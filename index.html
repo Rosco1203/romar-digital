@@ -123,6 +123,8 @@
       border: 2px solid var(--gold); border-radius: 12px; padding: 12px 22px; white-space: nowrap;
     }
     .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
+    .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
+    .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
     .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
     .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
     .tier { display: flex; flex-direction: column; position: relative; }
@@ -182,10 +184,13 @@
       <div>
         <div class="eyebrow">Live demo line</div>
         <h2>Hear it before you buy it</h2>
-        <p>Call our demo line and book a fake service call. You&rsquo;ll talk to the same AI receptionist we set up for HVAC and other local-service shops.</p>
-        <p class="fine">You&rsquo;ll be speaking with an automated AI assistant, and the call is recorded.</p>
+        <p>Call our demo line and book a fake service call. You&rsquo;ll talk to the same AI receptionist we set up for HVAC and other local-service shops. Or try our demo HVAC website and chatbot.</p>
+        <p class="fine">You&rsquo;ll be speaking with an automated AI assistant, and the call is recorded. The demo site is for a fictional company.</p>
       </div>
-      <a class="demo-phone" href="tel:+12089340280" aria-label="Call the demo line at (208) 934-0280">(208) 934-0280</a>
+      <div class="demo-actions">
+        <a class="demo-phone" href="tel:+12089340280" aria-label="Call the demo line at (208) 934-0280">(208) 934-0280</a>
+        <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">See the demo website &amp; chatbot &rarr;</a>
+      </div>
     </div>
   </div>
 
