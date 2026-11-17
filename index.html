@@ -102,6 +102,53 @@
     .team-card a:hover { text-decoration: none; }
     .team-card a:hover img { border-color: var(--accent); }
     .team-card a:hover h3 { color: var(--accent); }
+
+    /* --- Website + chatbot packages (added) --- */
+    :root { --gold: #C9883A; --charcoal: #2B2F36; }
+    .nav-links { flex-wrap: nowrap; }
+    .nav-links a { white-space: nowrap; }
+    .demo-callout {
+      max-width: 1100px; margin: 0 auto 20px; padding: 0 24px;
+    }
+    .demo-box {
+      display: flex; gap: 28px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      background: linear-gradient(135deg, #131b33, #0f1629);
+      border: 1px solid var(--gold); border-radius: 16px; padding: 28px 32px;
+    }
+    .demo-box h2 { font-size: 1.5rem; margin-bottom: 6px; }
+    .demo-box p { color: var(--muted); max-width: 640px; }
+    .demo-box .fine { font-size: 0.8rem; margin-top: 8px; }
+    .demo-phone {
+      font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text);
+      border: 2px solid var(--gold); border-radius: 12px; padding: 12px 22px; white-space: nowrap;
+    }
+    .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
+    .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
+    .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+    .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
+    .tier { display: flex; flex-direction: column; position: relative; }
+    .tier.featured { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 8px 30px rgba(201,136,58,0.12); }
+    .badge {
+      position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--charcoal);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px;
+    }
+    .tier .for { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; min-height: 3em; }
+    .tier .price { margin: 10px 0 2px; }
+    .tier .price small { display: block; font-size: 0.95rem; color: var(--text); font-weight: 600; margin-top: 2px; }
+    .tier .price small span { font-size: 0.85rem; }
+    .tier ul { list-style: none; margin: 14px 0 20px; flex: 1; }
+    .tier li { color: var(--muted); font-size: 0.92rem; padding-left: 22px; position: relative; margin-bottom: 6px; }
+    .tier li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .tier .cta { text-align: center; }
+    .tier .turn { color: var(--muted); font-size: 0.8rem; margin-bottom: 12px; }
+    .pkg-note { color: var(--muted); font-size: 0.85rem; margin-top: 20px; max-width: 820px; }
+    .bundle-save { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 700px) {
+      .demo-box { padding: 22px; }
+      .demo-phone { font-size: 1.4rem; }
+    }
   </style>
 </head>
 <body>
@@ -112,6 +159,9 @@
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
+        <a href="#web-builds">Websites</a>
+        <a href="#chatbots">Chatbots</a>
+        <a href="#bundles">Bundles</a>
         <a href="#products">Products</a>
         <a href="#about">About</a>
         <a href="#team">Team</a>
@@ -122,12 +172,27 @@
 
   <section class="hero">
     <h1>Digital growth for<br><span>modern businesses</span></h1>
-    <p>RoMar Digital helps companies increase their digital footprint and authority through full-stack development, design, content, marketing, and AI-powered voice solutions.</p>
+    <p>RoMar Digital helps companies increase their digital footprint and authority through full-stack development, design, content, marketing, website builds, AI chatbots, and AI-powered voice solutions.</p>
     <div class="hero-actions">
       <a class="cta" href="https://fazoo-checkout.onrender.com">View Products</a>
       <a class="btn-secondary" href="#services">Explore Services</a>
     </div>
   </section>
+
+  <div class="demo-callout" id="demo">
+    <div class="demo-box">
+      <div>
+        <div class="eyebrow">Live demo line</div>
+        <h2>Hear it before you buy it</h2>
+        <p>Call our demo line and book a fake service call. You&rsquo;ll talk to the same AI receptionist we set up for HVAC and other local-service shops. Or try our demo HVAC website and chatbot.</p>
+        <p class="fine">You&rsquo;ll be speaking with an automated AI assistant, and the call is recorded. The demo site is for a fictional company.</p>
+      </div>
+      <div class="demo-actions">
+        <a class="demo-phone" href="tel:+12089340280" aria-label="Call the demo line at (208) 934-0280">(208) 934-0280</a>
+        <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">See the demo website &amp; chatbot &rarr;</a>
+      </div>
+    </div>
+  </div>
 
   <section id="about">
     <h2>About RoMar Digital</h2>
@@ -140,7 +205,7 @@
         </div>
         <div class="detail-block">
           <h3>What we focus on</h3>
-          <p>Our work centers on two high-impact areas right now: AI voice agents that answer missed calls for service businesses (starting with HVAC), and review generation and management that keeps Google profiles strong and trustworthy.</p>
+          <p>Our work centers on a few high-impact areas right now: AI voice agents that answer missed calls for service businesses (starting with HVAC), website builds and AI chatbots that turn visitors into booked jobs, and review generation and management that keeps Google profiles strong and trustworthy.</p>
         </div>
       </div>
       <div>
@@ -174,6 +239,14 @@
         <p>Content strategy, campaign planning, and messaging that positions your business as the clear local choice. Coordinated with ads and social.</p>
       </div>
       <div class="card">
+        <h3>Website Builds</h3>
+        <p>Fast, mobile-friendly local-service websites with click-to-call, request-a-visit forms, local SEO setup, hosting, and monthly care. <a href="#web-builds">See website packages</a>.</p>
+      </div>
+      <div class="card">
+        <h3>AI Chatbots</h3>
+        <p>A website chatbot that answers questions from your approved information, captures leads, and books appointments. It always says it is an AI assistant. <a href="#chatbots">See chatbot packages</a>.</p>
+      </div>
+      <div class="card">
         <h3>AI Voice & Automation</h3>
         <p>Voice agents that answer after-hours and overflow calls, book jobs, and escalate urgent requests. Plus review request and reputation workflows.</p>
       </div>
@@ -197,6 +270,170 @@
         <p>We monitor performance, adjust messaging, and stay available for changes. You get a named point of contact.</p>
       </div>
     </div>
+  </section>
+
+  <section id="web-builds">
+    <div class="eyebrow">Website builds</div>
+    <h2>A website that brings in calls and jobs</h2>
+    <p class="sub">Done-for-you sites for local-service businesses. Setup fee once, then a flat monthly fee that covers hosting, SSL, backups, uptime monitoring, and small edits. You own your domain and your content.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Site Starter</h3>
+        <p class="for">For a solo operator with no site or a poor one</p>
+        <div class="price">$899 <span>one-time setup</span><small>+ $79 <span>/mo</span></small></div>
+        <p class="turn">Live in about 5 business days after we have your content and approval</p>
+        <ul>
+          <li>Up to 5 pages (Home, Services, About, Contact, +1)</li>
+          <li>Our branded template with your logo, colors, and photos</li>
+          <li>Click-to-call and quote-request form with instant email alert</li>
+          <li>Basic local SEO setup</li>
+          <li>Accessibility-minded build (WCAG 2.2 AA target) and accessibility statement</li>
+          <li>Privacy policy and terms pages</li>
+          <li>Hosting, SSL, backups, and uptime monitoring</li>
+          <li>Up to 30 min of edits per month</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/6oUdRb7audw4g9jbwS8og00">Get started</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recommended</span>
+        <h3>Site Pro</h3>
+        <p class="for">For most HVAC and plumbing shops</p>
+        <div class="price">$1,799 <span>one-time setup</span><small>+ $129 <span>/mo</span></small></div>
+        <p class="turn">Live in about 10 business days</p>
+        <ul>
+          <li>Up to 10 pages: 6 service pages and 3 service-area pages</li>
+          <li>Layout tailored to your trade</li>
+          <li>Booking: request-a-visit form, plus your Google Calendar, Jobber, or Housecall Pro link if you have one</li>
+          <li>Full on-page local SEO, local-business schema, and Search Console setup</li>
+          <li>Curated reviews block (you approve each one)</li>
+          <li>Keyboard and contrast accessibility pass</li>
+          <li>Monthly one-page analytics report</li>
+          <li>Up to 1 hour of edits per month</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/00wfZj66q0Ji7CN1Wi8og01">Get started</a>
+      </div>
+      <div class="card tier">
+        <h3>Site Premium</h3>
+        <p class="for">For multi-truck shops that want to rank in several towns</p>
+        <div class="price">$3,299 <span>one-time setup</span><small>+ $249 <span>/mo</span></small></div>
+        <p class="turn">Live in about 15&ndash;20 business days</p>
+        <ul>
+          <li>Up to 20 pages: up to 10 service or city pages, gallery, FAQ, and a financing or maintenance-plan page</li>
+          <li>Custom layout for each section</li>
+          <li>Booking with service-type logic</li>
+          <li>Full local SEO plus a new page or post every month</li>
+          <li>Reviews block with live feed if you use our Review Management</li>
+          <li>Monthly automated accessibility scan</li>
+          <li>Quarterly review call</li>
+          <li>Up to 2 hours of edits per month</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/7sY00l9iCgIg6yJ8kG8og02">Get started</a>
+      </div>
+    </div>
+    <p class="pkg-note">Add-ons: extra page $99 (service-area or service page $129), extra edit hour $75, 3-day rush launch +$300. Not included: ad management, guaranteed rankings, e-commerce checkout, logo design. The domain name is a pass-through cost you pay directly (about $11 a year for a .com).</p>
+  </section>
+
+  <section id="chatbots">
+    <div class="eyebrow">AI chatbots</div>
+    <h2>A chatbot that answers, captures, and books</h2>
+    <p class="sub">A website chatbot trained on your approved information: services, areas, hours, and FAQs. It tells visitors it is an AI assistant, screens for emergencies, hands off to your team, and emails you every lead.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Chat Starter</h3>
+        <p class="for">FAQ and lead capture</p>
+        <div class="price">$449 <span>one-time setup</span><small>+ $99 <span>/mo</span></small></div>
+        <p class="turn">Live in about 5 business days</p>
+        <ul>
+          <li>Up to 300 conversations per month</li>
+          <li>Answers from your approved knowledge base</li>
+          <li>Captures name, phone, email, address, issue, and urgency</li>
+          <li>Instant lead email with a conversation summary</li>
+          <li>Emergency screening that points to 911 or your emergency line</li>
+          <li>AI-assistant label, consent notice, and human hand-off</li>
+          <li>1 location</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/eVqcN70M677G1epcAW8og03">Get started</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recommended</span>
+        <h3>Chat Pro</h3>
+        <p class="for">Answers, leads, and bookings</p>
+        <div class="price">$799 <span>one-time setup</span><small>+ $199 <span>/mo</span></small></div>
+        <p class="turn">Live in about 8&ndash;10 business days</p>
+        <ul>
+          <li>Up to 600 conversations per month</li>
+          <li>Everything in Starter, plus <strong>appointment booking</strong> on your connected calendar, or a request window if you have none</li>
+          <li>English and Spanish</li>
+          <li>Basic per-page greetings</li>
+          <li>Monthly report: conversations, leads, bookings, top and unanswered questions</li>
+          <li>1 location</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/7sY9AVgL477G9KVeJ48og04">Get started</a>
+      </div>
+      <div class="card tier">
+        <h3>Chat Premium</h3>
+        <p class="for">Multiple locations and high traffic</p>
+        <div class="price">$1,299 <span>one-time setup</span><small>+ $349 <span>/mo</span></small></div>
+        <p class="turn">Live in about 12&ndash;15 business days</p>
+        <ul>
+          <li>Up to 1,200 conversations per month</li>
+          <li>Everything in Pro, plus rescheduling</li>
+          <li>Up to 3 locations</li>
+          <li>Custom triggers by page</li>
+          <li>Knowledge base shared with your AI Voice Receptionist</li>
+          <li>Monthly 30-minute tuning review</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/8x25kF3Yi8bKaOZasO8og05">Get started</a>
+      </div>
+    </div>
+    <p class="pkg-note">Conversations over your monthly cap are $0.25 each, with usage alerts at 75%, 90%, and 100%. A conversation is one visitor session with at least one visitor message in a 24-hour window. Add-ons: extra location $299 setup + $49/mo, extra 300 conversations $60/mo.</p>
+  </section>
+
+  <section id="bundles">
+    <div class="eyebrow">Bundles</div>
+    <h2>One front desk for calls, chat, and web</h2>
+    <p class="sub">Voice, chat, and website share one knowledge base, one booking calendar, and one escalation plan. Bundling costs less than buying each on its own.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Voice + Chat Pro</h3>
+        <p class="for">Answer every call and every chat</p>
+        <div class="price">$798 <span>one-time setup</span><small>+ $748 <span>/mo</span></small></div>
+        <p class="turn">AI Voice Receptionist and Chat Pro</p>
+        <ul>
+          <li>AI Voice Receptionist: 500 included minutes, $0.30/min overage</li>
+          <li>Chat Pro: 600 conversations, booking, Spanish</li>
+          <li>Shared knowledge base and calendar</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/6oUfZjbqKajS5uF30m8og06">Get started</a>
+      </div>
+      <div class="card tier">
+        <h3>Website + Chat Pro</h3>
+        <p class="for">A new site with a chatbot built in</p>
+        <div class="price">$2,199 <span>one-time setup</span><small>+ $279 <span>/mo</span></small></div>
+        <p class="turn">Site Pro and Chat Pro</p>
+        <ul>
+          <li>Site Pro: 10 pages, booking, full local SEO</li>
+          <li>Chat Pro: 600 conversations, booking, Spanish</li>
+          <li>One calendar behind both</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/fZubJ31QabnW4qB58u8og07">Get started</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recommended</span>
+        <h3>Full Front Desk</h3>
+        <p class="for">Phone, chat, and website working together</p>
+        <div class="price">$2,297 <span>one-time setup</span><small>+ $847 <span>/mo</span></small></div>
+        <p class="turn">AI Voice Receptionist, Chat Pro, and Site Pro</p>
+        <ul>
+          <li>AI Voice Receptionist: 500 included minutes, $0.30/min overage</li>
+          <li>Chat Pro: 600 conversations, booking, Spanish</li>
+          <li>Site Pro: 10 pages, booking, full local SEO</li>
+          <li>One knowledge base, one calendar, one escalation plan</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/fZubJ3cuO77GcX7bwS8og08">Get started</a>
+      </div>
+    </div>
+    <p class="pkg-note">Month-to-month after a 30-day first term. You own your domain, content, and delivered site code. Reviews can be added to any bundle at the standard review rates below.</p>
   </section>
 
   <section id="products">
@@ -283,6 +520,7 @@
 
   <footer>
     <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, Florida</p>
+    <!-- TODO (after legal approves the privacy policy): add <a href="privacy.html">Privacy Policy</a> here and create privacy.html. -->
   </footer>
 </body>
 </html>
