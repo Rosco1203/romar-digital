@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoMar Digital — Digital Growth for Modern Businesses</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
   <style>
     :root {
       --bg: #070b14;
@@ -35,7 +39,8 @@
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 24px;
     }
-    .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; }
+    .logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; color: inherit; }
+    .logo img { height: 42px; width: auto; display: block; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 24px; }
     .nav-links a { color: var(--muted); font-size: 0.95rem; }
@@ -96,7 +101,9 @@
 <body>
   <header>
     <nav>
-      <div class="logo">RoMar <span>Digital</span></div>
+      <a class="logo" href="https://rosco1203.github.io/romar-digital/" aria-label="RoMar Digital">
+        <img src="assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
+      </a>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#products">Products</a>
