@@ -122,6 +122,7 @@
     }
     .demo-box h2 { font-size: 1.5rem; margin-bottom: 6px; }
     .demo-box p { color: var(--muted); max-width: 640px; }
+    .demo-box > div:first-child { flex: 1 1 360px; }
     .demo-box .fine { font-size: 0.8rem; margin-top: 8px; }
     .demo-phone {
       font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text);
@@ -130,6 +131,14 @@
     .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
     .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
     .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+
+    .demo-lines { gap: 10px; flex: 0 1 440px; min-width: 300px; text-align: left; }
+    .demo-line { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center; padding: 10px 0; border-top: 1px solid rgba(201,136,58,0.28); }
+    .demo-line:first-child { border-top: 0; padding-top: 0; }
+    .demo-trade { grid-column: 1 / -1; color: var(--gold); font-weight: 700; font-size: 0.78rem; letter-spacing: 1.2px; text-transform: uppercase; }
+    .demo-lines .demo-phone { font-size: 1.15rem; padding: 8px 14px; text-align: center; }
+    .demo-lines .demo-site-link { font-size: 0.85rem; }
+    @media (max-width: 640px) { .demo-lines { min-width: 0; width: 100%; } .demo-line { grid-template-columns: 1fr; } }
     .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
     .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
     .tier { display: flex; flex-direction: column; position: relative; }
@@ -223,7 +232,7 @@
 
   <section class="hero">
     <h1>Digital growth for<br><span>modern businesses</span></h1>
-    <p>RoMar Digital helps companies increase their digital footprint and authority through full-stack development, design, content, marketing, website builds, AI chatbots, and AI-powered voice solutions.</p>
+    <p>RoMar Digital is a full-service AI, software, marketing and modern technology partner for local small businesses: AI voice receptionists, website builds, AI chatbots, review management, and the systems that tie them together.</p>
     <div class="hero-actions">
       <a class="cta" href="#products">View Products</a>
       <a class="btn-secondary" href="#services">Explore Services</a>
@@ -235,12 +244,25 @@
       <div>
         <div class="eyebrow">Live demo line</div>
         <h2>Hear it before you buy it</h2>
-        <p>Call our demo line and book a fake service call. You&rsquo;ll talk to the same AI receptionist we set up for HVAC and other local-service shops. Or try our demo HVAC website and chatbot.</p>
+        <p>Call a demo line and book a fake service call or estimate. You&rsquo;ll talk to the same kind of AI receptionist we set up for HVAC, plumbing, home improvement and other local-service shops. Or try a demo website and chatbot for each.</p>
         <p class="fine">You&rsquo;ll be speaking with an automated AI assistant, and the call is recorded. The demo site is for a fictional company.</p>
       </div>
-      <div class="demo-actions">
-        <a class="demo-phone" href="tel:+12089340280" aria-label="Call the demo line at (208) 934-0280">(208) 934-0280</a>
-        <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">See the demo website &amp; chatbot &rarr;</a>
+      <div class="demo-actions demo-lines">
+        <div class="demo-line">
+          <span class="demo-trade">HVAC</span>
+          <a class="demo-phone" href="tel:+12089340280" aria-label="Call the HVAC demo line at (208) 934-0280">(208) 934-0280</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">Demo site &amp; chatbot &rarr;</a>
+        </div>
+        <div class="demo-line">
+          <span class="demo-trade">Plumbing</span>
+          <a class="demo-phone" href="tel:+17542540902" aria-label="Call the Plumbing demo line at (754) 254-0902">(754) 254-0902</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Demo site &amp; chatbot &rarr;</a>
+        </div>
+        <div class="demo-line">
+          <span class="demo-trade">Home improvement</span>
+          <a class="demo-phone" href="tel:+17869816843" aria-label="Call the Home improvement demo line at (786) 981-6843">(786) 981-6843</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Demo site &amp; chatbot &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -256,7 +278,7 @@
         </div>
         <div class="detail-block">
           <h3>What we focus on</h3>
-          <p>Our work centers on a few high-impact areas right now: AI voice agents that answer missed calls for service businesses (starting with HVAC), website builds and AI chatbots that turn visitors into booked jobs, and review generation and management that keeps Google profiles strong and trustworthy.</p>
+          <p>Our work centers on a few high-impact areas right now: AI voice agents that answer missed calls for service businesses (live demos for HVAC, plumbing and home improvement), website builds and AI chatbots that turn visitors into booked jobs, and review generation and management that keeps Google profiles strong and trustworthy.</p>
         </div>
       </div>
       <div>
@@ -348,7 +370,7 @@
       <div class="card tier featured">
         <span class="badge">Recommended</span>
         <h3>Site Pro</h3>
-        <p class="for">For most HVAC and plumbing shops</p>
+        <p class="for">For most HVAC, plumbing and home improvement shops</p>
         <div class="price">$1,799 <span>one-time setup</span><small>+ $129 <span>/mo</span></small></div>
         <p class="turn">Live in about 10 business days</p>
         <ul>
@@ -523,8 +545,8 @@
     <p class="sub">Ready to deploy. Select a product to start checkout.</p>
     <div class="grid">
       <div class="card">
-        <h3>AI Voice Receptionist for HVAC</h3>
-        <p>An AI voice agent that answers calls in English or Spanish, books jobs into your calendar or Jobber, and handles urgent transfers. Includes 500 billed minutes a month, $0.30/min after that, and usage alerts at 75%, 90%, and 100%.</p>
+        <h3>AI Voice Receptionist</h3>
+        <p>Built for HVAC, plumbing and home improvement companies, and adaptable to other local trades. An AI voice agent that answers calls in English or Spanish, books jobs into your calendar or Jobber, and handles urgent transfers. Includes 500 billed minutes a month, $0.30/min after that, and usage alerts at 75%, 90%, and 100%.</p>
         <div class="price">$499 <span>setup</span> + $599 <span>/mo</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">Setup and Month 1 are charged at checkout. Overage is billed separately.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Select</a>
