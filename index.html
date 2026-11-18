@@ -8,6 +8,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
+  <link rel="canonical" href="https://rosco1203.github.io/romar-digital/">
+  <link rel="alternate" hreflang="en" href="https://rosco1203.github.io/romar-digital/">
+  <link rel="alternate" hreflang="es" href="https://rosco1203.github.io/romar-digital/es/">
+  <link rel="alternate" hreflang="x-default" href="https://rosco1203.github.io/romar-digital/">
+
   <style>
     :root {
       --bg: #070b14;
@@ -162,6 +167,20 @@
     footer a { color: var(--muted); }
     footer a:hover { color: var(--text); }
     .footer-contact span { white-space: nowrap; }
+    /* --- Language toggle --- */
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .lang-toggle {
+      border: 1px solid var(--border); color: var(--text); background: #0f1629;
+      padding: 8px 14px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; white-space: nowrap;
+    }
+    .lang-toggle:hover { border-color: var(--accent); text-decoration: none; }
+    @media (max-width: 700px) {
+      nav { padding: 12px 16px; gap: 8px; }
+      .logo img { height: 36px; width: auto; }
+      .nav-right { gap: 8px; }
+      .lang-toggle { padding: 7px 10px; font-size: 0.85rem; }
+      .nav-right .cta { padding: 8px 12px; font-size: 0.9rem; }
+    }
   </style>
 </head>
 <body>
@@ -179,7 +198,10 @@
         <a href="#about">About</a>
         <a href="#team">Team</a>
       </div>
-      <a class="cta" href="#services">Get Started</a>
+      <div class="nav-right">
+        <a class="lang-toggle" href="es/" hreflang="es" lang="es" aria-label="Ver este sitio en español" data-lang-toggle>Español</a>
+        <a class="cta" href="#services">Get Started</a>
+      </div>
     </nav>
   </header>
 
@@ -559,5 +581,16 @@
 
   <!-- Website chat assistant (RoMar Digital AI). Loads the Retell widget. -->
   <script src="chat-widget.js" defer></script>
+  <script>
+    // Keep the visitor on the same section when switching language.
+    (function () {
+      var a = document.querySelector('[data-lang-toggle]');
+      if (!a) return;
+      function sync() { a.href = a.getAttribute('data-base') + (location.hash || ''); }
+      a.setAttribute('data-base', a.getAttribute('href'));
+      sync();
+      window.addEventListener('hashchange', sync);
+    })();
+  </script>
 </body>
 </html>
