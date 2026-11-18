@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoMar Digital — Crecimiento digital para negocios modernos</title>
+  <meta name="description" content="RoMar Digital ayuda a negocios de servicios locales con recepcionista de voz con IA en inglés o español, sitios web y chatbots de IA que convierten llamadas y visitas en trabajos agendados.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+  <link rel="canonical" href="https://rosco1203.github.io/romar-digital/es/">
+  <link rel="alternate" hreflang="en" href="https://rosco1203.github.io/romar-digital/">
+  <link rel="alternate" hreflang="es" href="https://rosco1203.github.io/romar-digital/es/">
+  <link rel="alternate" hreflang="x-default" href="https://rosco1203.github.io/romar-digital/">
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --surface: #0f1629;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --accent-3: #0891b2;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #070b14;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(7,11,20,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px;
+    }
+    .logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; color: inherit; }
+    .logo img { height: 42px; width: auto; display: block; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .cta {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white; padding: 10px 20px; border-radius: 10px; font-weight: 600;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+    }
+    .cta:hover { opacity: 0.92; text-decoration: none; }
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 680px; margin: 0 auto 32px; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-secondary {
+      border: 1px solid var(--border); color: var(--text);
+      padding: 10px 20px; border-radius: 10px; background: #0f1629;
+    }
+    .btn-secondary:hover { background: #f1f5f9; text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+    h2 { font-size: 2rem; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .sub { color: var(--muted); margin-bottom: 36px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .price { font-size: 1.5rem; font-weight: 700; margin: 14px 0; color: var(--accent); }
+    .price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .detail-block { margin-bottom: 32px; }
+    .detail-block h3 { margin-bottom: 8px; font-size: 1.25rem; }
+    .detail-block p { color: var(--muted); margin-bottom: 8px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+    .team-card { text-align: center; }
+    .team-card img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin-bottom: 12px; border: 2px solid var(--border); }
+    .team-card h3 { font-size: 1rem; margin-bottom: 4px; }
+    .team-card p { color: var(--muted); font-size: 0.85rem; }
+
+    .team-intro { color: var(--muted); margin: -20px 0 36px; max-width: 680px; }
+    .team-card a { color: inherit; text-decoration: none; display: block; }
+    .team-card a:hover { text-decoration: none; }
+    .team-card a:hover img { border-color: var(--accent); }
+    .team-card a:hover h3 { color: var(--accent); }
+
+    /* --- Website + chatbot packages (added) --- */
+    :root { --gold: #C9883A; --charcoal: #2B2F36; }
+    .nav-links { flex-wrap: nowrap; }
+    .nav-links a { white-space: nowrap; }
+    .demo-callout {
+      max-width: 1100px; margin: 0 auto 20px; padding: 0 24px;
+    }
+    .demo-box {
+      display: flex; gap: 28px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      background: linear-gradient(135deg, #131b33, #0f1629);
+      border: 1px solid var(--gold); border-radius: 16px; padding: 28px 32px;
+    }
+    .demo-box h2 { font-size: 1.5rem; margin-bottom: 6px; }
+    .demo-box p { color: var(--muted); max-width: 640px; }
+    .demo-box .fine { font-size: 0.8rem; margin-top: 8px; }
+    .demo-phone {
+      font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text);
+      border: 2px solid var(--gold); border-radius: 12px; padding: 12px 22px; white-space: nowrap;
+    }
+    .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
+    .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
+    .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+    .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
+    .tier { display: flex; flex-direction: column; position: relative; }
+    .tier.featured { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 8px 30px rgba(201,136,58,0.12); }
+    .badge {
+      position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--charcoal);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px;
+    }
+    .tier .for { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; min-height: 3em; }
+    .tier .price { margin: 10px 0 2px; }
+    .tier .price small { display: block; font-size: 0.95rem; color: var(--text); font-weight: 600; margin-top: 2px; }
+    .tier .price small span { font-size: 0.85rem; }
+    .tier ul { list-style: none; margin: 14px 0 20px; flex: 1; }
+    .tier li { color: var(--muted); font-size: 0.92rem; padding-left: 22px; position: relative; margin-bottom: 6px; }
+    .tier li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .tier .cta { text-align: center; }
+    .tier .turn { color: var(--muted); font-size: 0.8rem; margin-bottom: 12px; }
+    .pkg-note { color: var(--muted); font-size: 0.85rem; margin-top: 20px; max-width: 820px; }
+    .bundle-save { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+    .card .bundle-save { color: var(--gold); }
+    .bundle-sub { margin: 36px 0 6px; font-size: 1.25rem; }
+    .bundle-subnote { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; max-width: 820px; }
+    .tier-grid.two { max-width: calc((100% - 40px) * 2 / 3 + 20px); }
+    .prepay-line { color: var(--gold); font-size: 0.95rem; font-weight: 600; margin-top: 18px; }
+    @media (max-width: 900px) { .tier-grid.two { max-width: none; } }
+    @media (max-width: 700px) {
+      .demo-box { padding: 22px; }
+      .demo-phone { font-size: 1.4rem; }
+    }
+
+    /* --- Footer --- */
+    footer { text-align: center; color: var(--muted); padding: 40px 24px 96px; font-size: 0.9rem; border-top: 1px solid var(--border); }
+    footer p { margin-bottom: 6px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+    .footer-contact span { white-space: nowrap; }
+    /* --- Language toggle --- */
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .lang-toggle {
+      border: 1px solid var(--border); color: var(--text); background: #0f1629;
+      padding: 8px 14px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; white-space: nowrap;
+    }
+    .lang-toggle:hover { border-color: var(--accent); text-decoration: none; }
+    @media (max-width: 700px) {
+      nav { padding: 12px 16px; gap: 8px; }
+      .logo img { height: 36px; width: auto; }
+      .nav-right { gap: 8px; }
+      .lang-toggle { padding: 7px 10px; font-size: 0.85rem; }
+      .nav-right .cta { padding: 8px 12px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="https://rosco1203.github.io/romar-digital/es/" aria-label="RoMar Digital">
+        <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
+      </a>
+      <div class="nav-links">
+        <a href="#services">Servicios</a>
+        <a href="#web-builds">Sitios web</a>
+        <a href="#chatbots">Chatbots</a>
+        <a href="#bundles">Paquetes</a>
+        <a href="#products">Productos</a>
+        <a href="#about">Nosotros</a>
+        <a href="#team">Equipo</a>
+      </div>
+      <div class="nav-right">
+        <a class="lang-toggle" href="../" hreflang="en" lang="en" aria-label="Switch to English" data-lang-toggle>English</a>
+        <a class="cta" href="#services">Comenzar</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Crecimiento digital para<br><span>negocios modernos</span></h1>
+    <p>RoMar Digital ayuda a las empresas a aumentar su presencia y autoridad digital con desarrollo de software, diseño, contenido, marketing, sitios web, chatbots de IA y soluciones de voz con inteligencia artificial.</p>
+    <div class="hero-actions">
+      <a class="cta" href="#products">Ver productos</a>
+      <a class="btn-secondary" href="#services">Explorar servicios</a>
+    </div>
+  </section>
+
+  <div class="demo-callout" id="demo">
+    <div class="demo-box">
+      <div>
+        <div class="eyebrow">Línea de demostración en vivo</div>
+        <h2>Escúchelo antes de comprarlo</h2>
+        <p>Llame a nuestra línea de demostración y agende una visita de servicio de prueba. Hablará con la misma recepcionista con IA que configuramos para negocios de aire acondicionado (HVAC) y otros servicios locales. También puede probar nuestro sitio web y chatbot de demostración para HVAC (en inglés).</p>
+        <p class="fine">Hablará con un asistente automatizado de IA y la llamada se graba. El sitio de demostración es de una empresa ficticia.</p>
+      </div>
+      <div class="demo-actions">
+        <a class="demo-phone" href="tel:+12089340280" aria-label="Llamar a la línea de demostración al (208) 934-0280">(208) 934-0280</a>
+        <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">Ver el sitio web y chatbot de demostración (en inglés) &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>Sobre RoMar Digital</h2>
+    <p class="sub">Una agencia digital con sede en Fort Lauderdale, Florida, enfocada en resultados prácticos para negocios locales y en crecimiento.</p>
+    <div class="two-col">
+      <div>
+        <div class="detail-block">
+          <h3>Quiénes somos</h3>
+          <p>RoMar Digital fue fundada por veteranos con experiencia en la industria que vieron a demasiados negocios batallar con herramientas digitales dispersas y tiempos de respuesta lentos. Creamos y operamos sistemas que captan clientes potenciales, atienden a sus clientes y protegen su reputación, sin que usted tenga que contratar más personal.</p>
+        </div>
+        <div class="detail-block">
+          <h3>En qué nos enfocamos</h3>
+          <p>Por ahora, nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios de servicios (empezando por HVAC), sitios web y chatbots de IA que convierten visitantes en trabajos agendados, y la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google.</p>
+        </div>
+      </div>
+      <div>
+        <div class="detail-block">
+          <h3>Cómo trabajamos</h3>
+          <p>Empezamos con un piloto claro. La configuración es sencilla, los precios son transparentes y medimos los resultados en llamadas atendidas, trabajos agendados y reseñas obtenidas. El servicio continuo incluye monitoreo, alertas de consumo excedente y atención directa.</p>
+        </div>
+        <div class="detail-block">
+          <h3>Ubicación y horario</h3>
+          <p><strong>Fort Lauderdale, Florida</strong></p>
+          <p>Lunes a viernes, de 8:00 a. m. a 5:00 p. m., hora del Este (ET)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Servicios</h2>
+    <p class="sub">Soluciones de nivel profesional para negocios que necesitan una infraestructura digital confiable.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Desarrollo de software a medida (Full-Stack)</h3>
+        <p>Aplicaciones web a medida, portales para clientes, APIs e integraciones que conectan las herramientas que usted ya tiene. Diseñado para ser confiable y fácil de entregar a su equipo.</p>
+      </div>
+      <div class="card">
+        <h3>Diseño y marca</h3>
+        <p>Sistemas visuales limpios, páginas de destino y materiales de marca que generan confianza rápidamente. Enfocados en la claridad y en lograr resultados, más que en la decoración.</p>
+      </div>
+      <div class="card">
+        <h3>Contenido y marketing</h3>
+        <p>Estrategia de contenido, planificación de campañas y mensajes que posicionan a su negocio como la mejor opción local. Coordinado con anuncios y redes sociales.</p>
+      </div>
+      <div class="card">
+        <h3>Creación de sitios web</h3>
+        <p>Sitios web rápidos y adaptados a celulares para negocios de servicios locales, con botón para llamar, formularios para solicitar una visita, configuración de SEO local, alojamiento y mantenimiento mensual. <a href="#web-builds">Ver paquetes de sitios web</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Chatbots de IA</h3>
+        <p>Un chatbot para su sitio web que responde preguntas con la información que usted aprueba, capta clientes potenciales y agenda citas. Siempre se identifica como asistente de IA. <a href="#chatbots">Ver paquetes de chatbots</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Voz con IA y automatización</h3>
+        <p>Agentes de voz que contestan en inglés o español las llamadas fuera de horario y las que su equipo no alcanza a atender, agendan trabajos y escalan las solicitudes urgentes. Además, flujos para solicitar reseñas y cuidar su reputación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <h2>Nuestro enfoque</h2>
+    <p class="sub">Práctico, medible y hecho para negocios de servicios.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Primero, un piloto</h3>
+        <p>Comience con un piloto enfocado para ver resultados antes de ampliar. Configuración clara, alcance definido y resultados documentados.</p>
+      </div>
+      <div class="card">
+        <h3>2. Precios transparentes</h3>
+        <p>Cuota de configuración inicial y mensualidad con consumo incluido. El consumo excedente se mide y se le avisa, para que no haya sorpresas.</p>
+      </div>
+      <div class="card">
+        <h3>3. Soporte continuo</h3>
+        <p>Monitoreamos el desempeño, ajustamos los mensajes y estamos disponibles para hacer cambios. Usted cuenta con una persona de contacto asignada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="web-builds">
+    <div class="eyebrow">Sitios web</div>
+    <h2>Un sitio web que le trae llamadas y trabajos</h2>
+    <p class="sub">Sitios web listos, hechos por nosotros, para negocios de servicios locales. Una sola cuota de configuración y luego una mensualidad fija que cubre alojamiento, SSL, copias de seguridad, monitoreo de disponibilidad y cambios menores. Usted es dueño de su dominio y de su contenido.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Sitio Inicial (Site Starter)</h3>
+        <p class="for">Para quien trabaja por cuenta propia y no tiene sitio web, o tiene uno deficiente</p>
+        <div class="price">$899 <span>pago único de configuración</span><small>+ $79 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 5 días hábiles, una vez que tengamos su contenido y su aprobación</p>
+        <ul>
+          <li>Hasta 5 páginas (Inicio, Servicios, Nosotros, Contacto y 1 más)</li>
+          <li>Nuestra plantilla con su logotipo, sus colores y sus fotos</li>
+          <li>Botón para llamar y formulario para solicitar cotización, con aviso inmediato por correo electrónico</li>
+          <li>Configuración básica de SEO local</li>
+          <li>Sitio diseñado pensando en la accesibilidad (meta: WCAG 2.2 nivel AA) y declaración de accesibilidad</li>
+          <li>Páginas de política de privacidad y de términos</li>
+          <li>Alojamiento, SSL, copias de seguridad y monitoreo de disponibilidad</li>
+          <li>Hasta 30 minutos de cambios al mes</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/6oUdRb7audw4g9jbwS8og00">Comenzar</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recomendado</span>
+        <h3>Sitio Pro (Site Pro)</h3>
+        <p class="for">Para la mayoría de los negocios de HVAC y plomería</p>
+        <div class="price">$1,799 <span>pago único de configuración</span><small>+ $129 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 10 días hábiles</p>
+        <ul>
+          <li>Hasta 10 páginas: 6 de servicios y 3 de áreas de servicio</li>
+          <li>Diseño adaptado a su oficio</li>
+          <li>Citas: formulario para solicitar una visita, más el enlace de su Google Calendar, Jobber o Housecall Pro si usted usa alguno</li>
+          <li>SEO local completo en cada página, marcado de negocio local (schema) y configuración de Search Console</li>
+          <li>Sección de reseñas seleccionadas (usted aprueba cada una)</li>
+          <li>Revisión de accesibilidad para uso con teclado y contraste de colores</li>
+          <li>Informe mensual de analítica de una página</li>
+          <li>Hasta 1 hora de cambios al mes</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/00wfZj66q0Ji7CN1Wi8og01">Comenzar</a>
+      </div>
+      <div class="card tier">
+        <h3>Sitio Premium (Site Premium)</h3>
+        <p class="for">Para negocios con varias camionetas que quieren aparecer en las búsquedas de varias ciudades</p>
+        <div class="price">$3,299 <span>pago único de configuración</span><small>+ $249 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 15 a 20 días hábiles</p>
+        <ul>
+          <li>Hasta 20 páginas: hasta 10 páginas de servicios o ciudades, galería, preguntas frecuentes y una página de financiamiento o planes de mantenimiento</li>
+          <li>Diseño personalizado para cada sección</li>
+          <li>Citas con lógica según el tipo de servicio</li>
+          <li>SEO local completo y una página o publicación nueva cada mes</li>
+          <li>Sección de reseñas con actualización en vivo si usa nuestra gestión de reseñas</li>
+          <li>Análisis automático de accesibilidad cada mes</li>
+          <li>Llamada de revisión cada trimestre</li>
+          <li>Hasta 2 horas de cambios al mes</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/7sY00l9iCgIg6yJ8kG8og02">Comenzar</a>
+      </div>
+    </div>
+    <p class="pkg-note">Complementos: página adicional $99 (página de área de servicio o de servicio $129), hora adicional de cambios $175, lanzamiento urgente en 3 días +$300. No incluido: administración de anuncios, posiciones garantizadas en buscadores, pagos en línea para tienda virtual ni diseño de logotipo. El nombre de dominio es un costo que usted paga directamente (alrededor de $11 al año por un .com).</p>
+  </section>
+
+  <section id="chatbots">
+    <div class="eyebrow">Chatbots de IA</div>
+    <h2>Un chatbot que responde, capta clientes y agenda citas</h2>
+    <p class="sub">Un chatbot para su sitio web, entrenado con la información que usted aprueba: servicios, áreas, horarios y preguntas frecuentes. Les dice a los visitantes que es un asistente de IA, identifica emergencias, pasa la conversación a su equipo y le envía por correo cada cliente potencial.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Chat Inicial (Chat Starter)</h3>
+        <p class="for">Preguntas frecuentes y captación de clientes potenciales</p>
+        <div class="price">$449 <span>pago único de configuración</span><small>+ $99 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 5 días hábiles</p>
+        <ul>
+          <li>Hasta 300 conversaciones al mes</li>
+          <li>Respuestas basadas en su base de conocimiento aprobada</li>
+          <li>Registra nombre, teléfono, correo electrónico, dirección, problema y urgencia</li>
+          <li>Correo inmediato con cada cliente potencial y un resumen de la conversación</li>
+          <li>Detección de emergencias que dirige al 911 o a su línea de emergencias</li>
+          <li>Aviso de que es un asistente de IA, aviso de consentimiento y traspaso a una persona</li>
+          <li>1 ubicación</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/eVqcN70M677G1epcAW8og03">Comenzar</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recomendado</span>
+        <h3>Chat Pro</h3>
+        <p class="for">Respuestas, clientes potenciales y citas</p>
+        <div class="price">$799 <span>pago único de configuración</span><small>+ $199 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 8 a 10 días hábiles</p>
+        <ul>
+          <li>Hasta 600 conversaciones al mes</li>
+          <li>Todo lo del plan Inicial, más <strong>agendado de citas</strong> en su calendario conectado, o una ventana de solicitud si no tiene calendario</li>
+          <li>Inglés o español</li>
+          <li>Saludos básicos según la página</li>
+          <li>Informe mensual: conversaciones, clientes potenciales, citas, preguntas más frecuentes y preguntas sin respuesta</li>
+          <li>1 ubicación</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/7sY9AVgL477G9KVeJ48og04">Comenzar</a>
+      </div>
+      <div class="card tier">
+        <h3>Chat Premium</h3>
+        <p class="for">Varias ubicaciones y mucho tráfico</p>
+        <div class="price">$1,299 <span>pago único de configuración</span><small>+ $349 <span>/mes</span></small></div>
+        <p class="turn">En línea en unos 12 a 15 días hábiles</p>
+        <ul>
+          <li>Hasta 1,200 conversaciones al mes</li>
+          <li>Todo lo del plan Pro, más reprogramación de citas</li>
+          <li>Hasta 3 ubicaciones</li>
+          <li>Activadores personalizados por página</li>
+          <li>Base de conocimiento compartida con su recepcionista de voz con IA</li>
+          <li>Revisión de ajustes de 30 minutos cada mes</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/8x25kF3Yi8bKaOZasO8og05">Comenzar</a>
+      </div>
+    </div>
+    <p class="pkg-note">Las conversaciones que excedan su límite mensual cuestan $0.25 cada una, con alertas de consumo al 75%, 90% y 100%. Una conversación es una sesión de un visitante con al menos un mensaje del visitante en un periodo de 24 horas. Complementos: ubicación adicional $299 de configuración + $49/mes, 300 conversaciones adicionales $60/mes.</p>
+  </section>
+
+  <section id="bundles">
+    <div class="eyebrow">Paquetes</div>
+    <h2>Una sola recepción para llamadas, chat y sitio web</h2>
+    <p class="sub">La voz, el chat y el sitio web comparten una misma base de conocimiento, un mismo calendario de citas y un mismo plan de escalamiento. Contratarlos juntos cuesta menos que comprar cada uno por separado.</p>
+    <div class="tier-grid">
+      <div class="card tier">
+        <h3>Voz + Chat Pro (Voice + Chat Pro)</h3>
+        <p class="for">Conteste cada llamada y cada chat</p>
+        <div class="price">$798 <span>pago único de configuración</span><small>+ $748 <span>/mes</span></small></div>
+        <p class="turn">Recepcionista de voz con IA y Chat Pro</p>
+        <ul>
+          <li>Recepcionista de voz con IA: en inglés o español, 500 minutos incluidos, $0.30/min por minutos adicionales</li>
+          <li>Chat Pro: 600 conversaciones, citas, en inglés o español</li>
+          <li>Base de conocimiento y calendario compartidos</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/6oUfZjbqKajS5uF30m8og06">Comenzar</a>
+      </div>
+      <div class="card tier">
+        <h3>Sitio web + Chat Pro (Website + Chat Pro)</h3>
+        <p class="for">Un sitio nuevo con chatbot integrado</p>
+        <div class="price">$2,199 <span>pago único de configuración</span><small>+ $279 <span>/mes</span></small></div>
+        <p class="turn">Sitio Pro y Chat Pro</p>
+        <ul>
+          <li>Sitio Pro: 10 páginas, citas, SEO local completo</li>
+          <li>Chat Pro: 600 conversaciones, citas, en inglés o español</li>
+          <li>Un solo calendario para ambos</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/fZubJ31QabnW4qB58u8og07">Comenzar</a>
+      </div>
+      <div class="card tier featured">
+        <span class="badge">Recomendado</span>
+        <h3>Atención Integral (Full Front Desk)</h3>
+        <p class="for">Teléfono, chat y sitio web trabajando juntos</p>
+        <div class="price">$2,297 <span>pago único de configuración</span><small>+ $847 <span>/mes</span></small></div>
+        <p class="turn">Recepcionista de voz con IA, Chat Pro y Sitio Pro</p>
+        <ul>
+          <li>Recepcionista de voz con IA: en inglés o español, 500 minutos incluidos, $0.30/min por minutos adicionales</li>
+          <li>Chat Pro: 600 conversaciones, citas, en inglés o español</li>
+          <li>Sitio Pro: 10 páginas, citas, SEO local completo</li>
+          <li>Una base de conocimiento, un calendario y un plan de escalamiento</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/fZubJ3cuO77GcX7bwS8og08">Comenzar</a>
+      </div>
+    </div>
+    <h3 class="bundle-sub">Voz + Reseñas</h3>
+    <p class="bundle-subnote">Conteste cada llamada, consiga reseñas y responda cada una, todo en un plan mes a mes, sin contratos largos.</p>
+    <div class="tier-grid two">
+      <div class="card tier">
+        <h3>Voz + Reseñas Fundadores (Voice + Review Founding)</h3>
+        <p class="for">Conteste el teléfono y construya sus reseñas</p>
+        <p class="bundle-save">Ahorre $79/mes frente a comprar cada uno por separado</p>
+        <div class="price">$499 <span>pago único de configuración</span><small>+ $769 <span>/mes</span></small></div>
+        <p class="turn">Recepcionista de voz con IA y Reseñas Fundadores</p>
+        <ul>
+          <li>Recepcionista de voz con IA: en inglés o español, 500 minutos incluidos, $0.30/min por minutos adicionales</li>
+          <li>Reseñas Fundadores: hasta 100 destinatarios de solicitudes y 30 borradores de respuesta al mes, una ubicación</li>
+          <li>Mes a mes, sin contrato largo</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/bJe4gBdyS2Rq0aleJ48og0c">Comenzar</a>
+      </div>
+      <div class="card tier">
+        <h3>Voz + Reseñas Estándar (Voice + Review Standard)</h3>
+        <p class="for">Conteste el teléfono y cada reseña</p>
+        <p class="bundle-save">Ahorre $99/mes frente a comprar cada uno por separado</p>
+        <div class="price">$499 <span>pago único de configuración</span><small>+ $899 <span>/mes</span></small></div>
+        <p class="turn">Recepcionista de voz con IA y Reseñas Estándar</p>
+        <ul>
+          <li>Recepcionista de voz con IA: en inglés o español, 500 minutos incluidos, $0.30/min por minutos adicionales</li>
+          <li>Reseñas Estándar: respuesta a todas las reseñas, hasta 250 destinatarios de solicitudes al mes, una ubicación (uso razonable: unas 75 respuestas al mes)</li>
+          <li>Mes a mes, sin contrato largo</li>
+        </ul>
+        <a class="cta" href="https://buy.stripe.com/cNi28t66qdw49KV58u8og0d">Comenzar</a>
+      </div>
+    </div>
+    <p class="pkg-note">La configuración y el primer mes se cobran al pagar; el consumo excedente de voz se factura aparte. Mes a mes después de un primer periodo de 30 días. Usted es dueño de su dominio, su contenido y el código del sitio entregado. Puede agregar reseñas a cualquier paquete a las tarifas estándar de reseñas que aparecen abajo.</p>
+    <p class="prepay-line">Pago anual por adelantado disponible: 12 meses al precio de 10. Pregúntenos.</p>
+  </section>
+
+  <section id="products">
+    <h2>Productos actuales</h2>
+    <p class="sub">Listos para activarse. Seleccione un producto para iniciar el pago.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Recepcionista de voz con IA para HVAC (AI Voice Receptionist for HVAC)</h3>
+        <p>Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
+        <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
+        <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
+        <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
+      </div>
+      <div class="card">
+        <h3>Reseñas — Fundadores (Founding)</h3>
+        <p>Generación de reseñas y gestión de reputación para los primeros clientes. Flujo que solicita reseñas a todos los clientes por igual, conforme a las pautas de la FTC, con respuestas aprobadas por el dueño.</p>
+        <div class="price">$249 <span>/mes</span></div>
+        <a class="cta" href="https://buy.stripe.com/9B65kFfH077G5uF58u8og0a">Seleccionar</a>
+      </div>
+      <div class="card">
+        <h3>Reseñas — Estándar (Standard)</h3>
+        <p>Para negocios con más movimiento: cada reseña recibe respuesta, con plantillas aprobadas para reseñas de 4 y 5 estrellas, y usted aprueba lo que se publica. Hasta 250 destinatarios de solicitudes al mes, con un límite de uso razonable de unas 75 respuestas al mes. Precio por ubicación. Las solicitudes de reseñas por mensaje de texto llegarán más adelante.</p>
+        <div class="price">$399 <span>/mes por ubicación</span></div>
+        <a class="cta" href="https://buy.stripe.com/6oU28t52m2Rq6yJ0Se8og0b">Seleccionar</a>
+      </div>
+    </div>
+    <p class="prepay-line">Pago anual por adelantado disponible: 12 meses al precio de 10. Pregúntenos.</p>
+  </section>
+
+  <section id="team">
+    <h2>El equipo</h2>
+    <p class="sub">Las personas detrás de RoMar Digital.</p>
+    <p class="team-intro">RoMar Digital funciona con un equipo de especialistas en IA, dirigido por su fundador, Roy Hancock.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <a href="../team/maya-chen.html" target="_blank" rel="noopener">
+          <img src="../assets/team/maya-chen.jpg" alt="Maya Chen">
+          <h3>Maya Chen</h3>
+        </a>
+        <p>Estratega de marketing</p>
+      </div>
+      <div class="team-card">
+        <a href="../team/aisha-thompson.html" target="_blank" rel="noopener">
+          <img src="../assets/team/aisha-thompson.jpg" alt="Aisha Thompson">
+          <h3>Aisha Thompson</h3>
+        </a>
+        <p>Líder de redes sociales</p>
+      </div>
+      <div class="team-card">
+        <a href="../team/marcus-rivera.html" target="_blank" rel="noopener">
+          <img src="../assets/team/marcus-rivera.jpg" alt="Marcus Rivera">
+          <h3>Marcus Rivera</h3>
+        </a>
+        <p>Líder de finanzas</p>
+      </div>
+      <div class="team-card">
+        <a href="../team/elena-brooks.html" target="_blank" rel="noopener">
+          <img src="../assets/team/elena-brooks.jpg" alt="Elena Brooks">
+          <h3>Elena Brooks</h3>
+        </a>
+        <p>Analista de investigación</p>
+      </div>
+      <div class="team-card">
+        <a href="../team/jordan-hale.html" target="_blank" rel="noopener">
+          <img src="../assets/team/jordan-hale.jpg" alt="Jordan Hale">
+          <h3>Jordan Hale</h3>
+        </a>
+        <p>Especialista en generación de clientes potenciales</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
+    <p>14982 SW 20th St, Miramar, FL 33027</p>
+    <p>© 2026 RoMar Digital. Todos los derechos reservados. · Fort Lauderdale, Florida</p>
+    <p><a href="../privacy.html" hreflang="en" lang="en">Política de privacidad (en inglés)</a></p>
+  </footer>
+
+  <!-- Website chat assistant (RoMar Digital AI). Loads the Retell widget. -->
+  <script src="../chat-widget.js" defer></script>
+  <script>
+    // Keep the visitor on the same section when switching language.
+    (function () {
+      var a = document.querySelector('[data-lang-toggle]');
+      if (!a) return;
+      function sync() { a.href = a.getAttribute('data-base') + (location.hash || ''); }
+      a.setAttribute('data-base', a.getAttribute('href'));
+      sync();
+      window.addEventListener('hashchange', sync);
+    })();
+  </script>
+</body>
+</html>
