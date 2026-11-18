@@ -45,7 +45,7 @@
   if (es) {
     s.setAttribute('data-dynamic', JSON.stringify({
       page_language: 'es',
-      greeting: "Hola, soy el asistente de IA de RoMar Digital (un asistente automatizado, no una persona). Puedo responder preguntas sobre nuestra recepcionista de voz con IA, sitios web, chatbots, paquetes y precios, y orientarle a la página correcta. También puedo ayudarle en inglés. ¿En qué puedo ayudarle?"
+      greeting: "Hola, soy el asistente de IA de RoMar Digital (un asistente automatizado, no una persona). Puedo responder preguntas sobre nuestra recepcionista de voz con IA, la gestión de reseñas, sitios web, chatbots, paquetes y precios, y orientarle a la página correcta. También puedo ayudarle en inglés. ¿En qué puedo ayudarle?"
     }));
   }
   document.head.appendChild(s);
