@@ -41,12 +41,12 @@
       border-bottom: 1px solid var(--border);
     }
     nav {
-      max-width: 1100px; margin: 0 auto;
+      max-width: 1240px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 24px;
     }
     .logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; color: inherit; }
-    .logo img { height: 42px; width: auto; display: block; }
+    .logo img { height: 72px; width: auto; display: block; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 24px; }
     .nav-links a { color: var(--muted); font-size: 0.95rem; }
@@ -170,7 +170,7 @@
     .prepay-box { margin-top: 36px; padding: 28px 32px; background: linear-gradient(135deg, #131b33, #0f1629); border: 1px solid var(--gold); border-radius: 16px; }
     .prepay-box h3 { font-size: 1.35rem; margin-bottom: 6px; }
     .prepay-box .prepay-intro { color: var(--muted); margin-bottom: 18px; max-width: 760px; }
-    .prepay-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px 20px; margin-bottom: 18px; }
+    .prepay-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px 20px; margin-bottom: 18px; }
     .prepay-item { display: flex; align-items: center; justify-content: space-between; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
     .prepay-item .pp-name { font-weight: 700; font-size: 0.98rem; }
     .prepay-item .pp-price { color: var(--accent); font-weight: 700; font-size: 1.15rem; }
@@ -208,9 +208,62 @@
     .who-demo .who-contact { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
     .who-note { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 820px; }
     .who-note a { color: var(--gold); font-weight: 600; text-decoration: underline; }
-    @media (max-width: 900px) { .nav-links { display: none; } }
-    @media (max-width: 1100px) and (min-width: 701px) { .nav-links { gap: 14px; } .nav-links a { font-size: 0.85rem; } nav { padding-left: 16px; padding-right: 16px; } }
+    /* --- Header: larger logo + wordmark, anchor offset --- */
+    :root { --header-h: 105px; }
+    html { scroll-padding-top: calc(var(--header-h) - 40px); }
+    #demo, #pay-annually, #custom-packages { scroll-margin-top: 40px; }
+    @media (max-width: 1240px) { :root { --header-h: 97px; } .logo img { height: 64px; } }
+    @media (max-width: 1100px) { :root { --header-h: 89px; } .logo img { height: 56px; } }
+    @media (max-width: 1000px) { .nav-links { display: none; } }
+    @media (max-width: 1240px) and (min-width: 1001px) { .nav-links { gap: 14px; } .nav-links a { font-size: 0.85rem; } nav { padding-left: 16px; padding-right: 16px; } }
+    @media (max-width: 700px) { :root { --header-h: 75px; } }
+    @media (max-width: 380px) { :root { --header-h: 63px; } header .logo img { height: 38px; } header nav { padding-left: 12px; padding-right: 12px; } header .lang-toggle { padding: 6px 8px; } header .nav-right .cta { padding: 8px 10px; } }
     @media (max-width: 700px) { .who-chips li { font-size: 0.82rem; padding: 3px 10px; } }
+
+
+    /* --- Contact us form --- */
+    #contact .contact-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; align-items: start; }
+    .contact-info p { color: var(--muted); margin-bottom: 12px; }
+    .contact-info .contact-lines { list-style: none; margin-top: 18px; }
+    .contact-info .contact-lines li { margin-bottom: 8px; color: var(--text); }
+    .contact-info .contact-lines a { color: var(--gold); font-weight: 600; }
+    .contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form .field { margin-bottom: 14px; }
+    .contact-form label, .contact-form legend { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .contact-form .opt { color: var(--muted); font-weight: 400; }
+    .contact-form input[type=text], .contact-form input[type=tel], .contact-form input[type=email], .contact-form select, .contact-form textarea {
+      width: 100%; background: #0a1020; color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 12px; font: inherit; font-size: 1rem; }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .contact-form fieldset { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+    .contact-form .checks { display: flex; flex-wrap: wrap; gap: 8px 10px; }
+    .contact-form .check { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: 0.88rem; font-weight: 400; margin: 0; cursor: pointer; }
+    .contact-form .check input { accent-color: var(--gold); width: 16px; height: 16px; margin: 0; }
+    .contact-form .err { color: #fca5a5; font-size: 0.82rem; margin-top: 4px; min-height: 0; }
+    .contact-form .invalid { border-color: #f87171 !important; }
+    .contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .contact-form button[type=submit] { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+    .contact-form button[disabled] { opacity: 0.6; cursor: wait; }
+    .contact-form .fine { color: var(--muted); font-size: 0.8rem; margin-top: 12px; }
+    .contact-status { margin-top: 16px; padding: 14px 16px; border-radius: 10px; font-size: 0.95rem; display: none; }
+    .contact-status.ok { display: block; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.5); }
+    .contact-status.bad { display: block; background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.5); }
+    .contact-status a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+    @media (max-width: 800px) { #contact .contact-wrap { grid-template-columns: 1fr; } .contact-form .row { grid-template-columns: 1fr; gap: 0; } .contact-form { padding: 18px; } }
+
+    .card-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; }
+    .card-links a { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .card[id] { scroll-margin-top: 40px; }
+
+    .custom-callout { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .custom-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; border: 1px solid var(--gold); border-radius: 14px; padding: 18px 24px; background: linear-gradient(135deg, #131b33, #0f1629); }
+    .custom-box p { margin: 0; flex: 1 1 420px; color: var(--text); }
+    .custom-box p strong { color: var(--gold); }
+    .custom-box .btn-secondary { white-space: nowrap; border-color: var(--gold); }
+    .custom-line { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
+    .custom-line a { color: var(--gold); font-weight: 700; }
 
     /* --- Footer --- */
     footer { text-align: center; color: var(--muted); padding: 40px 24px 96px; font-size: 0.9rem; border-top: 1px solid var(--border); }
@@ -227,7 +280,7 @@
     .lang-toggle:hover { border-color: var(--accent); text-decoration: none; }
     @media (max-width: 700px) {
       nav { padding: 12px 16px; gap: 8px; }
-      .logo img { height: 36px; width: auto; }
+      .logo img { height: 50px; width: auto; }
       .nav-right { gap: 8px; }
       .lang-toggle { padding: 7px 10px; font-size: 0.85rem; }
       .nav-right .cta { padding: 8px 12px; font-size: 0.9rem; }
@@ -238,7 +291,7 @@
   <header>
     <nav>
       <a class="logo" href="https://rosco1203.github.io/romar-digital/es/" aria-label="RoMar Digital">
-        <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
+        <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="196" height="72">
       </a>
       <div class="nav-links">
         <a href="#who-we-help">Sectores</a>
@@ -252,7 +305,7 @@
       </div>
       <div class="nav-right">
         <a class="lang-toggle" href="../" hreflang="en" lang="en" aria-label="Switch to English" data-lang-toggle>English</a>
-        <a class="cta" href="#services">Comenzar</a>
+        <a class="cta" href="#contact">Comenzar</a>
       </div>
     </nav>
   </header>
@@ -263,6 +316,7 @@
     <div class="hero-actions">
       <a class="cta" href="#products">Ver productos</a>
       <a class="btn-secondary" href="#services">Explorar servicios</a>
+      <a class="btn-secondary" href="#contact">Contáctenos</a>
     </div>
   </section>
 
@@ -331,8 +385,8 @@
         </ul>
         <p class="who-why">Los clientes llaman cuando están varados o comparando precios. Conteste cada llamada y construya las reseñas y la presencia local que le ganen el siguiente cliente.</p>
         <div class="who-demo">
-          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
-          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20automotriz%20o%20de%20transporte">Contactar a Roy &rarr;</a>
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="auto-transport">Contáctenos &rarr;</a>
         </div>
       </div>
       <div class="card who-card">
@@ -354,8 +408,8 @@
         </ul>
         <p class="who-why">Las reseñas y una presencia constante en redes sociales atraen clientes nuevos. Un chatbot o una recepcionista con IA responde preguntas y atiende solicitudes de cita cuando su equipo está ocupado con los clientes.</p>
         <div class="who-demo">
-          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
-          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20personal%20o%20de%20consumo">Contactar a Roy &rarr;</a>
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="personal-consumer">Contáctenos &rarr;</a>
         </div>
       </div>
       <div class="card who-card">
@@ -377,12 +431,12 @@
         </ul>
         <p class="who-why">Las llamadas y consultas llegan mientras usted atiende a un cliente. Capte cada una, envíe lo urgente directamente a usted y ofrezca a los prospectos un sitio web y un chat claros para empezar.</p>
         <div class="who-demo">
-          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
-          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20de%20servicios%20profesionales">Contactar a Roy &rarr;</a>
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="office-professional">Contáctenos &rarr;</a>
         </div>
       </div>
     </div>
-    <p class="who-note">¿No ve su tipo de negocio? Con gusto conversamos. <a href="mailto:rosco@romar-digital.com?subject=Pregunta%20sobre%20RoMar%20Digital">Escriba a Roy</a> o llame al <a href="tel:+15615686032">(561) 568-6032</a>.</p>
+    <p class="who-note">¿No ve su tipo de negocio? Con gusto conversamos. <a href="#contact">Contáctenos</a> o llame al <a href="tel:+15615686032">(561) 568-6032</a>.</p>
   </section>
 
   <div class="demo-callout" id="demo">
@@ -448,31 +502,37 @@
 
   <section id="services">
     <h2>Servicios</h2>
-    <p class="sub">Soluciones de nivel profesional para negocios que necesitan una infraestructura digital confiable.</p>
+    <p class="sub">Soluciones de nivel profesional para negocios que necesitan una infraestructura digital confiable. Ofrecemos paquetes personalizados para pequeños negocios y empresas más grandes. <a href="#contact">Contáctenos</a>.</p>
     <div class="grid">
       <div class="card">
         <h3>Desarrollo de software a medida (Full-Stack)</h3>
         <p>Aplicaciones web a medida, portales para clientes, APIs e integraciones que conectan las herramientas que usted ya tiene. Diseñado para ser confiable y fácil de entregar a su equipo.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre un proyecto a medida &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Diseño y marca</h3>
         <p>Sistemas visuales limpios, páginas de destino y materiales de marca que generan confianza rápidamente. Enfocados en la claridad y en lograr resultados, más que en la decoración.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre diseño &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Contenido y marketing</h3>
         <p>Estrategia de contenido, planificación de campañas y mensajes que posicionan a su negocio como la mejor opción local. Coordinado con anuncios y redes sociales.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre marketing en redes sociales &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Creación de sitios web</h3>
         <p>Sitios web rápidos y adaptados a celulares para negocios de servicios locales, con botón para llamar, formularios para solicitar una visita, configuración de SEO local, alojamiento y mantenimiento mensual. <a href="#web-builds">Ver paquetes de sitios web</a>.</p>
+        <div class="card-links"><a href="#web-builds">Paquetes de sitios web &rarr;</a><a href="#bundles">Paquetes combinados &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Chatbots de IA</h3>
         <p>Un chatbot para su sitio web que responde preguntas con la información que usted aprueba, capta clientes potenciales y agenda citas. Siempre se identifica como asistente de IA. <a href="#chatbots">Ver paquetes de chatbots</a>.</p>
+        <div class="card-links"><a href="#chatbots">Paquetes de chatbots &rarr;</a><a href="#bundles">Paquetes combinados &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Voz con IA y automatización</h3>
         <p>Agentes de voz que contestan en inglés o español las llamadas fuera de horario y las que su equipo no alcanza a atender, agendan trabajos y escalan las solicitudes urgentes. Además, flujos para solicitar reseñas y cuidar su reputación.</p>
+        <div class="card-links"><a href="#voice-receptionist">Precios de la recepcionista de voz &rarr;</a><a href="#reviews">Precios de gestión de reseñas &rarr;</a><a href="#bundles">Paquetes combinados &rarr;</a><a href="#pay-annually">Pago anual &rarr;</a></div>
       </div>
     </div>
   </section>
@@ -495,6 +555,13 @@
       </div>
     </div>
   </section>
+
+  <div class="custom-callout" id="custom-packages">
+    <div class="custom-box">
+      <p><strong>¿Necesita algo más pequeño o más grande?</strong> Creamos paquetes personalizados para pequeños negocios y empresas más grandes.</p>
+      <a class="btn-secondary" href="#contact">Contáctenos</a>
+    </div>
+  </div>
 
   <section id="web-builds">
     <div class="eyebrow">Sitios web</div>
@@ -689,20 +756,21 @@
     </div>
     <p class="pkg-note">La configuración y el primer mes se cobran al pagar; el consumo excedente de voz se factura aparte. Mes a mes después de un primer periodo de 30 días. Usted es dueño de su dominio, su contenido y el código del sitio entregado. Puede agregar reseñas a cualquier paquete a las tarifas estándar de reseñas que aparecen abajo.</p>
     <p class="prepay-line">Pague anualmente: 12 meses al precio de 10. <a href="#pay-annually">Ver opciones anuales</a></p>
+    <p class="custom-line">¿Necesita algo más pequeño o más grande? Creamos paquetes personalizados para pequeños negocios y empresas más grandes. <a href="#contact">Contáctenos</a>.</p>
   </section>
 
   <section id="products">
     <h2>Productos actuales</h2>
     <p class="sub">Listos para activarse. Seleccione un producto para iniciar el pago.</p>
     <div class="grid">
-      <div class="card">
+      <div class="card" id="voice-receptionist">
         <h3>Recepcionista de voz con IA (AI Voice Receptionist)</h3>
         <p>Pensada para pequeños negocios locales, con demostraciones en vivo para HVAC, plomería, remodelación y electricidad. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
         <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
       </div>
-      <div class="card">
+      <div class="card" id="reviews">
         <h3>Reseñas — Fundadores (Founding)</h3>
         <p>Generación de reseñas y gestión de reputación para los primeros clientes. Flujo que solicita reseñas a todos los clientes por igual, conforme a las pautas de la FTC, con respuestas aprobadas por el dueño.</p>
         <div class="price">$249 <span>/mes</span></div>
@@ -793,6 +861,64 @@
     </div>
   </section>
 
+  <section id="contact">
+    <div class="eyebrow">Contáctenos</div>
+    <h2>Cuéntenos sobre su negocio</h2>
+    <p class="sub">¿Tiene preguntas, quiere una demostración para su tipo de negocio o está listo para comenzar? Envíenos un mensaje.</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p>Complete el formulario y le responderemos por teléfono o correo electrónico, en inglés o en español. ¿Prefiere hablar ahora? Comuníquese directamente:</p>
+        <ul class="contact-lines">
+          <li>Teléfono: <a href="tel:+15615686032">(561) 568-6032</a></li>
+          <li>Correo electrónico: <a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></li>
+          <li>Fort Lauderdale, Florida</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate data-endpoint="https://romar-track1-tools.onrender.com/contact" data-lang="es" aria-describedby="contact-status">
+        <div class="row">
+          <div class="field"><label for="cf-name">Su nombre</label><input type="text" id="cf-name" name="name" autocomplete="name" maxlength="120" required><div class="err" data-err="name"></div></div>
+          <div class="field"><label for="cf-business">Nombre del negocio</label><input type="text" id="cf-business" name="business" autocomplete="organization" maxlength="160" required><div class="err" data-err="business"></div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="cf-phone">Teléfono <span class="opt">(teléfono o correo obligatorio)</span></label><input type="tel" id="cf-phone" name="phone" autocomplete="tel" maxlength="40"><div class="err" data-err="phone"></div></div>
+          <div class="field"><label for="cf-email">Correo electrónico <span class="opt">(teléfono o correo obligatorio)</span></label><input type="email" id="cf-email" name="email" autocomplete="email" maxlength="160"><div class="err" data-err="email"></div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="cf-category">Tipo de negocio</label>
+            <select id="cf-category" name="category" required>
+              <option value="">Elija una opción</option>
+            <option value="home-services">Servicios para el hogar</option>
+            <option value="auto-transport">Automotriz y transporte</option>
+            <option value="personal-consumer">Negocios personales y de consumo</option>
+            <option value="office-professional">Oficinas y servicios profesionales</option>
+            <option value="other">Otro</option>
+            </select><div class="err" data-err="category"></div></div>
+          <div class="field"><label for="cf-language">Idioma preferido</label>
+            <select id="cf-language" name="language">
+              <option value="en">English</option>
+              <option value="es" selected>Español</option>
+            </select></div>
+        </div>
+        <fieldset class="field">
+          <legend>Servicios que le interesan <span class="opt">(opcional)</span></legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="services" value="voice-receptionist"> Recepcionista de voz con IA</label>
+            <label class="check"><input type="checkbox" name="services" value="review-management"> Gestión de reseñas</label>
+            <label class="check"><input type="checkbox" name="services" value="website-builds"> Sitios web</label>
+            <label class="check"><input type="checkbox" name="services" value="chatbot-builds"> Chatbots</label>
+            <label class="check"><input type="checkbox" name="services" value="social-marketing"> Marketing en redes sociales</label>
+            <label class="check"><input type="checkbox" name="services" value="not-sure"> Aún no estoy seguro</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="cf-message">¿Cómo podemos ayudarle?</label><textarea id="cf-message" name="message" maxlength="2000" required></textarea><div class="err" data-err="message"></div></div>
+        <div class="hp" aria-hidden="true"><label for="cf-website">Website</label><input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="cta" type="submit" id="cf-submit">Enviar mensaje</button>
+        <p class="fine">Por favor no incluya datos de pago ni otros datos personales sensibles. Consulte nuestra <a href="../privacy.html">Política de privacidad</a>.</p>
+        <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
   <footer>
     <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
     <p>14982 SW 20th St, Miramar, FL 33027</p>
@@ -811,6 +937,99 @@
       a.setAttribute('data-base', a.getAttribute('href'));
       sync();
       window.addEventListener('hashchange', sync);
+    })();
+  </script>
+  <script>
+    // Contact us form: posts to the RoMar tool server; falls back to a prefilled email if it is unreachable.
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var T = {"en": {"required": "This field is required.", "badPhone": "Enter a valid phone number.", "badEmail": "Enter a valid email address.", "needOne": "Enter a phone number or an email so we can reach you.", "chooseOne": "Choose a business type.", "sending": "Sending…", "thanks": "Thank you! We got your message and will follow up with you soon.", "fixThis": "Please check this field.", "checkFields": "Please check the highlighted fields and try again.", "tooMany": "You have sent several messages in a short time.", "failed": "Sorry, we couldn’t send your message just now.", "emailInstead": "Email us instead (your details are filled in)", "orCall": "or call", "subject": "Website contact form", "mName": "Name", "mBiz": "Business", "mPhone": "Phone", "mEmail": "Email", "mType": "Business type", "mSvc": "Interested in"}, "es": {"required": "Este campo es obligatorio.", "badPhone": "Ingrese un número de teléfono válido.", "badEmail": "Ingrese un correo electrónico válido.", "needOne": "Ingrese un teléfono o un correo para poder contactarlo.", "chooseOne": "Elija un tipo de negocio.", "sending": "Enviando…", "thanks": "¡Gracias! Recibimos su mensaje y nos pondremos en contacto con usted pronto.", "fixThis": "Revise este campo.", "checkFields": "Revise los campos resaltados e inténtelo de nuevo.", "tooMany": "Ha enviado varios mensajes en poco tiempo.", "failed": "Lo sentimos, no pudimos enviar su mensaje en este momento.", "emailInstead": "Escríbanos por correo (sus datos ya están completos)", "orCall": "o llame al", "subject": "Formulario de contacto del sitio web", "mName": "Nombre", "mBiz": "Negocio", "mPhone": "Teléfono", "mEmail": "Correo", "mType": "Tipo de negocio", "mSvc": "Interesado en"}};
+      var lang = form.getAttribute('data-lang') === 'es' ? 'es' : 'en';
+      var t = T[lang];
+      var status = document.getElementById('contact-status');
+      var btn = document.getElementById('cf-submit');
+      var started = Date.now();
+      var CAT_LABEL = {"home-services": "Servicios para el hogar", "auto-transport": "Automotriz y transporte", "personal-consumer": "Negocios personales y de consumo", "office-professional": "Oficinas y servicios profesionales", "other": "Otro"};
+      var SVC_LABEL = {"voice-receptionist": "Recepcionista de voz con IA", "review-management": "Gestión de reseñas", "website-builds": "Sitios web", "chatbot-builds": "Chatbots", "social-marketing": "Marketing en redes sociales", "not-sure": "Aún no estoy seguro"};
+
+      // "Contact us" links on the category cards can pre-select the category.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[data-category]') : null;
+        if (a) { var s = form.elements['category']; if (s) s.value = a.getAttribute('data-category'); }
+      });
+
+      function val(n) { return (form.elements[n].value || '').replace(/^\s+|\s+$/g, ''); }
+      function setErr(n, msg) {
+        var box = form.querySelector('[data-err="' + n + '"]'); if (box) box.textContent = msg || '';
+        var el = form.elements[n]; if (el && el.classList) { if (msg) el.classList.add('invalid'); else el.classList.remove('invalid'); }
+      }
+      function services() {
+        var out = [], boxes = form.querySelectorAll('input[name="services"]:checked');
+        for (var i = 0; i < boxes.length; i++) out.push(boxes[i].value);
+        return out;
+      }
+      function validate() {
+        var bad = 0, first = null;
+        function fail(n, m) { setErr(n, m); bad++; if (!first) first = form.elements[n]; }
+        ['name','business','phone','email','category','message'].forEach(function (n) { setErr(n, ''); });
+        if (!val('name')) fail('name', t.required);
+        if (!val('business')) fail('business', t.required);
+        var phone = val('phone'), email = val('email');
+        if (phone && !/^[0-9+().\-\s]{7,40}$/.test(phone) || (phone && phone.replace(/\D/g, '').length < 7)) fail('phone', t.badPhone);
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) fail('email', t.badEmail);
+        if (!phone && !email) { fail('email', t.needOne); }
+        if (!val('category')) fail('category', t.chooseOne);
+        if (val('message').length < 5) fail('message', t.required);
+        if (first) first.focus();
+        return bad === 0;
+      }
+      function mailtoHref() {
+        var lines = [
+          t.mName + ': ' + val('name'), t.mBiz + ': ' + val('business'), t.mPhone + ': ' + val('phone'), t.mEmail + ': ' + val('email'),
+          t.mType + ': ' + (CAT_LABEL[val('category')] || ''),
+          t.mSvc + ': ' + services().map(function (s) { return SVC_LABEL[s]; }).join(', '), '', val('message')
+        ];
+        return 'mailto:rosco@romar-digital.com?subject=' + encodeURIComponent(t.subject) + '&body=' + encodeURIComponent(lines.join('\n').slice(0, 1500));
+      }
+      function show(kind, html) { status.className = 'contact-status ' + kind; status.innerHTML = html; }
+      function fallback(msg) {
+        show('bad', msg + ' <a href="' + mailtoHref() + '">' + t.emailInstead + '</a> ' + t.orCall + ' <a href="tel:+15615686032">(561) 568-6032</a>.');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.className = 'contact-status'; status.textContent = '';
+        if (!validate()) return;
+        var payload = {
+          name: val('name'), business: val('business'), phone: val('phone'), email: val('email'),
+          category: val('category'), services: services(), language: val('language'), message: val('message'),
+          website: form.elements['website'].value, elapsed_ms: Date.now() - started
+        };
+        btn.disabled = true; var label = btn.textContent; btn.textContent = t.sending;
+        var ctl = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+        fetch(form.getAttribute('data-endpoint'), {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: ctl ? ctl.signal : undefined
+        }).then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (b) { return { status: r.status, body: b }; });
+        }).then(function (res) {
+          clearTimeout(timer);
+          if (res.status === 200 && res.body.status === 'ok') {
+            form.reset(); started = Date.now(); form.elements['language'].value = lang;
+            show('ok', t.thanks);
+          } else if (res.status === 400 && res.body.fields) {
+            Object.keys(res.body.fields).forEach(function (n) { setErr(n, t.fixThis); });
+            show('bad', t.checkFields);
+          } else if (res.status === 429) {
+            fallback(t.tooMany);
+          } else {
+            fallback(t.failed);
+          }
+        }).catch(function () {
+          clearTimeout(timer); fallback(t.failed);
+        }).then(function () { btn.disabled = false; btn.textContent = label; });
+      });
     })();
   </script>
 </body>
