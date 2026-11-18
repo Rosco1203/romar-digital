@@ -41,12 +41,12 @@
       border-bottom: 1px solid var(--border);
     }
     nav {
-      max-width: 1100px; margin: 0 auto;
+      max-width: 1240px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 24px;
     }
     .logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; color: inherit; }
-    .logo img { height: 42px; width: auto; display: block; }
+    .logo img { height: 72px; width: auto; display: block; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 24px; }
     .nav-links a { color: var(--muted); font-size: 0.95rem; }
@@ -164,13 +164,15 @@
     .bundle-sub { margin: 36px 0 6px; font-size: 1.25rem; }
     .bundle-subnote { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; max-width: 820px; }
     .tier-grid.two { max-width: calc((100% - 40px) * 2 / 3 + 20px); }
+    .tier-grid.one { max-width: calc((100% - 40px) / 3); min-width: 280px; }
+    @media (max-width: 900px) { .tier-grid.one { max-width: none; } }
     .prepay-line { color: var(--gold); font-size: 0.95rem; font-weight: 600; margin-top: 18px; }
     .prepay-line a { text-decoration: underline; }
     /* --- Annual prepay (added) --- */
     .prepay-box { margin-top: 36px; padding: 28px 32px; background: linear-gradient(135deg, #131b33, #0f1629); border: 1px solid var(--gold); border-radius: 16px; }
     .prepay-box h3 { font-size: 1.35rem; margin-bottom: 6px; }
     .prepay-box .prepay-intro { color: var(--muted); margin-bottom: 18px; max-width: 760px; }
-    .prepay-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px 20px; margin-bottom: 18px; }
+    .prepay-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px 20px; margin-bottom: 18px; }
     .prepay-item { display: flex; align-items: center; justify-content: space-between; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
     .prepay-item .pp-name { font-weight: 700; font-size: 0.98rem; }
     .prepay-item .pp-price { color: var(--accent); font-weight: 700; font-size: 1.15rem; }
@@ -187,6 +189,102 @@
       .demo-phone { font-size: 1.4rem; }
     }
 
+
+    /* --- Who we help (category cards) --- */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px; }
+    .who-card { display: flex; flex-direction: column; }
+    .who-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .who-card .who-label { color: var(--gold); font-weight: 700; font-size: 0.72rem; letter-spacing: 1.2px; text-transform: uppercase; margin: 14px 0 8px; }
+    .who-card .who-label:first-of-type { margin-top: 10px; }
+    .who-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+    .who-chips li { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; line-height: 1.5; }
+    .who-chips.fit li { border-color: rgba(201,136,58,0.55); }
+    .who-chips.fit a { color: var(--text); }
+    .who-chips.fit li:hover { background: var(--gold); border-color: var(--gold); }
+    .who-chips.fit li:hover a { color: var(--charcoal); text-decoration: none; }
+    .who-card .who-why { color: var(--muted); font-size: 0.92rem; margin-top: auto; padding-top: 16px; }
+    .who-demo { padding-top: 14px; }
+    .who-demo p { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .who-demo .demo-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .who-demo .demo-links a { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-demo .who-contact { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-note { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 820px; }
+    .who-note a { color: var(--gold); font-weight: 600; text-decoration: underline; }
+    /* --- Header: larger logo + wordmark, anchor offset --- */
+    :root { --header-h: 105px; }
+    html { scroll-padding-top: calc(var(--header-h) - 40px); }
+    #demo, #pay-annually, #custom-packages { scroll-margin-top: 40px; }
+    @media (max-width: 1240px) { :root { --header-h: 97px; } .logo img { height: 64px; } }
+    @media (max-width: 1100px) { :root { --header-h: 89px; } .logo img { height: 56px; } }
+    .nav-links { gap: 16px; }
+    @media (max-width: 1100px) { .nav-links { display: none; } }
+    @media (max-width: 1240px) and (min-width: 1101px) { .nav-links { gap: 14px; } .nav-links a { font-size: 0.85rem; } nav { padding-left: 16px; padding-right: 16px; } }
+    @media (max-width: 700px) { :root { --header-h: 75px; } }
+    @media (max-width: 380px) { :root { --header-h: 63px; } header .logo img { height: 38px; } header nav { padding-left: 12px; padding-right: 12px; } header .lang-toggle { padding: 6px 8px; } header .nav-right .cta { padding: 8px 10px; } }
+    @media (max-width: 700px) { .who-chips li { font-size: 0.82rem; padding: 3px 10px; } }
+
+
+    /* --- Contact us form --- */
+    #contact .contact-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; align-items: start; }
+    .contact-info p { color: var(--muted); margin-bottom: 12px; }
+    .contact-info .contact-lines { list-style: none; margin-top: 18px; }
+    .contact-info .contact-lines li { margin-bottom: 8px; color: var(--text); }
+    .contact-info .contact-lines a { color: var(--gold); font-weight: 600; }
+    .contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form .field { margin-bottom: 14px; }
+    .contact-form label, .contact-form legend { display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .contact-form .opt { color: var(--muted); font-weight: 400; }
+    .contact-form input[type=text], .contact-form input[type=tel], .contact-form input[type=email], .contact-form select, .contact-form textarea {
+      width: 100%; background: #0a1020; color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 12px; font: inherit; font-size: 1rem; }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .contact-form fieldset { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+    .contact-form .checks { display: flex; flex-wrap: wrap; gap: 8px 10px; }
+    .contact-form .check { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: 0.88rem; font-weight: 400; margin: 0; cursor: pointer; }
+    .contact-form .check input { accent-color: var(--gold); width: 16px; height: 16px; margin: 0; }
+    .contact-form .err { color: #fca5a5; font-size: 0.82rem; margin-top: 4px; min-height: 0; }
+    .contact-form .invalid { border-color: #f87171 !important; }
+    .contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .contact-form button[type=submit] { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+    .contact-form button[disabled] { opacity: 0.6; cursor: wait; }
+    .contact-form .fine { color: var(--muted); font-size: 0.8rem; margin-top: 12px; }
+    .contact-status { margin-top: 16px; padding: 14px 16px; border-radius: 10px; font-size: 0.95rem; display: none; }
+    .contact-status.ok { display: block; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.5); }
+    .contact-status.bad { display: block; background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.5); }
+    .contact-status a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+    @media (max-width: 800px) { #contact .contact-wrap { grid-template-columns: 1fr; } .contact-form .row { grid-template-columns: 1fr; gap: 0; } .contact-form { padding: 18px; } }
+
+    .card-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; }
+    .card-links a { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .card[id] { scroll-margin-top: 40px; }
+
+    .custom-callout { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .custom-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; border: 1px solid var(--gold); border-radius: 14px; padding: 18px 24px; background: linear-gradient(135deg, #131b33, #0f1629); }
+    .custom-box p { margin: 0; flex: 1 1 420px; color: var(--text); }
+    .custom-box p strong { color: var(--gold); }
+    .custom-box .btn-secondary { white-space: nowrap; border-color: var(--gold); }
+    .custom-line { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
+    .custom-line a { color: var(--gold); font-weight: 700; }
+
+    /* --- Review management section --- */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 20px; margin-bottom: 28px; }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: var(--charcoal); font-weight: 800; margin-bottom: 12px; }
+    .rev-detail .card ul { list-style: none; margin: 12px 0 0; }
+    .rev-detail .card li { color: var(--muted); font-size: 0.92rem; padding-left: 22px; position: relative; margin-bottom: 6px; }
+    .rev-detail .card li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .rev-detail .price { margin: 8px 0 4px; }
+    .rev-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 16px; }
+    .rev-actions a:not(.cta) { color: var(--gold); font-weight: 700; font-size: 0.92rem; }
+
+    /* --- Plans & pricing (single home for buyable plans) --- */
+    .plan-group { margin-top: 56px; scroll-margin-top: 40px; }
+    .plan-group > .group-h { font-size: 1.6rem; letter-spacing: -0.5px; margin-bottom: 10px; }
+    #plans > .custom-callout { padding: 0; margin: 0 0 8px; }
+
+    .services-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); }
+
     /* --- Footer --- */
     footer { text-align: center; color: var(--muted); padding: 40px 24px 96px; font-size: 0.9rem; border-top: 1px solid var(--border); }
     footer p { margin-bottom: 6px; }
@@ -202,7 +300,7 @@
     .lang-toggle:hover { border-color: var(--accent); text-decoration: none; }
     @media (max-width: 700px) {
       nav { padding: 12px 16px; gap: 8px; }
-      .logo img { height: 36px; width: auto; }
+      .logo img { height: 50px; width: auto; }
       .nav-right { gap: 8px; }
       .lang-toggle { padding: 7px 10px; font-size: 0.85rem; }
       .nav-right .cta { padding: 8px 12px; font-size: 0.9rem; }
@@ -213,20 +311,21 @@
   <header>
     <nav>
       <a class="logo" href="https://rosco1203.github.io/romar-digital/es/" aria-label="RoMar Digital">
-        <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
+        <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="196" height="72">
       </a>
       <div class="nav-links">
+        <a href="#who-we-help">Sectores</a>
         <a href="#services">Servicios</a>
+        <a href="#reviews">Reseñas</a>
+        <a href="#plans">Planes y precios</a>
         <a href="#web-builds">Sitios web</a>
         <a href="#chatbots">Chatbots</a>
-        <a href="#bundles">Paquetes</a>
-        <a href="#products">Productos</a>
         <a href="#about">Nosotros</a>
         <a href="#team">Equipo</a>
       </div>
       <div class="nav-right">
         <a class="lang-toggle" href="../" hreflang="en" lang="en" aria-label="Switch to English" data-lang-toggle>English</a>
-        <a class="cta" href="#services">Comenzar</a>
+        <a class="cta" href="#contact">Comenzar</a>
       </div>
     </nav>
   </header>
@@ -235,17 +334,137 @@
     <h1>Crecimiento digital para<br><span>negocios modernos</span></h1>
     <p>RoMar Digital es un socio integral de IA, software, marketing y tecnología moderna para pequeños negocios locales: recepcionistas de voz con IA, sitios web, chatbots de IA, gestión de reseñas y los sistemas que los conectan.</p>
     <div class="hero-actions">
-      <a class="cta" href="#products">Ver productos</a>
+      <a class="cta" href="#plans">Ver planes y precios</a>
       <a class="btn-secondary" href="#services">Explorar servicios</a>
+      <a class="btn-secondary" href="#contact">Contáctenos</a>
     </div>
+  </section>
+
+  <section id="who-we-help">
+    <div class="eyebrow">A quién ayudamos</div>
+    <h2>Un solo socio tecnológico para todo tipo de negocio local</h2>
+    <p class="sub">RoMar Digital trabaja con pequeños negocios locales de muchas industrias. Las cuatro demostraciones en vivo de más abajo son ejemplos destacados, no el límite de lo que hacemos. Encuentre su tipo de negocio, vea qué le conviene y contáctenos.</p>
+    <div class="who-grid">
+      <div class="card who-card">
+        <h3>Servicios para el hogar</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>HVAC (aire acondicionado)</li>
+            <li>Plomería</li>
+            <li>Electricidad</li>
+            <li>Techos</li>
+            <li>Remodelación</li>
+            <li>Jardinería y cuidado del césped</li>
+            <li>Control de plagas</li>
+            <li>Limpieza y servicio doméstico</li>
+            <li>Mantenimiento de piscinas</li>
+            <li>Cerrajería</li>
+            <li>Pintura</li>
+            <li>Pisos</li>
+            <li>Puertas de garaje</li>
+            <li>Servicio de árboles</li>
+            <li>Lavado a presión</li>
+            <li>Cercas</li>
+            <li>Mantenimiento general (handyman)</li>
+            <li>Energía solar</li>
+            <li>Reparación de electrodomésticos</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#voice-receptionist">Recepcionista de voz con IA</a></li>
+            <li><a href="#reviews">Gestión de reseñas</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+        </ul>
+        <p class="who-why">Una llamada perdida es un trabajo perdido. Una recepcionista con IA contesta fuera de horario, agenda o transfiere las solicitudes urgentes, y un sitio web con chatbot convierte visitantes en trabajos agendados.</p>
+        <div class="who-demo">
+          <p>Pruebe una demostración en vivo hecha para estos oficios:</p>
+          <div class="demo-links">
+            <a href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">HVAC (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Plomería (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Remodelación (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-electrical/" target="_blank" rel="noopener">Electricidad (en inglés) &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Automotriz y transporte</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Taller mecánico</li>
+            <li>Grúas</li>
+            <li>Mudanzas</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#voice-receptionist">Recepcionista de voz con IA</a></li>
+            <li><a href="#reviews">Gestión de reseñas</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+        </ul>
+        <p class="who-why">Los clientes llaman cuando están varados o comparando precios. Conteste cada llamada y construya las reseñas y la presencia local que le ganen el siguiente cliente.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="auto-transport">Contáctenos &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Negocios personales y de consumo</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Salones de belleza y barberías</li>
+            <li>Gimnasios y estudios de ejercicio</li>
+            <li>Estética y peluquería para mascotas</li>
+            <li>Restaurantes</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#reviews">Gestión de reseñas</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#voice-receptionist">Recepcionista de voz con IA</a></li>
+        </ul>
+        <p class="who-why">Las reseñas y una presencia constante en redes sociales atraen clientes nuevos. Un chatbot o una recepcionista con IA responde preguntas y atiende solicitudes de cita cuando su equipo está ocupado con los clientes.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="personal-consumer">Contáctenos &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Oficinas y servicios profesionales</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Bufetes de abogados</li>
+            <li>Contadores y CPAs</li>
+            <li>Agentes de seguros</li>
+            <li>Bienes raíces</li>
+            <li>Administración de propiedades</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#voice-receptionist">Recepcionista de voz con IA</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#reviews">Gestión de reseñas</a></li>
+        </ul>
+        <p class="who-why">Las llamadas y consultas llegan mientras usted atiende a un cliente. Capte cada una, envíe lo urgente directamente a usted y ofrezca a los prospectos un sitio web y un chat claros para empezar.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contáctenos para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="#contact" data-category="office-professional">Contáctenos &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <p class="who-note">¿No ve su tipo de negocio? Con gusto conversamos. <a href="#contact">Contáctenos</a> o llame al <a href="tel:+15615686032">(561) 568-6032</a>.</p>
   </section>
 
   <div class="demo-callout" id="demo">
     <div class="demo-box">
       <div>
-        <div class="eyebrow">Línea de demostración en vivo</div>
+        <div class="eyebrow">Demostraciones en vivo destacadas</div>
         <h2>Escúchelo antes de comprarlo</h2>
-        <p>Llame a una línea de demostración y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que configuramos para negocios de aire acondicionado (HVAC), plomería, remodelación, electricidad y otros servicios locales. También puede probar un sitio web y chatbot de demostración para cada uno (en inglés).</p>
+        <p>Por ahora tenemos cuatro demostraciones en vivo: HVAC (aire acondicionado), plomería, remodelación y electricidad. Llame a una línea y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que podemos configurar para cualquier negocio local, de cualquiera de las categorías anteriores. También puede probar el sitio web y chatbot de demostración de cada una (en inglés).</p>
         <p class="fine">Hablará con un asistente automatizado de IA y la llamada se graba. El sitio de demostración es de una empresa ficticia.</p>
       </div>
       <div class="demo-actions demo-lines">
@@ -284,7 +503,7 @@
         </div>
         <div class="detail-block">
           <h3>En qué nos enfocamos</h3>
-          <p>Por ahora, nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios de servicios (con demostraciones en vivo para servicios del hogar como HVAC, plomería, remodelación y electricidad), sitios web y chatbots de IA que convierten visitantes en trabajos agendados, y la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google.</p>
+          <p>Nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios locales (con demostraciones en vivo para HVAC, plomería, remodelación y electricidad), sitios web y chatbots de IA que convierten visitantes en citas y trabajos agendados, la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google, y marketing en redes sociales que lo mantiene visible.</p>
         </div>
       </div>
       <div>
@@ -303,31 +522,42 @@
 
   <section id="services">
     <h2>Servicios</h2>
-    <p class="sub">Soluciones de nivel profesional para negocios que necesitan una infraestructura digital confiable.</p>
-    <div class="grid">
+    <p class="sub">Un resumen de lo que hacemos. Cada tarjeta enlaza a sus planes o detalles, y los precios completos están en <a href="#plans">Planes y precios</a>. Ofrecemos paquetes personalizados para pequeños negocios y empresas más grandes. <a href="#contact">Contáctenos</a>.</p>
+    <div class="grid services-grid">
+      <div class="card">
+        <h3>Creación de sitios web</h3>
+        <p>Sitios web rápidos y adaptados a celulares para negocios de servicios locales, con botón para llamar, formularios para solicitar una visita, configuración de SEO local, alojamiento y mantenimiento mensual.</p>
+        <div class="card-links"><a href="#web-builds">Planes de sitios web &rarr;</a></div>
+      </div>
+      <div class="card">
+        <h3>Chatbots de IA</h3>
+        <p>Un chatbot para su sitio web que responde preguntas con la información que usted aprueba, capta clientes potenciales y agenda citas. Siempre se identifica como asistente de IA.</p>
+        <div class="card-links"><a href="#chatbots">Planes de chatbots &rarr;</a></div>
+      </div>
+      <div class="card">
+        <h3>Voz con IA y automatización</h3>
+        <p>Agentes de voz que contestan en inglés o español las llamadas fuera de horario y las que su equipo no alcanza a atender, agendan trabajos y escalan las solicitudes urgentes.</p>
+        <div class="card-links"><a href="#voice-receptionist">Plan de la recepcionista de voz &rarr;</a><a href="#bundles">Paquetes combinados &rarr;</a><a href="#pay-annually">Pago anual &rarr;</a></div>
+      </div>
+      <div class="card">
+        <h3>Gestión de reseñas</h3>
+        <p>Pida a cada cliente una reseña en Google y responda rápido las reseñas nuevas, y usted aprueba cada respuesta. Los correos de solicitud llegan a todos los clientes de la misma manera, sin filtros.</p>
+        <div class="card-links"><a href="#reviews">Cómo funciona &rarr;</a><a href="#review-product">Plan y precio de reseñas &rarr;</a></div>
+      </div>
       <div class="card">
         <h3>Desarrollo de software a medida (Full-Stack)</h3>
         <p>Aplicaciones web a medida, portales para clientes, APIs e integraciones que conectan las herramientas que usted ya tiene. Diseñado para ser confiable y fácil de entregar a su equipo.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre un proyecto a medida &rarr;</a><a href="#custom-packages">Paquetes personalizados &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Diseño y marca</h3>
         <p>Sistemas visuales limpios, páginas de destino y materiales de marca que generan confianza rápidamente. Enfocados en la claridad y en lograr resultados, más que en la decoración.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre diseño &rarr;</a><a href="#custom-packages">Paquetes personalizados &rarr;</a></div>
       </div>
       <div class="card">
         <h3>Contenido y marketing</h3>
         <p>Estrategia de contenido, planificación de campañas y mensajes que posicionan a su negocio como la mejor opción local. Coordinado con anuncios y redes sociales.</p>
-      </div>
-      <div class="card">
-        <h3>Creación de sitios web</h3>
-        <p>Sitios web rápidos y adaptados a celulares para negocios de servicios locales, con botón para llamar, formularios para solicitar una visita, configuración de SEO local, alojamiento y mantenimiento mensual. <a href="#web-builds">Ver paquetes de sitios web</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Chatbots de IA</h3>
-        <p>Un chatbot para su sitio web que responde preguntas con la información que usted aprueba, capta clientes potenciales y agenda citas. Siempre se identifica como asistente de IA. <a href="#chatbots">Ver paquetes de chatbots</a>.</p>
-      </div>
-      <div class="card">
-        <h3>Voz con IA y automatización</h3>
-        <p>Agentes de voz que contestan en inglés o español las llamadas fuera de horario y las que su equipo no alcanza a atender, agendan trabajos y escalan las solicitudes urgentes. Además, flujos para solicitar reseñas y cuidar su reputación.</p>
+        <div class="card-links"><a href="#contact">Consulte sobre marketing en redes sociales &rarr;</a><a href="#custom-packages">Paquetes personalizados &rarr;</a></div>
       </div>
     </div>
   </section>
@@ -351,10 +581,72 @@
     </div>
   </section>
 
-  <section id="web-builds">
+  <section id="reviews">
+    <div class="eyebrow">Gestión de reseñas</div>
+    <h2>Convierta los trabajos terminados en reseñas honestas en Google</h2>
+    <p class="sub">Ayudamos a negocios locales a pedir una reseña a cada cliente y a responder rápido las reseñas nuevas, y usted aprueba todo lo que se publica.</p>
+    <div class="steps">
+      <div class="card"><div class="step-num">1</div><h3>Le pedimos reseñas a sus clientes</h3><p>Enviamos una solicitud de reseña por correo electrónico a sus clientes. A todos se les pide de la misma manera y con el mismo enlace, hayan quedado contentos o no. Seguimos la guía de la FTC y nunca filtramos a quién se le pide.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>Sus clientes lo reseñan en Google</h3><p>Sus clientes escriben sus propias reseñas honestas en su perfil de Google. Nunca escribimos reseñas por ellos ni ofrecemos nada a cambio.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>Redactamos respuestas y usted aprueba</h3><p>Redactamos respuestas a las reseñas nuevas. Usted aprueba lo que se publica y nada se publica automáticamente.</p></div>
+      <div class="card"><div class="step-num">4</div><h3>Vea los resultados crecer con el tiempo</h3><p>Un informe mensual muestra las reseñas nuevas y las respuestas. Los resultados dependen de sus clientes, por lo que no prometemos una cantidad de reseñas, una calificación ni una posición en las búsquedas.</p></div>
+    </div>
+    <div class="two-col rev-detail">
+      <div class="card">
+        <h3>Para quién es</h3>
+        <p>Negocios locales con perfil de Google Business Profile que quieren reseñas más recientes y que se responda cada reseña, desde servicios del hogar y talleres automotrices hasta salones, restaurantes y oficinas profesionales.</p>
+        <p style="margin-top:10px;">Puede combinarlo con la recepcionista de voz con IA: vea el paquete Voz + Reseñas Estándar más abajo.</p>
+      </div>
+      <div class="card">
+        <h3>Qué incluye Reseñas Estándar ($399/mes por ubicación)</h3>
+        <ul>
+          <li>Hasta 250 destinatarios de solicitudes al mes, una ubicación</li>
+          <li>Cada reseña recibe respuesta; uso razonable de unas 75 respuestas al mes por ubicación</li>
+          <li>Plantillas aprobadas para reseñas de 4 y 5 estrellas; usted aprueba lo que se publica</li>
+          <li>Las solicitudes se envían hoy por correo electrónico. Las solicitudes por mensaje de texto llegarán más adelante y aún no están disponibles</li>
+          <li>Mes a mes, con precio por ubicación</li>
+        </ul>
+        <div class="rev-actions">
+          <a class="cta" href="#review-product">Vea el plan y el precio de Reseñas Estándar &rarr;</a>
+          <a href="#bundles">Paquete Voz + Reseñas Estándar &rarr;</a>
+          <a href="#pay-annually">Pago anual &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <h2>Planes y precios</h2>
+    <p class="sub">Elija un plan y pague en línea, o contáctenos para algo a la medida. Aquí están todos los planes disponibles: Recepcionista de voz con IA, Reseñas Estándar, paquetes de sitios web, paquetes de chatbots, paquetes combinados y pago anual.</p>
+    <div class="custom-callout" id="custom-packages">
+      <div class="custom-box">
+        <p><strong>¿Necesita algo más pequeño o más grande?</strong> Creamos paquetes personalizados para pequeños negocios y empresas más grandes.</p>
+        <a class="btn-secondary" href="#contact">Contáctenos</a>
+      </div>
+    </div>
+
+  <div class="plan-group" id="products">
+    <div class="grid">
+      <div class="card" id="voice-receptionist">
+        <h3>Recepcionista de voz con IA (AI Voice Receptionist)</h3>
+        <p>Pensada para pequeños negocios locales, con demostraciones en vivo para HVAC, plomería, remodelación y electricidad. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
+        <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
+        <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
+        <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
+      </div>
+      <div class="card" id="review-product">
+        <h3>Reseñas — Estándar (Standard)</h3>
+        <p>Cada reseña recibe respuesta (uso razonable de unas 75 respuestas al mes por ubicación), con plantillas aprobadas para reseñas de 4 y 5 estrellas, y usted aprueba lo que se publica. Hasta 250 destinatarios de solicitudes al mes. Precio por ubicación. Las solicitudes por mensaje de texto llegarán más adelante. <a href="#reviews">Cómo funciona la gestión de reseñas</a>.</p>
+        <div class="price">$399 <span>/mes por ubicación</span></div>
+        <a class="cta" href="https://buy.stripe.com/6oU28t52m2Rq6yJ0Se8og0b">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-group" id="web-builds">
     <div class="eyebrow">Sitios web</div>
-    <h2>Un sitio web que le trae llamadas y trabajos</h2>
-    <p class="sub">Sitios web listos, hechos por nosotros, para negocios de servicios locales. Una sola cuota de configuración y luego una mensualidad fija que cubre alojamiento, SSL, copias de seguridad, monitoreo de disponibilidad y cambios menores. Usted es dueño de su dominio y de su contenido.</p>
+    <h3 class="group-h">Un sitio web que le trae llamadas y trabajos</h3>
+    <p class="sub">Sitios web listos, hechos por nosotros, para pequeños negocios locales. Una sola cuota de configuración y luego una mensualidad fija que cubre alojamiento, SSL, copias de seguridad, monitoreo de disponibilidad y cambios menores. Usted es dueño de su dominio y de su contenido.</p>
     <div class="tier-grid">
       <div class="card tier">
         <h3>Sitio Inicial (Site Starter)</h3>
@@ -376,12 +668,12 @@
       <div class="card tier featured">
         <span class="badge">Recomendado</span>
         <h3>Sitio Pro (Site Pro)</h3>
-        <p class="for">Para la mayoría de los negocios de servicios locales, como HVAC, plomería, remodelación y electricidad</p>
+        <p class="for">Para la mayoría de los pequeños negocios locales, desde servicios del hogar hasta salones y oficinas profesionales</p>
         <div class="price">$1,799 <span>pago único de configuración</span><small>+ $129 <span>/mes</span></small></div>
         <p class="turn">En línea en unos 10 días hábiles</p>
         <ul>
           <li>Hasta 10 páginas: 6 de servicios y 3 de áreas de servicio</li>
-          <li>Diseño adaptado a su oficio</li>
+          <li>Diseño adaptado a su negocio</li>
           <li>Citas: formulario para solicitar una visita, más el enlace de su Google Calendar, Jobber o Housecall Pro si usted usa alguno</li>
           <li>SEO local completo en cada página, marcado de negocio local (schema) y configuración de Search Console</li>
           <li>Sección de reseñas seleccionadas (usted aprueba cada una)</li>
@@ -393,7 +685,7 @@
       </div>
       <div class="card tier">
         <h3>Sitio Premium (Site Premium)</h3>
-        <p class="for">Para negocios con varias camionetas que quieren aparecer en las búsquedas de varias ciudades</p>
+        <p class="for">Para negocios con varias cuadrillas o sucursales que quieren aparecer en las búsquedas de varias ciudades</p>
         <div class="price">$3,299 <span>pago único de configuración</span><small>+ $249 <span>/mes</span></small></div>
         <p class="turn">En línea en unos 15 a 20 días hábiles</p>
         <ul>
@@ -410,11 +702,11 @@
       </div>
     </div>
     <p class="pkg-note">Complementos: página adicional $99 (página de área de servicio o de servicio $129), hora adicional de cambios $175, lanzamiento urgente en 3 días +$300. No incluido: administración de anuncios, posiciones garantizadas en buscadores, pagos en línea para tienda virtual ni diseño de logotipo. El nombre de dominio es un costo que usted paga directamente (alrededor de $11 al año por un .com).</p>
-  </section>
+  </div>
 
-  <section id="chatbots">
+  <div class="plan-group" id="chatbots">
     <div class="eyebrow">Chatbots de IA</div>
-    <h2>Un chatbot que responde, capta clientes y agenda citas</h2>
+    <h3 class="group-h">Un chatbot que responde, capta clientes y agenda citas</h3>
     <p class="sub">Un chatbot para su sitio web, entrenado con la información que usted aprueba: servicios, áreas, horarios y preguntas frecuentes. Les dice a los visitantes que es un asistente de IA, identifica emergencias, pasa la conversación a su equipo y le envía por correo cada cliente potencial.</p>
     <div class="tier-grid">
       <div class="card tier">
@@ -466,11 +758,11 @@
       </div>
     </div>
     <p class="pkg-note">Las conversaciones que excedan su límite mensual cuestan $0.25 cada una, con alertas de consumo al 75%, 90% y 100%. Una conversación es una sesión de un visitante con al menos un mensaje del visitante en un periodo de 24 horas. Complementos: ubicación adicional $299 de configuración + $49/mes, 300 conversaciones adicionales $60/mes.</p>
-  </section>
+  </div>
 
-  <section id="bundles">
+  <div class="plan-group" id="bundles">
     <div class="eyebrow">Paquetes</div>
-    <h2>Una sola recepción para llamadas, chat y sitio web</h2>
+    <h3 class="group-h">Una sola recepción para llamadas, chat y sitio web</h3>
     <p class="sub">La voz, el chat y el sitio web comparten una misma base de conocimiento, un mismo calendario de citas y un mismo plan de escalamiento. Contratarlos juntos cuesta menos que comprar cada uno por separado.</p>
     <div class="tier-grid">
       <div class="card tier">
@@ -514,20 +806,7 @@
     </div>
     <h3 class="bundle-sub">Voz + Reseñas</h3>
     <p class="bundle-subnote">Conteste cada llamada, consiga reseñas y responda cada una, todo en un plan mes a mes, sin contratos largos.</p>
-    <div class="tier-grid two">
-      <div class="card tier">
-        <h3>Voz + Reseñas Fundadores (Voice + Review Founding)</h3>
-        <p class="for">Conteste el teléfono y construya sus reseñas</p>
-        <p class="bundle-save">Ahorre $79/mes frente a comprar cada uno por separado</p>
-        <div class="price">$499 <span>pago único de configuración</span><small>+ $769 <span>/mes</span></small></div>
-        <p class="turn">Recepcionista de voz con IA y Reseñas Fundadores</p>
-        <ul>
-          <li>Recepcionista de voz con IA: en inglés o español, 500 minutos incluidos, $0.30/min por minutos adicionales</li>
-          <li>Reseñas Fundadores: hasta 100 destinatarios de solicitudes y 30 borradores de respuesta al mes, una ubicación</li>
-          <li>Mes a mes, sin contrato largo</li>
-        </ul>
-        <a class="cta" href="https://buy.stripe.com/bJe4gBdyS2Rq0aleJ48og0c">Comenzar</a>
-      </div>
+    <div class="tier-grid one">
       <div class="card tier">
         <h3>Voz + Reseñas Estándar (Voice + Review Standard)</h3>
         <p class="for">Conteste el teléfono y cada reseña</p>
@@ -544,33 +823,10 @@
     </div>
     <p class="pkg-note">La configuración y el primer mes se cobran al pagar; el consumo excedente de voz se factura aparte. Mes a mes después de un primer periodo de 30 días. Usted es dueño de su dominio, su contenido y el código del sitio entregado. Puede agregar reseñas a cualquier paquete a las tarifas estándar de reseñas que aparecen abajo.</p>
     <p class="prepay-line">Pague anualmente: 12 meses al precio de 10. <a href="#pay-annually">Ver opciones anuales</a></p>
-  </section>
+  </div>
 
-  <section id="products">
-    <h2>Productos actuales</h2>
-    <p class="sub">Listos para activarse. Seleccione un producto para iniciar el pago.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Recepcionista de voz con IA (AI Voice Receptionist)</h3>
-        <p>Pensada para negocios de HVAC, plomería, remodelación y electricidad, y adaptable a otros oficios locales. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
-        <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
-        <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
-        <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
-      </div>
-      <div class="card">
-        <h3>Reseñas — Fundadores (Founding)</h3>
-        <p>Generación de reseñas y gestión de reputación para los primeros clientes. Flujo que solicita reseñas a todos los clientes por igual, conforme a las pautas de la FTC, con respuestas aprobadas por el dueño.</p>
-        <div class="price">$249 <span>/mes</span></div>
-        <a class="cta" href="https://buy.stripe.com/9B65kFfH077G5uF58u8og0a">Seleccionar</a>
-      </div>
-      <div class="card">
-        <h3>Reseñas — Estándar (Standard)</h3>
-        <p>Para negocios con más movimiento: cada reseña recibe respuesta, con plantillas aprobadas para reseñas de 4 y 5 estrellas, y usted aprueba lo que se publica. Hasta 250 destinatarios de solicitudes al mes, con un límite de uso razonable de unas 75 respuestas al mes. Precio por ubicación. Las solicitudes de reseñas por mensaje de texto llegarán más adelante.</p>
-        <div class="price">$399 <span>/mes por ubicación</span></div>
-        <a class="cta" href="https://buy.stripe.com/6oU28t52m2Rq6yJ0Se8og0b">Seleccionar</a>
-      </div>
-    </div>
-        <div class="prepay-box" id="pay-annually">
+  <div class="plan-group" id="annual-prepay">
+    <div class="prepay-box" id="pay-annually" style="margin-top:0">
       <h3>Pague anualmente: 12 meses al precio de 10</h3>
       <p class="prepay-intro">Pague un año completo por adelantado mediante transferencia bancaria ACH y obtenga dos meses gratis.</p>
       <div class="prepay-list">
@@ -579,16 +835,8 @@
           <a class="cta" href="https://buy.stripe.com/7sY4gBbqKfEc1ep8kG8og0e">Pagar anualmente</a>
         </div>
         <div class="prepay-item">
-          <div><div class="pp-name">Reseñas — Fundadores</div><div class="pp-price">$2,490 <span>/año</span></div><div class="pp-setup">Sin cargo de configuración</div></div>
-          <a class="cta" href="https://buy.stripe.com/6oU8wR3Yi2Rq7CNasO8og0f">Pagar anualmente</a>
-        </div>
-        <div class="prepay-item">
           <div><div class="pp-name">Reseñas — Estándar</div><div class="pp-price">$3,990 <span>/año</span></div><div class="pp-setup">Sin cargo de configuración</div></div>
           <a class="cta" href="https://buy.stripe.com/aFafZj8ey0Jif5fasO8og0g">Pagar anualmente</a>
-        </div>
-        <div class="prepay-item">
-          <div><div class="pp-name">Voz + Reseñas Fundadores</div><div class="pp-price">$7,690 <span>/año</span></div><div class="pp-setup">+ $499 de configuración al pagar (no se exonera)</div></div>
-          <a class="cta" href="https://buy.stripe.com/cNiaEZcuO1Nmf5ffN88og0h">Pagar anualmente</a>
         </div>
         <div class="prepay-item">
           <div><div class="pp-name">Voz + Reseñas Estándar</div><div class="pp-price">$8,990 <span>/año</span></div><div class="pp-setup">+ $499 de configuración al pagar (no se exonera)</div></div>
@@ -603,6 +851,8 @@
         <li>Los términos están en el Anexo de Pago Anual por Adelantado (Annual Prepay Addendum, en inglés).</li>
       </ul>
     </div>
+  </div>
+
   </section>
 
   <section id="team">
@@ -648,6 +898,64 @@
     </div>
   </section>
 
+  <section id="contact">
+    <div class="eyebrow">Contáctenos</div>
+    <h2>Cuéntenos sobre su negocio</h2>
+    <p class="sub">¿Tiene preguntas, quiere una demostración para su tipo de negocio o está listo para comenzar? Envíenos un mensaje.</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p>Complete el formulario y le responderemos por teléfono o correo electrónico, en inglés o en español. ¿Prefiere hablar ahora? Comuníquese directamente:</p>
+        <ul class="contact-lines">
+          <li>Teléfono: <a href="tel:+15615686032">(561) 568-6032</a></li>
+          <li>Correo electrónico: <a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></li>
+          <li>Fort Lauderdale, Florida</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate data-endpoint="https://romar-track1-tools.onrender.com/contact" data-lang="es" aria-describedby="contact-status">
+        <div class="row">
+          <div class="field"><label for="cf-name">Su nombre</label><input type="text" id="cf-name" name="name" autocomplete="name" maxlength="120" required><div class="err" data-err="name"></div></div>
+          <div class="field"><label for="cf-business">Nombre del negocio</label><input type="text" id="cf-business" name="business" autocomplete="organization" maxlength="160" required><div class="err" data-err="business"></div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="cf-phone">Teléfono <span class="opt">(teléfono o correo obligatorio)</span></label><input type="tel" id="cf-phone" name="phone" autocomplete="tel" maxlength="40"><div class="err" data-err="phone"></div></div>
+          <div class="field"><label for="cf-email">Correo electrónico <span class="opt">(teléfono o correo obligatorio)</span></label><input type="email" id="cf-email" name="email" autocomplete="email" maxlength="160"><div class="err" data-err="email"></div></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="cf-category">Tipo de negocio</label>
+            <select id="cf-category" name="category" required>
+              <option value="">Elija una opción</option>
+            <option value="home-services">Servicios para el hogar</option>
+            <option value="auto-transport">Automotriz y transporte</option>
+            <option value="personal-consumer">Negocios personales y de consumo</option>
+            <option value="office-professional">Oficinas y servicios profesionales</option>
+            <option value="other">Otro</option>
+            </select><div class="err" data-err="category"></div></div>
+          <div class="field"><label for="cf-language">Idioma preferido</label>
+            <select id="cf-language" name="language">
+              <option value="en">English</option>
+              <option value="es" selected>Español</option>
+            </select></div>
+        </div>
+        <fieldset class="field">
+          <legend>Servicios que le interesan <span class="opt">(opcional)</span></legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="services" value="voice-receptionist"> Recepcionista de voz con IA</label>
+            <label class="check"><input type="checkbox" name="services" value="review-management"> Gestión de reseñas</label>
+            <label class="check"><input type="checkbox" name="services" value="website-builds"> Sitios web</label>
+            <label class="check"><input type="checkbox" name="services" value="chatbot-builds"> Chatbots</label>
+            <label class="check"><input type="checkbox" name="services" value="social-marketing"> Marketing en redes sociales</label>
+            <label class="check"><input type="checkbox" name="services" value="not-sure"> Aún no estoy seguro</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="cf-message">¿Cómo podemos ayudarle?</label><textarea id="cf-message" name="message" maxlength="2000" required></textarea><div class="err" data-err="message"></div></div>
+        <div class="hp" aria-hidden="true"><label for="cf-website">Website</label><input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="cta" type="submit" id="cf-submit">Enviar mensaje</button>
+        <p class="fine">Por favor no incluya datos de pago ni otros datos personales sensibles. Consulte nuestra <a href="../privacy.html">Política de privacidad</a>.</p>
+        <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
   <footer>
     <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
     <p>14982 SW 20th St, Miramar, FL 33027</p>
@@ -666,6 +974,99 @@
       a.setAttribute('data-base', a.getAttribute('href'));
       sync();
       window.addEventListener('hashchange', sync);
+    })();
+  </script>
+  <script>
+    // Contact us form: posts to the RoMar tool server; falls back to a prefilled email if it is unreachable.
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var T = {"en": {"required": "This field is required.", "badPhone": "Enter a valid phone number.", "badEmail": "Enter a valid email address.", "needOne": "Enter a phone number or an email so we can reach you.", "chooseOne": "Choose a business type.", "sending": "Sending…", "thanks": "Thank you! We got your message and will follow up with you soon.", "fixThis": "Please check this field.", "checkFields": "Please check the highlighted fields and try again.", "tooMany": "You have sent several messages in a short time.", "failed": "Sorry, we couldn’t send your message just now.", "emailInstead": "Email us instead (your details are filled in)", "orCall": "or call", "subject": "Website contact form", "mName": "Name", "mBiz": "Business", "mPhone": "Phone", "mEmail": "Email", "mType": "Business type", "mSvc": "Interested in"}, "es": {"required": "Este campo es obligatorio.", "badPhone": "Ingrese un número de teléfono válido.", "badEmail": "Ingrese un correo electrónico válido.", "needOne": "Ingrese un teléfono o un correo para poder contactarlo.", "chooseOne": "Elija un tipo de negocio.", "sending": "Enviando…", "thanks": "¡Gracias! Recibimos su mensaje y nos pondremos en contacto con usted pronto.", "fixThis": "Revise este campo.", "checkFields": "Revise los campos resaltados e inténtelo de nuevo.", "tooMany": "Ha enviado varios mensajes en poco tiempo.", "failed": "Lo sentimos, no pudimos enviar su mensaje en este momento.", "emailInstead": "Escríbanos por correo (sus datos ya están completos)", "orCall": "o llame al", "subject": "Formulario de contacto del sitio web", "mName": "Nombre", "mBiz": "Negocio", "mPhone": "Teléfono", "mEmail": "Correo", "mType": "Tipo de negocio", "mSvc": "Interesado en"}};
+      var lang = form.getAttribute('data-lang') === 'es' ? 'es' : 'en';
+      var t = T[lang];
+      var status = document.getElementById('contact-status');
+      var btn = document.getElementById('cf-submit');
+      var started = Date.now();
+      var CAT_LABEL = {"home-services": "Servicios para el hogar", "auto-transport": "Automotriz y transporte", "personal-consumer": "Negocios personales y de consumo", "office-professional": "Oficinas y servicios profesionales", "other": "Otro"};
+      var SVC_LABEL = {"voice-receptionist": "Recepcionista de voz con IA", "review-management": "Gestión de reseñas", "website-builds": "Sitios web", "chatbot-builds": "Chatbots", "social-marketing": "Marketing en redes sociales", "not-sure": "Aún no estoy seguro"};
+
+      // "Contact us" links on the category cards can pre-select the category.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[data-category]') : null;
+        if (a) { var s = form.elements['category']; if (s) s.value = a.getAttribute('data-category'); }
+      });
+
+      function val(n) { return (form.elements[n].value || '').replace(/^\s+|\s+$/g, ''); }
+      function setErr(n, msg) {
+        var box = form.querySelector('[data-err="' + n + '"]'); if (box) box.textContent = msg || '';
+        var el = form.elements[n]; if (el && el.classList) { if (msg) el.classList.add('invalid'); else el.classList.remove('invalid'); }
+      }
+      function services() {
+        var out = [], boxes = form.querySelectorAll('input[name="services"]:checked');
+        for (var i = 0; i < boxes.length; i++) out.push(boxes[i].value);
+        return out;
+      }
+      function validate() {
+        var bad = 0, first = null;
+        function fail(n, m) { setErr(n, m); bad++; if (!first) first = form.elements[n]; }
+        ['name','business','phone','email','category','message'].forEach(function (n) { setErr(n, ''); });
+        if (!val('name')) fail('name', t.required);
+        if (!val('business')) fail('business', t.required);
+        var phone = val('phone'), email = val('email');
+        if (phone && !/^[0-9+().\-\s]{7,40}$/.test(phone) || (phone && phone.replace(/\D/g, '').length < 7)) fail('phone', t.badPhone);
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) fail('email', t.badEmail);
+        if (!phone && !email) { fail('email', t.needOne); }
+        if (!val('category')) fail('category', t.chooseOne);
+        if (val('message').length < 5) fail('message', t.required);
+        if (first) first.focus();
+        return bad === 0;
+      }
+      function mailtoHref() {
+        var lines = [
+          t.mName + ': ' + val('name'), t.mBiz + ': ' + val('business'), t.mPhone + ': ' + val('phone'), t.mEmail + ': ' + val('email'),
+          t.mType + ': ' + (CAT_LABEL[val('category')] || ''),
+          t.mSvc + ': ' + services().map(function (s) { return SVC_LABEL[s]; }).join(', '), '', val('message')
+        ];
+        return 'mailto:rosco@romar-digital.com?subject=' + encodeURIComponent(t.subject) + '&body=' + encodeURIComponent(lines.join('\n').slice(0, 1500));
+      }
+      function show(kind, html) { status.className = 'contact-status ' + kind; status.innerHTML = html; }
+      function fallback(msg) {
+        show('bad', msg + ' <a href="' + mailtoHref() + '">' + t.emailInstead + '</a> ' + t.orCall + ' <a href="tel:+15615686032">(561) 568-6032</a>.');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.className = 'contact-status'; status.textContent = '';
+        if (!validate()) return;
+        var payload = {
+          name: val('name'), business: val('business'), phone: val('phone'), email: val('email'),
+          category: val('category'), services: services(), language: val('language'), message: val('message'),
+          website: form.elements['website'].value, elapsed_ms: Date.now() - started
+        };
+        btn.disabled = true; var label = btn.textContent; btn.textContent = t.sending;
+        var ctl = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+        fetch(form.getAttribute('data-endpoint'), {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: ctl ? ctl.signal : undefined
+        }).then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (b) { return { status: r.status, body: b }; });
+        }).then(function (res) {
+          clearTimeout(timer);
+          if (res.status === 200 && res.body.status === 'ok') {
+            form.reset(); started = Date.now(); form.elements['language'].value = lang;
+            show('ok', t.thanks);
+          } else if (res.status === 400 && res.body.fields) {
+            Object.keys(res.body.fields).forEach(function (n) { setErr(n, t.fixThis); });
+            show('bad', t.checkFields);
+          } else if (res.status === 429) {
+            fallback(t.tooMany);
+          } else {
+            fallback(t.failed);
+          }
+        }).catch(function () {
+          clearTimeout(timer); fallback(t.failed);
+        }).then(function () { btn.disabled = false; btn.textContent = label; });
+      });
     })();
   </script>
 </body>
