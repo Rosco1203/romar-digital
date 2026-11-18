@@ -156,6 +156,22 @@
     .bundle-subnote { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; max-width: 820px; }
     .tier-grid.two { max-width: calc((100% - 40px) * 2 / 3 + 20px); }
     .prepay-line { color: var(--gold); font-size: 0.95rem; font-weight: 600; margin-top: 18px; }
+    .prepay-line a { text-decoration: underline; }
+    /* --- Annual prepay (added) --- */
+    .prepay-box { margin-top: 36px; padding: 28px 32px; background: linear-gradient(135deg, #131b33, #0f1629); border: 1px solid var(--gold); border-radius: 16px; }
+    .prepay-box h3 { font-size: 1.35rem; margin-bottom: 6px; }
+    .prepay-box .prepay-intro { color: var(--muted); margin-bottom: 18px; max-width: 760px; }
+    .prepay-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px 20px; margin-bottom: 18px; }
+    .prepay-item { display: flex; align-items: center; justify-content: space-between; gap: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+    .prepay-item .pp-name { font-weight: 700; font-size: 0.98rem; }
+    .prepay-item .pp-price { color: var(--accent); font-weight: 700; font-size: 1.15rem; }
+    .prepay-item .pp-price span { color: var(--muted); font-size: 0.8rem; font-weight: 400; }
+    .prepay-item .pp-setup { color: var(--muted); font-size: 0.8rem; }
+    .prepay-item .cta { white-space: nowrap; padding: 9px 16px; font-size: 0.9rem; }
+    .prepay-terms { list-style: none; color: var(--muted); font-size: 0.85rem; max-width: 900px; }
+    .prepay-terms li { padding-left: 18px; position: relative; margin-bottom: 4px; }
+    .prepay-terms li::before { content: "\2022"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    @media (max-width: 700px) { .prepay-box { padding: 22px; } .prepay-item { flex-wrap: wrap; } .prepay-item .cta { width: 100%; text-align: center; } }
     @media (max-width: 900px) { .tier-grid.two { max-width: none; } }
     @media (max-width: 700px) {
       .demo-box { padding: 22px; }
@@ -500,7 +516,7 @@
       </div>
     </div>
     <p class="pkg-note">La configuración y el primer mes se cobran al pagar; el consumo excedente de voz se factura aparte. Mes a mes después de un primer periodo de 30 días. Usted es dueño de su dominio, su contenido y el código del sitio entregado. Puede agregar reseñas a cualquier paquete a las tarifas estándar de reseñas que aparecen abajo.</p>
-    <p class="prepay-line">Pago anual por adelantado disponible: 12 meses al precio de 10. Pregúntenos.</p>
+    <p class="prepay-line">Pague anualmente: 12 meses al precio de 10. <a href="#pay-annually">Ver opciones anuales</a></p>
   </section>
 
   <section id="products">
@@ -527,7 +543,39 @@
         <a class="cta" href="https://buy.stripe.com/6oU28t52m2Rq6yJ0Se8og0b">Seleccionar</a>
       </div>
     </div>
-    <p class="prepay-line">Pago anual por adelantado disponible: 12 meses al precio de 10. Pregúntenos.</p>
+        <div class="prepay-box" id="pay-annually">
+      <h3>Pague anualmente: 12 meses al precio de 10</h3>
+      <p class="prepay-intro">Pague un año completo por adelantado mediante transferencia bancaria ACH y obtenga dos meses gratis.</p>
+      <div class="prepay-list">
+        <div class="prepay-item">
+          <div><div class="pp-name">Recepcionista de voz con IA</div><div class="pp-price">$5,990 <span>/año</span></div><div class="pp-setup">+ $499 de configuración al pagar (no se exonera)</div></div>
+          <a class="cta" href="https://buy.stripe.com/7sY4gBbqKfEc1ep8kG8og0e">Pagar anualmente</a>
+        </div>
+        <div class="prepay-item">
+          <div><div class="pp-name">Reseñas — Fundadores</div><div class="pp-price">$2,490 <span>/año</span></div><div class="pp-setup">Sin cargo de configuración</div></div>
+          <a class="cta" href="https://buy.stripe.com/6oU8wR3Yi2Rq7CNasO8og0f">Pagar anualmente</a>
+        </div>
+        <div class="prepay-item">
+          <div><div class="pp-name">Reseñas — Estándar</div><div class="pp-price">$3,990 <span>/año</span></div><div class="pp-setup">Sin cargo de configuración</div></div>
+          <a class="cta" href="https://buy.stripe.com/aFafZj8ey0Jif5fasO8og0g">Pagar anualmente</a>
+        </div>
+        <div class="prepay-item">
+          <div><div class="pp-name">Voz + Reseñas Fundadores</div><div class="pp-price">$7,690 <span>/año</span></div><div class="pp-setup">+ $499 de configuración al pagar (no se exonera)</div></div>
+          <a class="cta" href="https://buy.stripe.com/cNiaEZcuO1Nmf5ffN88og0h">Pagar anualmente</a>
+        </div>
+        <div class="prepay-item">
+          <div><div class="pp-name">Voz + Reseñas Estándar</div><div class="pp-price">$8,990 <span>/año</span></div><div class="pp-setup">+ $499 de configuración al pagar (no se exonera)</div></div>
+          <a class="cta" href="https://buy.stripe.com/bJebJ3eCWgIg6yJ58u8og0i">Pagar anualmente</a>
+        </div>
+      </div>
+      <ul class="prepay-terms">
+        <li>Solo pago bancario por ACH. No se aceptan tarjetas para el pago anual por adelantado.</li>
+        <li>No está disponible con una configuración exonerada. La configuración de $499 de la voz y de los paquetes con voz se cobra al pagar.</li>
+        <li>Si cancela antes de tiempo, los meses usados se recalculan a la tarifa mensual y se le reembolsa el resto. No hay reembolso a partir del mes 10.</li>
+        <li>El consumo excedente de voz ($0.30/min después de 500 minutos) se factura aparte cada mes. Las reseñas se cobran por ubicación.</li>
+        <li>Los términos están en el Anexo de Pago Anual por Adelantado (Annual Prepay Addendum, en inglés).</li>
+      </ul>
+    </div>
   </section>
 
   <section id="team">
