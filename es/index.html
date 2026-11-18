@@ -123,6 +123,7 @@
     }
     .demo-box h2 { font-size: 1.5rem; margin-bottom: 6px; }
     .demo-box p { color: var(--muted); max-width: 640px; }
+    .demo-box > div:first-child { flex: 1 1 360px; }
     .demo-box .fine { font-size: 0.8rem; margin-top: 8px; }
     .demo-phone {
       font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text);
@@ -131,6 +132,14 @@
     .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
     .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
     .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+
+    .demo-lines { gap: 10px; flex: 0 1 440px; min-width: 300px; text-align: left; }
+    .demo-line { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center; padding: 10px 0; border-top: 1px solid rgba(201,136,58,0.28); }
+    .demo-line:first-child { border-top: 0; padding-top: 0; }
+    .demo-trade { grid-column: 1 / -1; color: var(--gold); font-weight: 700; font-size: 0.78rem; letter-spacing: 1.2px; text-transform: uppercase; }
+    .demo-lines .demo-phone { font-size: 1.15rem; padding: 8px 14px; text-align: center; }
+    .demo-lines .demo-site-link { font-size: 0.85rem; }
+    @media (max-width: 640px) { .demo-lines { min-width: 0; width: 100%; } .demo-line { grid-template-columns: 1fr; } }
     .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
     .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
     .tier { display: flex; flex-direction: column; position: relative; }
@@ -224,7 +233,7 @@
 
   <section class="hero">
     <h1>Crecimiento digital para<br><span>negocios modernos</span></h1>
-    <p>RoMar Digital ayuda a las empresas a aumentar su presencia y autoridad digital con desarrollo de software, diseño, contenido, marketing, sitios web, chatbots de IA y soluciones de voz con inteligencia artificial.</p>
+    <p>RoMar Digital es un socio integral de IA, software, marketing y tecnología moderna para pequeños negocios locales: recepcionistas de voz con IA, sitios web, chatbots de IA, gestión de reseñas y los sistemas que los conectan.</p>
     <div class="hero-actions">
       <a class="cta" href="#products">Ver productos</a>
       <a class="btn-secondary" href="#services">Explorar servicios</a>
@@ -236,12 +245,25 @@
       <div>
         <div class="eyebrow">Línea de demostración en vivo</div>
         <h2>Escúchelo antes de comprarlo</h2>
-        <p>Llame a nuestra línea de demostración y agende una visita de servicio de prueba. Hablará con la misma recepcionista con IA que configuramos para negocios de aire acondicionado (HVAC) y otros servicios locales. También puede probar nuestro sitio web y chatbot de demostración para HVAC (en inglés).</p>
+        <p>Llame a una línea de demostración y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que configuramos para negocios de aire acondicionado (HVAC), plomería, remodelación y otros servicios locales. También puede probar un sitio web y chatbot de demostración para cada uno (en inglés).</p>
         <p class="fine">Hablará con un asistente automatizado de IA y la llamada se graba. El sitio de demostración es de una empresa ficticia.</p>
       </div>
-      <div class="demo-actions">
-        <a class="demo-phone" href="tel:+12089340280" aria-label="Llamar a la línea de demostración al (208) 934-0280">(208) 934-0280</a>
-        <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">Ver el sitio web y chatbot de demostración (en inglés) &rarr;</a>
+      <div class="demo-actions demo-lines">
+        <div class="demo-line">
+          <span class="demo-trade">HVAC (aire acondicionado)</span>
+          <a class="demo-phone" href="tel:+12089340280" aria-label="Llamar a la línea de demostración de HVAC (aire acondicionado) al (208) 934-0280">(208) 934-0280</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
+        </div>
+        <div class="demo-line">
+          <span class="demo-trade">Plomería</span>
+          <a class="demo-phone" href="tel:+17542540902" aria-label="Llamar a la línea de demostración de Plomería al (754) 254-0902">(754) 254-0902</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
+        </div>
+        <div class="demo-line">
+          <span class="demo-trade">Remodelación y mejoras del hogar</span>
+          <a class="demo-phone" href="tel:+17869816843" aria-label="Llamar a la línea de demostración de Remodelación y mejoras del hogar al (786) 981-6843">(786) 981-6843</a>
+          <a class="demo-site-link" href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -257,7 +279,7 @@
         </div>
         <div class="detail-block">
           <h3>En qué nos enfocamos</h3>
-          <p>Por ahora, nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios de servicios (empezando por HVAC), sitios web y chatbots de IA que convierten visitantes en trabajos agendados, y la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google.</p>
+          <p>Por ahora, nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios de servicios (con demostraciones en vivo para HVAC, plomería y remodelación), sitios web y chatbots de IA que convierten visitantes en trabajos agendados, y la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google.</p>
         </div>
       </div>
       <div>
@@ -349,7 +371,7 @@
       <div class="card tier featured">
         <span class="badge">Recomendado</span>
         <h3>Sitio Pro (Site Pro)</h3>
-        <p class="for">Para la mayoría de los negocios de HVAC y plomería</p>
+        <p class="for">Para la mayoría de los negocios de HVAC, plomería y remodelación</p>
         <div class="price">$1,799 <span>pago único de configuración</span><small>+ $129 <span>/mes</span></small></div>
         <p class="turn">En línea en unos 10 días hábiles</p>
         <ul>
@@ -524,8 +546,8 @@
     <p class="sub">Listos para activarse. Seleccione un producto para iniciar el pago.</p>
     <div class="grid">
       <div class="card">
-        <h3>Recepcionista de voz con IA para HVAC (AI Voice Receptionist for HVAC)</h3>
-        <p>Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
+        <h3>Recepcionista de voz con IA (AI Voice Receptionist)</h3>
+        <p>Pensada para negocios de HVAC, plomería y remodelación, y adaptable a otros oficios locales. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
         <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
