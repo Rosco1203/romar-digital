@@ -186,6 +186,31 @@
       .demo-phone { font-size: 1.4rem; }
     }
 
+
+    /* --- Who we help (category cards) --- */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px; }
+    .who-card { display: flex; flex-direction: column; }
+    .who-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .who-card .who-label { color: var(--gold); font-weight: 700; font-size: 0.72rem; letter-spacing: 1.2px; text-transform: uppercase; margin: 14px 0 8px; }
+    .who-card .who-label:first-of-type { margin-top: 10px; }
+    .who-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+    .who-chips li { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; line-height: 1.5; }
+    .who-chips.fit li { border-color: rgba(201,136,58,0.55); }
+    .who-chips.fit a { color: var(--text); }
+    .who-chips.fit li:hover { background: var(--gold); border-color: var(--gold); }
+    .who-chips.fit li:hover a { color: var(--charcoal); text-decoration: none; }
+    .who-card .who-why { color: var(--muted); font-size: 0.92rem; margin-top: auto; padding-top: 16px; }
+    .who-demo { padding-top: 14px; }
+    .who-demo p { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .who-demo .demo-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .who-demo .demo-links a { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-demo .who-contact { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-note { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 820px; }
+    .who-note a { color: var(--gold); font-weight: 600; text-decoration: underline; }
+    @media (max-width: 900px) { .nav-links { display: none; } }
+    @media (max-width: 1100px) and (min-width: 701px) { .nav-links { gap: 14px; } .nav-links a { font-size: 0.85rem; } nav { padding-left: 16px; padding-right: 16px; } }
+    @media (max-width: 700px) { .who-chips li { font-size: 0.82rem; padding: 3px 10px; } }
+
     /* --- Footer --- */
     footer { text-align: center; color: var(--muted); padding: 40px 24px 96px; font-size: 0.9rem; border-top: 1px solid var(--border); }
     footer p { margin-bottom: 6px; }
@@ -215,6 +240,7 @@
         <img src="assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
       </a>
       <div class="nav-links">
+        <a href="#who-we-help">Who we help</a>
         <a href="#services">Services</a>
         <a href="#web-builds">Websites</a>
         <a href="#chatbots">Chatbots</a>
@@ -239,12 +265,131 @@
     </div>
   </section>
 
+  <section id="who-we-help">
+    <div class="eyebrow">Who we help</div>
+    <h2>One technology partner for every kind of local business</h2>
+    <p class="sub">RoMar Digital works with local small businesses across many industries. The four live demos below are featured examples, not the limit of what we do. Find your kind of business, see what fits, and reach out.</p>
+    <div class="who-grid">
+      <div class="card who-card">
+        <h3>Home services</h3>
+        <p class="who-label">Example businesses</p>
+        <ul class="who-chips">
+            <li>HVAC</li>
+            <li>Plumbing</li>
+            <li>Electrical</li>
+            <li>Roofing</li>
+            <li>Remodeling</li>
+            <li>Landscaping and lawn care</li>
+            <li>Pest control</li>
+            <li>Cleaning and housekeeping</li>
+            <li>Pool service</li>
+            <li>Locksmith</li>
+            <li>Painting</li>
+            <li>Flooring</li>
+            <li>Garage door</li>
+            <li>Tree service</li>
+            <li>Pressure washing</li>
+            <li>Fencing</li>
+            <li>Handyman</li>
+            <li>Solar</li>
+            <li>Appliance repair</li>
+        </ul>
+        <p class="who-label">Best-fit RoMar services</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">AI Voice Receptionist</a></li>
+            <li><a href="#products">Review management</a></li>
+            <li><a href="#web-builds">Website builds</a></li>
+            <li><a href="#chatbots">Chatbot builds</a></li>
+            <li><a href="#services">Social marketing</a></li>
+        </ul>
+        <p class="who-why">Missed calls are missed jobs. An AI receptionist answers after hours, books or hands off urgent requests, and a site and chatbot turn visitors into booked work.</p>
+        <div class="who-demo">
+          <p>Try a live demo built for these trades:</p>
+          <div class="demo-links">
+            <a href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">HVAC &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Plumbing &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Home improvement &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-electrical/" target="_blank" rel="noopener">Electrical &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Auto and transport</h3>
+        <p class="who-label">Example businesses</p>
+        <ul class="who-chips">
+            <li>Auto repair</li>
+            <li>Towing</li>
+            <li>Moving</li>
+        </ul>
+        <p class="who-label">Best-fit RoMar services</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">AI Voice Receptionist</a></li>
+            <li><a href="#products">Review management</a></li>
+            <li><a href="#web-builds">Website builds</a></li>
+            <li><a href="#services">Social marketing</a></li>
+        </ul>
+        <p class="who-why">Customers call when they are stuck or comparing quotes. Answer every call, and build the reviews and local presence that win the next one.</p>
+        <div class="who-demo">
+          <p>No demo for this category yet. Call any live demo line below to hear the AI receptionist, or contact Roy about a demo for your business.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demo%20for%20an%20auto%20or%20transport%20business">Contact Roy &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Personal and consumer businesses</h3>
+        <p class="who-label">Example businesses</p>
+        <ul class="who-chips">
+            <li>Salons and barbers</li>
+            <li>Fitness studios</li>
+            <li>Pet grooming</li>
+            <li>Restaurants</li>
+        </ul>
+        <p class="who-label">Best-fit RoMar services</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">Review management</a></li>
+            <li><a href="#services">Social marketing</a></li>
+            <li><a href="#chatbots">Chatbot builds</a></li>
+            <li><a href="#web-builds">Website builds</a></li>
+            <li><a href="#products">AI Voice Receptionist</a></li>
+        </ul>
+        <p class="who-why">Reviews and a steady social presence bring in new customers. A chatbot or AI receptionist answers questions and handles booking requests when your team is busy with customers.</p>
+        <div class="who-demo">
+          <p>No demo for this category yet. Call any live demo line below to hear the AI receptionist, or contact Roy about a demo for your business.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demo%20for%20a%20personal%20or%20consumer%20business">Contact Roy &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Office and professional services</h3>
+        <p class="who-label">Example businesses</p>
+        <ul class="who-chips">
+            <li>Law firms</li>
+            <li>Accountants and CPAs</li>
+            <li>Insurance agents</li>
+            <li>Real estate</li>
+            <li>Property management</li>
+        </ul>
+        <p class="who-label">Best-fit RoMar services</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">AI Voice Receptionist</a></li>
+            <li><a href="#web-builds">Website builds</a></li>
+            <li><a href="#chatbots">Chatbot builds</a></li>
+            <li><a href="#products">Review management</a></li>
+        </ul>
+        <p class="who-why">Calls and inquiries come in while you are with a client. Capture each one, route what is urgent to you, and give prospects a clear website and chat to start with.</p>
+        <div class="who-demo">
+          <p>No demo for this category yet. Call any live demo line below to hear the AI receptionist, or contact Roy about a demo for your business.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demo%20for%20a%20professional%20services%20business">Contact Roy &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <p class="who-note">Don&rsquo;t see your kind of business? We&rsquo;re happy to talk. <a href="mailto:rosco@romar-digital.com?subject=Question%20about%20RoMar%20Digital">Email Roy</a> or call <a href="tel:+15615686032">(561) 568-6032</a>.</p>
+  </section>
+
   <div class="demo-callout" id="demo">
     <div class="demo-box">
       <div>
-        <div class="eyebrow">Live demo line</div>
+        <div class="eyebrow">Featured live demos</div>
         <h2>Hear it before you buy it</h2>
-        <p>Call a demo line and book a fake service call or estimate. You&rsquo;ll talk to the same kind of AI receptionist we set up for HVAC, plumbing, home improvement, electrical and other local-service shops. Or try a demo website and chatbot for each.</p>
+        <p>We have four live demos so far: HVAC, plumbing, home improvement and electrical. Call a line and book a fake service call or estimate. You&rsquo;ll talk to the same kind of AI receptionist we can set up for any local business, in any of the categories above. Or try the demo website and chatbot for each.</p>
         <p class="fine">You&rsquo;ll be speaking with an automated AI assistant, and the call is recorded. The demo site is for a fictional company.</p>
       </div>
       <div class="demo-actions demo-lines">
@@ -283,7 +428,7 @@
         </div>
         <div class="detail-block">
           <h3>What we focus on</h3>
-          <p>Our work centers on a few high-impact areas right now: AI voice agents that answer missed calls for service businesses (live demos for home services like HVAC, plumbing, home improvement and electrical), website builds and AI chatbots that turn visitors into booked jobs, and review generation and management that keeps Google profiles strong and trustworthy.</p>
+          <p>Our work centers on a few high-impact areas: AI voice agents that answer missed calls for local businesses (live demos for HVAC, plumbing, home improvement and electrical), website builds and AI chatbots that turn visitors into bookings, review generation and management that keeps Google profiles strong and trustworthy, and social marketing that keeps you visible.</p>
         </div>
       </div>
       <div>
@@ -353,7 +498,7 @@
   <section id="web-builds">
     <div class="eyebrow">Website builds</div>
     <h2>A website that brings in calls and jobs</h2>
-    <p class="sub">Done-for-you sites for local-service businesses. Setup fee once, then a flat monthly fee that covers hosting, SSL, backups, uptime monitoring, and small edits. You own your domain and your content.</p>
+    <p class="sub">Done-for-you sites for local small businesses. Setup fee once, then a flat monthly fee that covers hosting, SSL, backups, uptime monitoring, and small edits. You own your domain and your content.</p>
     <div class="tier-grid">
       <div class="card tier">
         <h3>Site Starter</h3>
@@ -375,12 +520,12 @@
       <div class="card tier featured">
         <span class="badge">Recommended</span>
         <h3>Site Pro</h3>
-        <p class="for">For most local service shops, like HVAC, plumbing, home improvement and electrical</p>
+        <p class="for">For most local small businesses, from home services to salons and professional offices</p>
         <div class="price">$1,799 <span>one-time setup</span><small>+ $129 <span>/mo</span></small></div>
         <p class="turn">Live in about 10 business days</p>
         <ul>
           <li>Up to 10 pages: 6 service pages and 3 service-area pages</li>
-          <li>Layout tailored to your trade</li>
+          <li>Layout tailored to your business</li>
           <li>Booking: request-a-visit form, plus your Google Calendar, Jobber, or Housecall Pro link if you have one</li>
           <li>Full on-page local SEO, local-business schema, and Search Console setup</li>
           <li>Curated reviews block (you approve each one)</li>
@@ -392,7 +537,7 @@
       </div>
       <div class="card tier">
         <h3>Site Premium</h3>
-        <p class="for">For multi-truck shops that want to rank in several towns</p>
+        <p class="for">For multi-crew or multi-location businesses that want to rank in several towns</p>
         <div class="price">$3,299 <span>one-time setup</span><small>+ $249 <span>/mo</span></small></div>
         <p class="turn">Live in about 15&ndash;20 business days</p>
         <ul>
@@ -551,7 +696,7 @@
     <div class="grid">
       <div class="card">
         <h3>AI Voice Receptionist</h3>
-        <p>Built for HVAC, plumbing, home improvement and electrical companies, and adaptable to other local trades. An AI voice agent that answers calls in English or Spanish, books jobs into your calendar or Jobber, and handles urgent transfers. Includes 500 billed minutes a month, $0.30/min after that, and usage alerts at 75%, 90%, and 100%.</p>
+        <p>Built for local small businesses, with live demos for HVAC, plumbing, home improvement and electrical. An AI voice agent that answers calls in English or Spanish, books jobs into your calendar or Jobber, and handles urgent transfers. Includes 500 billed minutes a month, $0.30/min after that, and usage alerts at 75%, 90%, and 100%.</p>
         <div class="price">$499 <span>setup</span> + $599 <span>/mo</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">Setup and Month 1 are charged at checkout. Overage is billed separately.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Select</a>

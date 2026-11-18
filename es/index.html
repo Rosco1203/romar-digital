@@ -187,6 +187,31 @@
       .demo-phone { font-size: 1.4rem; }
     }
 
+
+    /* --- Who we help (category cards) --- */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px; }
+    .who-card { display: flex; flex-direction: column; }
+    .who-card h3 { font-size: 1.25rem; margin-bottom: 4px; }
+    .who-card .who-label { color: var(--gold); font-weight: 700; font-size: 0.72rem; letter-spacing: 1.2px; text-transform: uppercase; margin: 14px 0 8px; }
+    .who-card .who-label:first-of-type { margin-top: 10px; }
+    .who-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+    .who-chips li { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; padding: 4px 12px; border-radius: 999px; line-height: 1.5; }
+    .who-chips.fit li { border-color: rgba(201,136,58,0.55); }
+    .who-chips.fit a { color: var(--text); }
+    .who-chips.fit li:hover { background: var(--gold); border-color: var(--gold); }
+    .who-chips.fit li:hover a { color: var(--charcoal); text-decoration: none; }
+    .who-card .who-why { color: var(--muted); font-size: 0.92rem; margin-top: auto; padding-top: 16px; }
+    .who-demo { padding-top: 14px; }
+    .who-demo p { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .who-demo .demo-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .who-demo .demo-links a { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-demo .who-contact { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+    .who-note { color: var(--muted); font-size: 0.9rem; margin-top: 22px; max-width: 820px; }
+    .who-note a { color: var(--gold); font-weight: 600; text-decoration: underline; }
+    @media (max-width: 900px) { .nav-links { display: none; } }
+    @media (max-width: 1100px) and (min-width: 701px) { .nav-links { gap: 14px; } .nav-links a { font-size: 0.85rem; } nav { padding-left: 16px; padding-right: 16px; } }
+    @media (max-width: 700px) { .who-chips li { font-size: 0.82rem; padding: 3px 10px; } }
+
     /* --- Footer --- */
     footer { text-align: center; color: var(--muted); padding: 40px 24px 96px; font-size: 0.9rem; border-top: 1px solid var(--border); }
     footer p { margin-bottom: 6px; }
@@ -216,6 +241,7 @@
         <img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
       </a>
       <div class="nav-links">
+        <a href="#who-we-help">Sectores</a>
         <a href="#services">Servicios</a>
         <a href="#web-builds">Sitios web</a>
         <a href="#chatbots">Chatbots</a>
@@ -240,12 +266,131 @@
     </div>
   </section>
 
+  <section id="who-we-help">
+    <div class="eyebrow">A quién ayudamos</div>
+    <h2>Un solo socio tecnológico para todo tipo de negocio local</h2>
+    <p class="sub">RoMar Digital trabaja con pequeños negocios locales de muchas industrias. Las cuatro demostraciones en vivo de más abajo son ejemplos destacados, no el límite de lo que hacemos. Encuentre su tipo de negocio, vea qué le conviene y contáctenos.</p>
+    <div class="who-grid">
+      <div class="card who-card">
+        <h3>Servicios para el hogar</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>HVAC (aire acondicionado)</li>
+            <li>Plomería</li>
+            <li>Electricidad</li>
+            <li>Techos</li>
+            <li>Remodelación</li>
+            <li>Jardinería y cuidado del césped</li>
+            <li>Control de plagas</li>
+            <li>Limpieza y servicio doméstico</li>
+            <li>Mantenimiento de piscinas</li>
+            <li>Cerrajería</li>
+            <li>Pintura</li>
+            <li>Pisos</li>
+            <li>Puertas de garaje</li>
+            <li>Servicio de árboles</li>
+            <li>Lavado a presión</li>
+            <li>Cercas</li>
+            <li>Mantenimiento general (handyman)</li>
+            <li>Energía solar</li>
+            <li>Reparación de electrodomésticos</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">Recepcionista de voz con IA</a></li>
+            <li><a href="#products">Gestión de reseñas</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+        </ul>
+        <p class="who-why">Una llamada perdida es un trabajo perdido. Una recepcionista con IA contesta fuera de horario, agenda o transfiere las solicitudes urgentes, y un sitio web con chatbot convierte visitantes en trabajos agendados.</p>
+        <div class="who-demo">
+          <p>Pruebe una demostración en vivo hecha para estos oficios:</p>
+          <div class="demo-links">
+            <a href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">HVAC (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Plomería (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Remodelación (en inglés) &rarr;</a>
+            <a href="https://rosco1203.github.io/demo-electrical/" target="_blank" rel="noopener">Electricidad (en inglés) &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Automotriz y transporte</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Taller mecánico</li>
+            <li>Grúas</li>
+            <li>Mudanzas</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">Recepcionista de voz con IA</a></li>
+            <li><a href="#products">Gestión de reseñas</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+        </ul>
+        <p class="who-why">Los clientes llaman cuando están varados o comparando precios. Conteste cada llamada y construya las reseñas y la presencia local que le ganen el siguiente cliente.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20automotriz%20o%20de%20transporte">Contactar a Roy &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Negocios personales y de consumo</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Salones de belleza y barberías</li>
+            <li>Gimnasios y estudios de ejercicio</li>
+            <li>Estética y peluquería para mascotas</li>
+            <li>Restaurantes</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">Gestión de reseñas</a></li>
+            <li><a href="#services">Marketing en redes sociales</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#products">Recepcionista de voz con IA</a></li>
+        </ul>
+        <p class="who-why">Las reseñas y una presencia constante en redes sociales atraen clientes nuevos. Un chatbot o una recepcionista con IA responde preguntas y atiende solicitudes de cita cuando su equipo está ocupado con los clientes.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20personal%20o%20de%20consumo">Contactar a Roy &rarr;</a>
+        </div>
+      </div>
+      <div class="card who-card">
+        <h3>Oficinas y servicios profesionales</h3>
+        <p class="who-label">Ejemplos de negocios</p>
+        <ul class="who-chips">
+            <li>Bufetes de abogados</li>
+            <li>Contadores y CPAs</li>
+            <li>Agentes de seguros</li>
+            <li>Bienes raíces</li>
+            <li>Administración de propiedades</li>
+        </ul>
+        <p class="who-label">Servicios de RoMar que mejor le encajan</p>
+        <ul class="who-chips fit">
+            <li><a href="#products">Recepcionista de voz con IA</a></li>
+            <li><a href="#web-builds">Sitios web</a></li>
+            <li><a href="#chatbots">Chatbots</a></li>
+            <li><a href="#products">Gestión de reseñas</a></li>
+        </ul>
+        <p class="who-why">Las llamadas y consultas llegan mientras usted atiende a un cliente. Capte cada una, envíe lo urgente directamente a usted y ofrezca a los prospectos un sitio web y un chat claros para empezar.</p>
+        <div class="who-demo">
+          <p>Aún no tenemos una demostración para esta categoría. Llame a cualquiera de las líneas de demostración en vivo de más abajo para escuchar a la recepcionista con IA, o contacte a Roy para hablar de una demostración para su negocio.</p>
+          <a class="who-contact" href="mailto:rosco@romar-digital.com?subject=Demostraci%C3%B3n%20para%20un%20negocio%20de%20servicios%20profesionales">Contactar a Roy &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <p class="who-note">¿No ve su tipo de negocio? Con gusto conversamos. <a href="mailto:rosco@romar-digital.com?subject=Pregunta%20sobre%20RoMar%20Digital">Escriba a Roy</a> o llame al <a href="tel:+15615686032">(561) 568-6032</a>.</p>
+  </section>
+
   <div class="demo-callout" id="demo">
     <div class="demo-box">
       <div>
-        <div class="eyebrow">Línea de demostración en vivo</div>
+        <div class="eyebrow">Demostraciones en vivo destacadas</div>
         <h2>Escúchelo antes de comprarlo</h2>
-        <p>Llame a una línea de demostración y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que configuramos para negocios de aire acondicionado (HVAC), plomería, remodelación, electricidad y otros servicios locales. También puede probar un sitio web y chatbot de demostración para cada uno (en inglés).</p>
+        <p>Por ahora tenemos cuatro demostraciones en vivo: HVAC (aire acondicionado), plomería, remodelación y electricidad. Llame a una línea y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que podemos configurar para cualquier negocio local, de cualquiera de las categorías anteriores. También puede probar el sitio web y chatbot de demostración de cada una (en inglés).</p>
         <p class="fine">Hablará con un asistente automatizado de IA y la llamada se graba. El sitio de demostración es de una empresa ficticia.</p>
       </div>
       <div class="demo-actions demo-lines">
@@ -284,7 +429,7 @@
         </div>
         <div class="detail-block">
           <h3>En qué nos enfocamos</h3>
-          <p>Por ahora, nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios de servicios (con demostraciones en vivo para servicios del hogar como HVAC, plomería, remodelación y electricidad), sitios web y chatbots de IA que convierten visitantes en trabajos agendados, y la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google.</p>
+          <p>Nuestro trabajo se concentra en unas pocas áreas de alto impacto: agentes de voz con IA que contestan las llamadas perdidas de negocios locales (con demostraciones en vivo para HVAC, plomería, remodelación y electricidad), sitios web y chatbots de IA que convierten visitantes en citas y trabajos agendados, la generación y gestión de reseñas para mantener sólidos y confiables los perfiles de Google, y marketing en redes sociales que lo mantiene visible.</p>
         </div>
       </div>
       <div>
@@ -354,7 +499,7 @@
   <section id="web-builds">
     <div class="eyebrow">Sitios web</div>
     <h2>Un sitio web que le trae llamadas y trabajos</h2>
-    <p class="sub">Sitios web listos, hechos por nosotros, para negocios de servicios locales. Una sola cuota de configuración y luego una mensualidad fija que cubre alojamiento, SSL, copias de seguridad, monitoreo de disponibilidad y cambios menores. Usted es dueño de su dominio y de su contenido.</p>
+    <p class="sub">Sitios web listos, hechos por nosotros, para pequeños negocios locales. Una sola cuota de configuración y luego una mensualidad fija que cubre alojamiento, SSL, copias de seguridad, monitoreo de disponibilidad y cambios menores. Usted es dueño de su dominio y de su contenido.</p>
     <div class="tier-grid">
       <div class="card tier">
         <h3>Sitio Inicial (Site Starter)</h3>
@@ -376,12 +521,12 @@
       <div class="card tier featured">
         <span class="badge">Recomendado</span>
         <h3>Sitio Pro (Site Pro)</h3>
-        <p class="for">Para la mayoría de los negocios de servicios locales, como HVAC, plomería, remodelación y electricidad</p>
+        <p class="for">Para la mayoría de los pequeños negocios locales, desde servicios del hogar hasta salones y oficinas profesionales</p>
         <div class="price">$1,799 <span>pago único de configuración</span><small>+ $129 <span>/mes</span></small></div>
         <p class="turn">En línea en unos 10 días hábiles</p>
         <ul>
           <li>Hasta 10 páginas: 6 de servicios y 3 de áreas de servicio</li>
-          <li>Diseño adaptado a su oficio</li>
+          <li>Diseño adaptado a su negocio</li>
           <li>Citas: formulario para solicitar una visita, más el enlace de su Google Calendar, Jobber o Housecall Pro si usted usa alguno</li>
           <li>SEO local completo en cada página, marcado de negocio local (schema) y configuración de Search Console</li>
           <li>Sección de reseñas seleccionadas (usted aprueba cada una)</li>
@@ -393,7 +538,7 @@
       </div>
       <div class="card tier">
         <h3>Sitio Premium (Site Premium)</h3>
-        <p class="for">Para negocios con varias camionetas que quieren aparecer en las búsquedas de varias ciudades</p>
+        <p class="for">Para negocios con varias cuadrillas o sucursales que quieren aparecer en las búsquedas de varias ciudades</p>
         <div class="price">$3,299 <span>pago único de configuración</span><small>+ $249 <span>/mes</span></small></div>
         <p class="turn">En línea en unos 15 a 20 días hábiles</p>
         <ul>
@@ -552,7 +697,7 @@
     <div class="grid">
       <div class="card">
         <h3>Recepcionista de voz con IA (AI Voice Receptionist)</h3>
-        <p>Pensada para negocios de HVAC, plomería, remodelación y electricidad, y adaptable a otros oficios locales. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
+        <p>Pensada para pequeños negocios locales, con demostraciones en vivo para HVAC, plomería, remodelación y electricidad. Un agente de voz con IA que contesta llamadas en inglés o español, agenda trabajos en su calendario o en Jobber y maneja las transferencias urgentes. Incluye 500 minutos facturables al mes, $0.30/min después de eso, y alertas de consumo al 75%, 90% y 100%.</p>
         <div class="price">$499 <span>configuración</span> + $599 <span>/mes</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">La configuración y el primer mes se cobran al pagar. El consumo excedente se factura aparte.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
