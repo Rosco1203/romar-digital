@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — RoMar Digital</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    :root {
+      --bg: #070b14;
+      --surface: #0f1629;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --accent-3: #0891b2;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #070b14;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(7,11,20,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px;
+    }
+    .logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; color: inherit; }
+    .logo img { height: 42px; width: auto; display: block; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .cta {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white; padding: 10px 20px; border-radius: 10px; font-weight: 600;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+    }
+    .cta:hover { opacity: 0.92; text-decoration: none; }
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 680px; margin: 0 auto 32px; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-secondary {
+      border: 1px solid var(--border); color: var(--text);
+      padding: 10px 20px; border-radius: 10px; background: #0f1629;
+    }
+    .btn-secondary:hover { background: #f1f5f9; text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+    h2 { font-size: 2rem; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .sub { color: var(--muted); margin-bottom: 36px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .price { font-size: 1.5rem; font-weight: 700; margin: 14px 0; color: var(--accent); }
+    .price span { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+    .detail-block { margin-bottom: 32px; }
+    .detail-block h3 { margin-bottom: 8px; font-size: 1.25rem; }
+    .detail-block p { color: var(--muted); margin-bottom: 8px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+    .team-card { text-align: center; }
+    .team-card img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin-bottom: 12px; border: 2px solid var(--border); }
+    .team-card h3 { font-size: 1rem; margin-bottom: 4px; }
+    .team-card p { color: var(--muted); font-size: 0.85rem; }
+
+    .team-intro { color: var(--muted); margin: -20px 0 36px; max-width: 680px; }
+    .team-card a { color: inherit; text-decoration: none; display: block; }
+    .team-card a:hover { text-decoration: none; }
+    .team-card a:hover img { border-color: var(--accent); }
+    .team-card a:hover h3 { color: var(--accent); }
+
+    /* --- Website + chatbot packages (added) --- */
+    :root { --gold: #C9883A; --charcoal: #2B2F36; }
+    .nav-links { flex-wrap: nowrap; }
+    .nav-links a { white-space: nowrap; }
+    .demo-callout {
+      max-width: 1100px; margin: 0 auto 20px; padding: 0 24px;
+    }
+    .demo-box {
+      display: flex; gap: 28px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      background: linear-gradient(135deg, #131b33, #0f1629);
+      border: 1px solid var(--gold); border-radius: 16px; padding: 28px 32px;
+    }
+    .demo-box h2 { font-size: 1.5rem; margin-bottom: 6px; }
+    .demo-box p { color: var(--muted); max-width: 640px; }
+    .demo-box .fine { font-size: 0.8rem; margin-top: 8px; }
+    .demo-phone {
+      font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text);
+      border: 2px solid var(--gold); border-radius: 12px; padding: 12px 22px; white-space: nowrap;
+    }
+    .demo-phone:hover { background: var(--gold); color: var(--charcoal); text-decoration: none; }
+    .demo-actions { display: flex; flex-direction: column; align-items: stretch; gap: 12px; text-align: center; }
+    .demo-site-link { color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+    .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
+    .tier { display: flex; flex-direction: column; position: relative; }
+    .tier.featured { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 8px 30px rgba(201,136,58,0.12); }
+    .badge {
+      position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--charcoal);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px;
+    }
+    .tier .for { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; min-height: 3em; }
+    .tier .price { margin: 10px 0 2px; }
+    .tier .price small { display: block; font-size: 0.95rem; color: var(--text); font-weight: 600; margin-top: 2px; }
+    .tier .price small span { font-size: 0.85rem; }
+    .tier ul { list-style: none; margin: 14px 0 20px; flex: 1; }
+    .tier li { color: var(--muted); font-size: 0.92rem; padding-left: 22px; position: relative; margin-bottom: 6px; }
+    .tier li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .tier .cta { text-align: center; }
+    .tier .turn { color: var(--muted); font-size: 0.8rem; margin-bottom: 12px; }
+    .pkg-note { color: var(--muted); font-size: 0.85rem; margin-top: 20px; max-width: 820px; }
+    .bundle-save { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+    @media (max-width: 700px) {
+      .demo-box { padding: 22px; }
+      .demo-phone { font-size: 1.4rem; }
+    }
+
+    /* --- Footer --- */
+    footer { text-align: center; color: var(--muted); padding: 40px 24px; font-size: 0.9rem; border-top: 1px solid var(--border); }
+    footer p { margin-bottom: 6px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+    .footer-contact span { white-space: nowrap; }
+  
+    /* --- Policy page --- */
+    .policy { max-width: 780px; margin: 0 auto; padding: 56px 24px 64px; }
+    .policy h1 { font-size: clamp(2rem, 4vw, 2.6rem); letter-spacing: -1px; margin-bottom: 8px; }
+    .policy .updated { color: var(--muted); margin-bottom: 28px; }
+    .policy h2 { font-size: 1.3rem; margin: 32px 0 10px; }
+    .policy p, .policy li { color: var(--muted); margin-bottom: 10px; }
+    .policy ul { padding-left: 22px; }
+    .policy strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="index.html" aria-label="RoMar Digital">
+        <img src="assets/romar-logo-header.png" alt="RoMar Digital" width="114" height="42">
+      </a>
+      <a class="cta" href="index.html">Back to home</a>
+    </nav>
+  </header>
+
+  <main class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: November 17, 2026</p>
+
+    <p>RoMar Digital ("RoMar Digital", "we", "us"), based in Fort Lauderdale, Florida, builds websites, AI chat assistants and AI voice receptionists for local service businesses. This policy explains how we handle personal information collected through our website, <a href="https://rosco1203.github.io/romar-digital/">https://rosco1203.github.io/romar-digital/</a> (the "Site"), our website chat assistant, our demo chat and demo phone line, our emails, and when you buy our services.</p>
+
+    <h2>1. Information we collect</h2>
+    <ul>
+      <li><strong>Website chat assistant:</strong> the Site has an AI chat assistant, powered by our provider Retell AI. It tells you it is an AI. If you chat with it, we collect the messages you type. If you choose to share your name, business name, email address, phone number or what you need, we collect that too. Chat transcripts, and the contact details you type in a chat, are stored by our chat provider and are emailed to our team so we can follow up with you. Please do not type sensitive information (such as payment card numbers or health information) into the chat.</li>
+      <li><strong>Purchases:</strong> when you buy a plan, our payment processor, Stripe, collects your payment card details on its own secure checkout page. We receive your name, email, billing address, phone number and payment status, but never your full card number.</li>
+      <li><strong>Demo phone line:</strong> if you call our demo AI receptionist at (208) 934-0280, the call is recorded and transcribed, and you are told at the start that you are talking with an AI.</li>
+      <li><strong>Emails and calls with us:</strong> messages you send to <a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a> or calls to <a href="tel:+15615686032">(561) 568-6032</a>.</li>
+      <li><strong>Automatically collected:</strong> our website host, GitHub Pages, logs technical data such as IP address, browser and pages requested, for security and operation. The Site does not use analytics or advertising cookies.</li>
+    </ul>
+
+    <h2>2. How we use it</h2>
+    <ul>
+      <li>To answer your questions, send proposals, set up and provide services, and support you.</li>
+      <li>To follow up on chats, calls and messages where you shared your contact details.</li>
+      <li>To process payments and keep business, tax and accounting records.</li>
+      <li>To send you information about our services. Every marketing email includes an unsubscribe link and our mailing address, and we honor opt-outs promptly.</li>
+      <li>To run, secure and improve our Site, demos and services.</li>
+      <li>To comply with law and protect our rights.</li>
+    </ul>
+    <p>We do not sell personal information.</p>
+
+    <h2>3. Who we share it with</h2>
+    <p>Service providers that help us operate, under contracts or terms that limit their use of the data: payments (Stripe), website hosting (GitHub), our webhook and booking service host (Render), AI chat and voice platform (Retell AI), email delivery (Resend), email hosting (WebHero), and scheduling (Google Calendar). We may also share information when required by law, to protect rights and safety, or in a sale or merger of our business.</p>
+
+    <h2>4. Data we handle for our clients</h2>
+    <p>When we build or run a website, chat assistant or phone assistant for a client business, we process that business's customer data (for example its website leads, chat transcripts and call recordings) on the client's behalf and only to provide our services to that client. The client's own privacy policy explains how it uses that data; please contact that business directly with questions. We do not sell client customer data, do not use it to market our own services, and do not use one client's data to serve another client. Chat transcripts and call recordings are deleted after 30 days by default.</p>
+
+    <h2>5. Cookies, ads and your choices</h2>
+    <p>The Site does not currently use advertising or analytics cookies. You can also block cookies in your browser.</p>
+
+    <h2>6. Text messages</h2>
+    <p>We do not currently send text messages.</p>
+
+    <h2>7. Retention and security</h2>
+    <p>Demo phone call recordings and transcripts: 30 days. Website chat transcripts and the email alerts that contain a visitor's contact details: kept while we follow up and as needed for our business records, and deleted on request. Customer, billing and contract records: as long as needed to provide services and for tax and legal purposes (generally 7 years). Leads who do not become customers: up to 2 years after last contact, or sooner on request. We use reasonable safeguards, limit access to those who need it, and never store full card numbers, but no system is completely secure.</p>
+
+    <h2>8. Your rights</h2>
+    <p>You may ask us to tell you what personal information we have about you, correct it, delete it, or stop marketing to you, by emailing <a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a>. We will verify and respond within a reasonable time, or within the time the law requires. Residents of states with consumer privacy laws may have additional rights where those laws apply to us. We will not treat you differently for making a request.</p>
+
+    <h2>9. Children, links and changes</h2>
+    <p>Our Site and services are for businesses and are not directed to children under 13. Links to other sites (such as Stripe Checkout) are governed by those sites' policies. We may update this policy and will change the "Last updated" date above; material changes will be posted on the Site.</p>
+
+    <h2>10. Contact</h2>
+    <p>RoMar Digital<br>14982 SW 20th St, Miramar, FL 33027<br><a href="tel:+15615686032">(561) 568-6032</a><br><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></p>
+  </main>
+
+  <footer>
+    <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
+    <p>14982 SW 20th St, Miramar, FL 33027</p>
+    <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, Florida · <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+  <script src="chat-widget.js" defer></script>
+</body>
+</html>

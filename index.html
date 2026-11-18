@@ -149,6 +149,13 @@
       .demo-box { padding: 22px; }
       .demo-phone { font-size: 1.4rem; }
     }
+
+    /* --- Footer --- */
+    footer { text-align: center; color: var(--muted); padding: 40px 24px; font-size: 0.9rem; border-top: 1px solid var(--border); }
+    footer p { margin-bottom: 6px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+    .footer-contact span { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -166,7 +173,7 @@
         <a href="#about">About</a>
         <a href="#team">Team</a>
       </div>
-      <a class="cta" href="https://fazoo-checkout.onrender.com">Get Started</a>
+      <a class="cta" href="#services">Get Started</a>
     </nav>
   </header>
 
@@ -174,7 +181,7 @@
     <h1>Digital growth for<br><span>modern businesses</span></h1>
     <p>RoMar Digital helps companies increase their digital footprint and authority through full-stack development, design, content, marketing, website builds, AI chatbots, and AI-powered voice solutions.</p>
     <div class="hero-actions">
-      <a class="cta" href="https://fazoo-checkout.onrender.com">View Products</a>
+      <a class="cta" href="#products">View Products</a>
       <a class="btn-secondary" href="#services">Explore Services</a>
     </div>
   </section>
@@ -441,36 +448,23 @@
     <p class="sub">Ready to deploy. Select a product to start checkout.</p>
     <div class="grid">
       <div class="card">
-        <h3>HVAC Voice — Setup</h3>
-        <p>One-time configuration of an AI voice agent that answers calls, books jobs into your calendar or Jobber, and handles urgent transfers.</p>
-        <div class="price">$499 <span>one-time</span></div>
-        <form action="https://fazoo-checkout.onrender.com/api/create-checkout-session" method="POST" style="display:inline;">
-          <button class="cta" type="submit" name="product" value="hvac-setup" style="border:none; cursor:pointer; font-family:inherit;">Select</button>
-        </form>
-      </div>
-      <div class="card">
-        <h3>HVAC Voice — Monthly</h3>
-        <p>Ongoing voice agent service with 500 included billed minutes, $0.30/min overage, and usage alerts at 75%, 90%, and 100%.</p>
-        <div class="price">$599 <span>/mo</span></div>
-        <form action="https://fazoo-checkout.onrender.com/api/create-checkout-session" method="POST" style="display:inline;">
-          <button class="cta" type="submit" name="product" value="hvac-monthly" style="border:none; cursor:pointer; font-family:inherit;">Select</button>
-        </form>
+        <h3>AI Voice Receptionist for HVAC</h3>
+        <p>An AI voice agent that answers calls, books jobs into your calendar or Jobber, and handles urgent transfers. Includes 500 billed minutes a month, $0.30/min after that, and usage alerts at 75%, 90%, and 100%.</p>
+        <div class="price">$499 <span>setup</span> + $599 <span>/mo</span></div>
+        <p style="font-size:0.8rem; margin-bottom:12px;">Setup and Month 1 are charged at checkout. Overage is billed separately.</p>
+        <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Select</a>
       </div>
       <div class="card">
         <h3>Reviews — Founding</h3>
         <p>Review generation and reputation management for early clients. Equal-ask workflow compliant with FTC guidance, owner-approved replies.</p>
         <div class="price">$249 <span>/mo</span></div>
-        <form action="https://fazoo-checkout.onrender.com/api/create-checkout-session" method="POST" style="display:inline;">
-          <button class="cta" type="submit" name="product" value="review-founding" style="border:none; cursor:pointer; font-family:inherit;">Select</button>
-        </form>
+        <a class="cta" href="https://buy.stripe.com/9B65kFfH077G5uF58u8og0a">Select</a>
       </div>
       <div class="card">
         <h3>Reviews — Standard</h3>
         <p>Higher-volume review management with priority support and expanded request capacity for established businesses.</p>
         <div class="price">$399 <span>/mo</span></div>
-        <form action="https://fazoo-checkout.onrender.com/api/create-checkout-session" method="POST" style="display:inline;">
-          <button class="cta" type="submit" name="product" value="review-standard" style="border:none; cursor:pointer; font-family:inherit;">Select</button>
-        </form>
+        <a class="cta" href="https://buy.stripe.com/6oU28t52m2Rq6yJ0Se8og0b">Select</a>
       </div>
     </div>
   </section>
@@ -519,8 +513,9 @@
   </section>
 
   <footer>
-    <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, Florida</p>
-    <!-- TODO (after legal approves the privacy policy): add <a href="privacy.html">Privacy Policy</a> here and create privacy.html. -->
+    <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
+    <p>14982 SW 20th St, Miramar, FL 33027</p>
+    <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, Florida · <a href="privacy.html">Privacy Policy</a></p>
   </footer>
 
   <!-- Website chat assistant (RoMar Digital AI). Loads the Retell widget. -->
