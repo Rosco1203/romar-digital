@@ -1,0 +1,5 @@
+# Local token -> lead mapping logs must never be committed (they stay outside the repo).
+lead-demo-tokens*
+*.tokens.csv
+demo/**/*.csv
+demo/**/*tokens*
