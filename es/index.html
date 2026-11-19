@@ -374,6 +374,12 @@
     .count-block h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--text); }
     .count-block p { color: var(--muted); font-size: 0.95rem; }
     @media (max-width: 700px) { .count-cols { grid-template-columns: 1fr; } .count-band { padding: 22px 18px; } }
+    .count-band h3 { font-size: 1.35rem; margin-bottom: 6px; }
+    .count-band .count-sub { color: var(--muted); margin-bottom: 20px; }
+    .count-block p + p { margin-top: 10px; }
+    .count-band .count-fine { margin-top: 20px; font-size: 0.8rem; color: var(--muted); }
+    .card .card-oneline { margin-top: 10px; font-size: 0.9rem; }
+    .card .card-oneline a { font-weight: 600; }
 
     /* --- Mobile menu (hamburger) --- */
     .menu-btn { display: none; width: 44px; height: 44px; padding: 0; flex-shrink: 0; border: 1px solid #C9883A; border-radius: 10px; background: #2B2F36; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
@@ -458,6 +464,10 @@
         <span class="promise-tag">Conteste cada llamada</span>
         <h3>Recepcionista de voz con IA</h3>
         <p>Conteste en inglés o español las llamadas que su equipo no alcanza a atender y las de fuera de horario, para que menos llamadas terminen en el buzón de voz. Su recepcionista agenda trabajos según lo que permita su calendario y pasa las solicitudes urgentes a su equipo.</p>
+        <!-- REVISAR (Marlene) -->
+        <p class="card-oneline">Antes de salir en vivo, probamos con su equipo el camino de las llamadas urgentes, y usted da su aprobación. <!-- REVISAR (Marlene) --><a href="#go-live">Vea cómo funciona la salida en vivo &rarr;</a></p>
+        <!-- REVISAR (Marlene) -->
+        <p class="card-oneline">500 minutos incluidos, alertas a los 375, 450 y 500 minutos, y $0.30 por minuto después de eso. <!-- REVISAR (Marlene) --><a href="#usage-alerts">Vea el uso y la tarifa de exceso &rarr;</a></p>
         <div class="card-links"><a href="#voice-receptionist">Vea cómo funciona &rarr;</a></div>
       </div>
       <div class="card">
@@ -778,17 +788,25 @@
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Seleccionar</a>
       </div>
       <div class="count-band" id="what-you-can-count-on">
+        <!-- REVISAR (Marlene) -->
+        <h3>Con lo que puede contar</h3>
+        <!-- REVISAR (Marlene) -->
+        <p class="count-sub">Dos cosas que hacemos con cada cliente de recepcionista de voz, explicadas en términos sencillos.</p>
         <div class="count-cols">
           <div class="count-block" id="go-live">
             <h4>Probado antes de salir en vivo</h4>
             <!-- REVISAR: Spanish copy from Maya's file; Marlene's in-house review pending -->
             <p>Antes de activar su recepcionista, probamos con su equipo el camino de las llamadas urgentes. Incluye una transferencia en vivo a cada uno de sus dos teléfonos de guardia y una transferencia fallida a propósito, para confirmar que el correo y el aviso de voz urgentes le llegan. Usted aprueba la prueba. Si falla un escenario de emergencia, lo corregimos y volvemos a probar antes de salir en vivo.</p>
+            <!-- REVISAR (Marlene) -->
+            <p>Las llamadas urgentes en español se pasan a su equipo de guardia para una devolución de llamada rápida, en lugar de una transferencia en vivo.</p>
           </div>
           <div class="count-block" id="usage-alerts">
             <h4>Alertas de uso y tarifa de exceso publicada</h4>
             <p>Su plan incluye 500 minutos facturables al mes. Le enviamos un correo a sus contactos de facturación al llegar a 375, 450 y 500 minutos (75 %, 90 % y 100 %). Después de 500 minutos, el uso cuesta $0.30 por minuto, contado por segundo y cobrado a la tarjeta registrada. Su estado de cuenta mensual muestra el uso.</p>
           </div>
         </div>
+        <!-- REVISAR (Marlene) -->
+        <p class="count-fine">La recepcionista es una asistente de IA. Las transferencias de llamadas, los avisos y las alertas dependen de las compañías telefónicas y de otros servicios externos, por lo que no podemos prometer que se conteste una llamada en particular ni que se reciba una alerta determinada.</p>
       </div>
       <div class="card" id="review-product">
         <h3>Reseñas — Estándar (Standard)</h3>
