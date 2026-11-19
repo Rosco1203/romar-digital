@@ -76,6 +76,7 @@
     }
     .hero h1 span { color: var(--accent); }
     .hero p { font-size: 1.2rem; color: var(--muted); max-width: 680px; margin: 0 auto 32px; }
+    .hero .hero-247 { font-size: 0.95rem; color: var(--muted); margin: 18px auto 0; max-width: 680px; }
     .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn-secondary {
       border: 1px solid var(--border); color: var(--text);
@@ -298,6 +299,19 @@
     footer a { color: var(--muted); }
     footer a:hover { color: var(--text); }
     .footer-contact span { white-space: nowrap; }
+    /* --- Call 24/7 CTA (AI receptionist line) --- */
+    .cta-call { background: var(--gold); color: #0b1220; padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+    .cta-call:hover { opacity: 0.92; text-decoration: none; }
+    .cta-call .cc-num { display: none; }
+    @media (min-width: 1600px) { .cta-call .cc-num { display: inline; } }
+    .btn-call { background: var(--gold); color: #0b1220; font-weight: 700; padding: 10px 20px; border-radius: 10px; }
+    .btn-call:hover { opacity: 0.92; text-decoration: none; }
+    .footer-247 a { color: var(--text); font-weight: 700; }
+    .footer-247-note { color: var(--muted); }
+    .contact-lines .note-247 { display: block; font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+    /* Small screens: the header keeps Call 24/7 and the language toggle; Contact us stays in the hero and the page. */
+    @media (max-width: 520px) { header .nav-right .cta { display: none; } .cta-call { padding: 9px 14px; font-size: 0.95rem; } }
+    @media (max-width: 380px) { .cta-call { padding: 8px 10px; font-size: 0.85rem; } }
     /* --- Language toggle --- */
     .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
     .lang-toggle {
@@ -332,6 +346,7 @@
       </div>
       <div class="nav-right">
         <a class="lang-toggle" href="es/" hreflang="es" lang="es" aria-label="Ver este sitio en español" data-lang-toggle>Español</a>
+        <a class="cta-call" href="tel:+17542903402" aria-label="Call us 24/7 at (754) 290-3402">Call 24/7<span class="cc-num">: (754) 290-3402</span></a>
         <a class="cta" href="#contact">Get Started</a>
       </div>
     </nav>
@@ -344,7 +359,9 @@
       <a class="cta" href="#plans">View plans &amp; pricing</a>
       <a class="btn-secondary" href="#services">Explore Services</a>
       <a class="btn-secondary" href="#contact">Contact us</a>
+      <a class="btn-call" href="tel:+17542903402">Call us 24/7: (754) 290-3402</a>
     </div>
+    <p class="hero-247">Calls answered 24/7 by our AI receptionist. Our team follows up during business hours.</p>
   </section>
 
   <section id="who-we-help">
@@ -469,7 +486,7 @@
         </div>
       </div>
     </div>
-    <p class="who-note">Don&rsquo;t see your kind of business? We&rsquo;re happy to talk. <a href="#contact">Contact us</a> or call <a href="tel:+15615686032">(561) 568-6032</a>.</p>
+    <p class="who-note">Don&rsquo;t see your kind of business? We&rsquo;re happy to talk. <a href="#contact">Contact us</a> or call us 24/7 at <a href="tel:+17542903402">(754) 290-3402</a>.</p>
   </section>
 
   <div class="demo-callout" id="demo">
@@ -537,7 +554,7 @@
         <div class="detail-block">
           <h3>Location & hours</h3>
           <p><strong>Fort Lauderdale, Florida</strong></p>
-          <p>Monday–Friday, 8:00 AM – 5:00 PM ET</p>
+          <p>Calls answered 24/7 by our AI receptionist. Our team follows up during business hours.</p>
         </div>
       </div>
     </div>
@@ -929,7 +946,8 @@
       <div class="contact-info">
         <p>Fill in the form and we&rsquo;ll follow up by phone or email, in English or Spanish. Prefer to talk now? Reach us directly:</p>
         <ul class="contact-lines">
-          <li>Phone: <a href="tel:+15615686032">(561) 568-6032</a></li>
+          <li><strong>Call us 24/7:</strong> <a href="tel:+17542903402">(754) 290-3402</a><span class="note-247">Calls answered 24/7 by our AI receptionist. Our team follows up during business hours.</span></li>
+          <li>Office line: <a href="tel:+15615686032">(561) 568-6032</a></li>
           <li>Email: <a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></li>
           <li>Fort Lauderdale, Florida</li>
         </ul>
@@ -980,7 +998,9 @@
   </section>
 
   <footer>
-    <p class="footer-contact"><span><a href="tel:+15615686032">(561) 568-6032</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
+    <p class="footer-contact footer-247"><span><a href="tel:+17542903402">Call 24/7: (754) 290-3402</a></span> · <span><a href="mailto:rosco@romar-digital.com">rosco@romar-digital.com</a></span></p>
+    <p class="footer-247-note">Calls answered 24/7 by our AI receptionist. Our team follows up during business hours.</p>
+    <p class="footer-contact"><span>Office line: <a href="tel:+15615686032">(561) 568-6032</a></span></p>
     <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, Florida</p>
     <p><a href="privacy.html">Privacy Policy</a></p>
   </footer>
@@ -1053,7 +1073,7 @@
       }
       function show(kind, html) { status.className = 'contact-status ' + kind; status.innerHTML = html; }
       function fallback(msg) {
-        show('bad', msg + ' <a href="' + mailtoHref() + '">' + t.emailInstead + '</a> ' + t.orCall + ' <a href="tel:+15615686032">(561) 568-6032</a>.');
+        show('bad', msg + ' <a href="' + mailtoHref() + '">' + t.emailInstead + '</a> ' + t.orCall + ' <a href="tel:+17542903402">(754) 290-3402</a>.');
       }
 
       form.addEventListener('submit', function (e) {
@@ -1098,6 +1118,7 @@
       var AW = 'AW-18583509735/';
       var DEMO = ['+12089340280', '+17542540902', '+17869816843', '+17727580270', '+19549458223', '+17868402907'];
       var OFFICE = '+15615686032';
+      var AI_LINE = '+17542903402'; /* RoMar AI receptionist line: counted as a phone click with the office-tap conversion */
       document.addEventListener('click', function (e) {
         try {
           var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="https://buy.stripe.com/"]') : null;
@@ -1106,7 +1127,7 @@
           if (h.indexOf('tel:') === 0) {
             var n = h.slice(4);
             if (DEMO.indexOf(n) > -1) gtag('event', 'conversion', { send_to: AW + 'v2Z9CMnemLsdEOe1p51F' });
-            else if (n === OFFICE) gtag('event', 'conversion', { send_to: AW + 'z1YUCMzemLsdEOe1p51F' });
+            else if (n === OFFICE || n === AI_LINE) gtag('event', 'conversion', { send_to: AW + 'z1YUCMzemLsdEOe1p51F' });
           } else {
             gtag('event', 'conversion', { send_to: AW + '6lshCM_emLsdEOe1p51F' });
           }
