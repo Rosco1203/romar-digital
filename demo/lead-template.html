@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+  LEAD DEMO TEMPLATE (RoMar Digital). Static fill, no JavaScript fill.
+  Six placeholders, each written as double curly braces around an UPPERCASE name:
+    BUSINESS_NAME, CITY, TRADE, CONTACT_FIRST_NAME, HOURS, SERVICES
+  Fill them with demo/fill_lead_demo.py (it escapes the text and refuses to write a page with a placeholder left),
+  or by hand with search-and-replace. See README.md, section "Personal demo page for a lead".
+  Filled pages live at demo/p/<random token>/index.html (never a business name in the URL); the script rewrites ../ to ../../../.
+  Public facts only. No invented reviews, ratings or prices. No prospect logo.
+  The chat widget is the existing RoMar Digital one (../chat-widget.js). No new agent, key or phone line.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo prepared for {{BUSINESS_NAME}} | RoMar Digital</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="A demo prepared by RoMar Digital for {{BUSINESS_NAME}}.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <style>
+    :root { --charcoal: #2B2F36; --surface: #343942; --surface-2: #23262c; --gold: #C9883A; --gold-2: #DDA458; --text: #f5f3ef; --muted: #b9bdc6; --border: #474d58; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--charcoal); color: var(--text); line-height: 1.65; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .demo-banner { background: var(--gold); color: var(--charcoal); font-weight: 700; font-size: 0.92rem; text-align: center; padding: 10px 16px; }
+    .demo-banner a { color: var(--charcoal); text-decoration: underline; }
+    header { background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+    header img { display: block; height: 48px; width: auto; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border-radius: 10px; font-weight: 700; font-size: 1rem; border: 2px solid var(--gold); }
+    .btn:hover { text-decoration: none; filter: brightness(1.08); }
+    .btn-primary { background: var(--gold); color: var(--charcoal); }
+    .btn-ghost { background: transparent; color: var(--gold); }
+    .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .hero { padding: 48px 0 32px; }
+    h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.15; margin-bottom: 14px; }
+    h2 { font-size: 1.5rem; margin-bottom: 8px; }
+    h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .lead { color: var(--muted); font-size: 1.1rem; max-width: 680px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .fine { color: var(--muted); font-size: 0.82rem; margin-top: 12px; max-width: 680px; }
+    .section { padding: 28px 0; }
+    .sub { color: var(--muted); max-width: 680px; margin-bottom: 18px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .facts .card h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.78rem; }
+    .facts ul { list-style: none; }
+    .facts li { padding-left: 16px; position: relative; margin-bottom: 4px; }
+    .facts li::before { content: "\2022"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+    .cta-box { background: linear-gradient(135deg, #373c46, #2f343c); border: 1px solid var(--gold); border-radius: 16px; padding: 28px 28px; margin: 12px 0 36px; }
+    footer { border-top: 1px solid var(--border); background: var(--surface-2); color: var(--muted); font-size: 0.85rem; padding: 20px 0; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+    :focus-visible { outline: 3px solid var(--gold-2); outline-offset: 2px; }
+    @media (max-width: 640px) { .wrap { padding: 0 18px; } .hero { padding-top: 32px; } .btn { width: 100%; } .cta-box { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <div class="demo-banner" role="note">Demo prepared by RoMar Digital for {{BUSINESS_NAME}} (not affiliated with or endorsed by them). This is not their website and nothing here is an offer.</div>
+
+  <header>
+    <div class="wrap">
+      <a href="https://rosco1203.github.io/romar-digital/" aria-label="RoMar Digital"><img src="../assets/romar-logo-header.png" alt="RoMar Digital" width="131" height="48"></a>
+      <a class="btn btn-ghost" href="../#contact">Contact us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">{{TRADE}} &middot; {{CITY}}</p>
+        <h1>A quick demo for {{BUSINESS_NAME}}</h1>
+        <p class="lead">Hi {{CONTACT_FIRST_NAME}}, this is a short look at how an AI chat assistant could answer questions from the customers of {{BUSINESS_NAME}} in {{CITY}}, at any hour. Tap the chat button at the bottom right of this page and try it.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="../#contact">Book a call or contact us</a>
+        </div>
+        <p class="fine">The assistant in this demo is RoMar Digital&rsquo;s own. It does not know {{BUSINESS_NAME}} yet. A real setup would be built around your services, hours and answers. You&rsquo;re chatting with an automated AI assistant, not a person. Please don&rsquo;t enter private or payment information.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>What it can do for {{BUSINESS_NAME}}</h2>
+        <p class="sub">The same kind of chat assistant we run for local businesses, set up for your business.</p>
+        <div class="cards">
+          <article class="card"><h3>Answers questions any hour</h3><p>Hours, services and service area, in plain language, day or night, so customers don&rsquo;t leave for the next business.</p></article>
+          <article class="card"><h3>Collects the details</h3><p>Name, phone and what the customer needs, passed to your team in a structured way instead of a missed message.</p></article>
+          <article class="card"><h3>Handles booking requests</h3><p>Google Calendar booking or a structured callback; your office confirms.</p></article>
+          <article class="card"><h3>Knows when to hand off</h3><p>Urgent or unusual requests go to a person on your team, not a guess from the bot.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>What we&rsquo;d start from</h2>
+        <p class="sub">Basics from {{BUSINESS_NAME}}&rsquo;s public information. We&rsquo;d confirm everything with you before anything is set up.</p>
+        <div class="facts">
+          <div class="card"><h3>Hours</h3><p>{{HOURS}}</p></div>
+          <div class="card"><h3>Services</h3>
+            <ul>
+              <li>{{SERVICES}}</li>
+            </ul>
+          </div>
+          <div class="card"><h3>Area</h3><p>{{CITY}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>Want this set up for {{BUSINESS_NAME}}?</h2>
+          <p class="sub">Book a call or send us a note and we&rsquo;ll walk through it with you. No pressure and no obligation.</p>
+          <a class="btn btn-primary" href="../#contact">Book a call or contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>RoMar Digital &middot; Fort Lauderdale, FL</span>
+      <span>Demo prepared for {{BUSINESS_NAME}} (not affiliated with or endorsed by them). <a href="../privacy.html">Privacy</a></span>
+    </div>
+  </footer>
+
+  <!-- Existing RoMar Digital chat widget (Retell). Same file the main site loads. Do not add another agent or key here. -->
+  <script src="../chat-widget.js" defer></script>
+</body>
+</html>
