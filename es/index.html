@@ -148,6 +148,9 @@
     .demo-trade { grid-column: 1 / -1; color: var(--gold); font-weight: 700; font-size: 0.78rem; letter-spacing: 1.2px; text-transform: uppercase; }
     .demo-lines .demo-phone { font-size: 1.15rem; padding: 8px 14px; text-align: center; }
     .demo-lines .demo-site-link { font-size: 0.85rem; }
+    .demo-lines .demo-chat { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 14px; border-radius: 10px; background: var(--gold); color: var(--charcoal); font-size: 0.95rem; font-weight: 700; text-align: center; }
+    .demo-lines .demo-chat:hover { text-decoration: none; filter: brightness(1.1); }
+    .demo-or { color: var(--muted); font-size: 0.85rem; }
     @media (max-width: 640px) { .demo-lines { min-width: 0; width: 100%; } .demo-line { grid-template-columns: 1fr; } }
     .eyebrow { color: var(--gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
     .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
@@ -494,40 +497,50 @@
     <div class="demo-box">
       <div>
         <div class="eyebrow">Demostraciones en vivo destacadas</div>
-        <h2>Escúchelo antes de comprarlo</h2>
-        <p>Por ahora tenemos seis demostraciones en vivo: HVAC (aire acondicionado), plomería, remodelación, electricidad, taller mecánico y salón de belleza. Llame a una línea y agende una visita o un estimado de prueba. Hablará con el mismo tipo de recepcionista con IA que podemos configurar para cualquier negocio local, de cualquiera de las categorías anteriores. También puede probar el sitio web y chatbot de demostración de cada una (en inglés).</p>
-        <p class="fine">Hablará con un asistente automatizado de IA y la llamada se graba. El sitio de demostración es de una empresa ficticia.</p>
+        <!-- REVISAR: titular: chat primero (Marlene) -->
+        <h2>Pru&eacute;belo antes de comprarlo</h2>
+        <!-- REVISAR: párrafo: chat primero, llamada después (Marlene) -->
+        <p>Empiece por el chat: elija un oficio y converse con nuestro asistente de IA en su sitio de demostraci&oacute;n, sin llamar por tel&eacute;fono. Luego llame a la l&iacute;nea de demostraci&oacute;n para escuchar a la misma clase de recepcionista con IA que podemos configurar para cualquier negocio local. El sitio y el chatbot est&aacute;n en ingl&eacute;s.</p>
+        <!-- REVISAR: nota: reserva (redacción aprobada: Google Calendar booking or a structured callback; your office confirms), IA y grabación (Marlene) -->
+        <p class="fine">Pruebe agendar una visita o un estimado de prueba. La reserva funciona con Google Calendar o con una devoluci&oacute;n de llamada estructurada; su oficina confirma. Si llama, hablar&aacute; con un asistente automatizado de IA y la llamada se graba. Los sitios de demostraci&oacute;n son de empresas ficticias.</p>
       </div>
       <div class="demo-actions demo-lines">
         <div class="demo-line">
           <span class="demo-trade">HVAC (aire acondicionado)</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de HVAC (aire acondicionado) (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <!-- REVISAR: botón y etiqueta "O llame…" (Marlene) -->
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+12089340280" aria-label="Llamar a la línea de demostración de HVAC (aire acondicionado) al (208) 934-0280">(208) 934-0280</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-hvac/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
         <div class="demo-line">
           <span class="demo-trade">Plomería</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de Plomería (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+17542540902" aria-label="Llamar a la línea de demostración de Plomería al (754) 254-0902">(754) 254-0902</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-plumbing/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
         <div class="demo-line">
           <span class="demo-trade">Remodelación y mejoras del hogar</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de Remodelación y mejoras del hogar (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+17869816843" aria-label="Llamar a la línea de demostración de Remodelación y mejoras del hogar al (786) 981-6843">(786) 981-6843</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-home-improvement/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
         <div class="demo-line">
           <span class="demo-trade">Electricidad</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-electrical/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de Electricidad (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+17727580270" aria-label="Llamar a la línea de demostración de Electricidad al (772) 758-0270">(772) 758-0270</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-electrical/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
         <div class="demo-line">
           <span class="demo-trade">Taller mecánico</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-auto-repair/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de Taller mecánico (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+19549458223" aria-label="Llamar a la línea de demostración de Taller mecánico al (954) 945-8223">(954) 945-8223</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-auto-repair/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
         <div class="demo-line">
           <span class="demo-trade">Salón de belleza</span>
+          <a class="demo-site-link demo-chat" href="https://rosco1203.github.io/demo-salon/" target="_blank" rel="noopener" aria-label="Chatear con nuestro asistente de IA en el sitio de demostraci&oacute;n de Salón de belleza (se abre en una pesta&ntilde;a nueva)">Chatee con nuestro asistente de IA (en ingl&eacute;s) &rarr;</a>
+          <span class="demo-or">O llame a la l&iacute;nea de demostraci&oacute;n:</span>
           <a class="demo-phone" href="tel:+17868402907" aria-label="Llamar a la línea de demostración de Salón de belleza al (786) 840-2907">(786) 840-2907</a>
-          <a class="demo-site-link" href="https://rosco1203.github.io/demo-salon/" target="_blank" rel="noopener">Sitio y chatbot (en inglés) &rarr;</a>
         </div>
       </div>
     </div>
