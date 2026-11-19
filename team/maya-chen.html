@@ -176,6 +176,26 @@
     .team-card a:hover { text-decoration: none; }
     .team-card a:hover img { border-color: var(--accent); }
     .team-card a:hover h3 { color: var(--accent); }
+
+    /* --- Mobile menu (hamburger) --- */
+    .menu-btn { display: none; width: 44px; height: 44px; padding: 0; flex-shrink: 0; border: 1px solid #C9883A; border-radius: 10px; background: #2B2F36; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+    .menu-btn .bar { display: block; width: 22px; height: 2px; border-radius: 2px; background: #C9883A; transition: transform .2s ease, opacity .2s ease; }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+    .menu-btn[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .menu-btn:focus-visible, .mobile-menu a:focus-visible { outline: 3px solid #f5f3ef; outline-offset: 2px; }
+    .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; background: #2B2F36; border-top: 1px solid #474d58; border-bottom: 3px solid #C9883A; box-shadow: 0 18px 30px rgba(0,0,0,0.35); max-height: calc(100vh - 70px); overflow-y: auto; padding: 8px 16px 16px; z-index: 30; }
+    .mobile-menu[hidden] { display: none; }
+    .mobile-menu a.mm-link { display: flex; align-items: center; min-height: 48px; padding: 0 12px; color: #f5f3ef; font-size: 1.05rem; font-weight: 600; border-bottom: 1px solid #3d424b; }
+    .mobile-menu a.mm-link:hover { background: #343942; color: #C9883A; text-decoration: none; }
+    .mm-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+    .mm-actions a { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 10px; font-weight: 700; font-size: 1rem; }
+    .mm-actions a:hover { text-decoration: none; opacity: 0.92; }
+    .mm-lang { border: 1px solid #C9883A; color: #f5f3ef; background: transparent; }
+    .mm-call { background: #C9883A; color: #1d2025; }
+    .nav-right-m { display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 700px) { .menu-btn { display: inline-flex; } }
+    @media (min-width: 701px) { .mobile-menu { display: none !important; } }
   </style>
 </head>
 <body>
@@ -190,8 +210,20 @@
         <a href="../index.html#about">About</a>
         <a href="../index.html#team">Team</a>
       </div>
-      <a class="cta" href="../index.html#services">Get Started</a>
+      <div class="nav-right-m">
+        <a class="cta" href="../index.html#services">Get Started</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      </div>
     </nav>
+  <div class="mobile-menu" id="mobile-menu" role="group" aria-label="Main menu" hidden>
+    <a class="mm-link" href="../index.html#services">Services</a>
+    <a class="mm-link" href="../index.html#products">Products</a>
+    <a class="mm-link" href="../index.html#about">About</a>
+    <a class="mm-link" href="../index.html#team">Team</a>
+    <div class="mm-actions">
+      <a class="mm-call" href="tel:+17542903402">Call 24/7: (754) 290-3402</a>
+    </div>
+  </div>
   </header>
 
   <article class="bio">
@@ -213,5 +245,37 @@
     <p class="footer-contact"><span>Office line: <a href="tel:+15615686032">(561) 568-6032</a></span></p>
     <p>© 2026 RoMar Digital. All rights reserved. · Fort Lauderdale, FL · Serving clients nationwide · <a href="../privacy.html">Privacy Policy</a></p>
   </footer>
+  <script>
+    /* Mobile menu: vanilla JS, no dependencies. */
+    (function () {
+      var btn = document.getElementById('menu-btn'), menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      var header = btn.closest('header');
+      var LABEL_OPEN = 'Open menu', LABEL_CLOSE = 'Close menu';
+      var mq = window.matchMedia('(min-width: 701px)');
+      var langHeader = document.querySelector('header .lang-toggle'), langMenu = menu.querySelector('.mm-lang');
+      function syncLang() { if (langHeader && langMenu) langMenu.setAttribute('href', langHeader.getAttribute('href')); }
+      function isOpen() { return btn.getAttribute('aria-expanded') === 'true'; }
+      function setOpen(open, returnFocus) {
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? LABEL_CLOSE : LABEL_OPEN);
+        if (open) { syncLang(); menu.removeAttribute('hidden'); } else { menu.setAttribute('hidden', ''); }
+        if (!open && returnFocus) btn.focus();
+      }
+      btn.addEventListener('click', function () { setOpen(!isOpen(), false); });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.key === 'Esc') && isOpen()) { e.preventDefault(); setOpen(false, true); }
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('a')) setOpen(false, false);
+      });
+      document.addEventListener('click', function (e) { if (isOpen() && header && !header.contains(e.target)) setOpen(false, false); });
+      header.addEventListener('focusout', function (e) {
+        if (isOpen() && e.relatedTarget && !header.contains(e.relatedTarget)) setOpen(false, false);
+      });
+      function onMq() { if (mq.matches && isOpen()) setOpen(false, false); }
+      if (mq.addEventListener) mq.addEventListener('change', onMq); else if (mq.addListener) mq.addListener(onMq);
+    })();
+  </script>
 </body>
 </html>
