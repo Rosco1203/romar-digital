@@ -386,6 +386,19 @@
     @media (max-width: 1100px) { .menu-btn { display: inline-flex; } }
     @media (max-width: 520px) { header .nav-right .lang-toggle { display: none; } }
     @media (min-width: 1101px) { .mobile-menu { display: none !important; } }
+    /* --- G3 / G4 band under the voice plan card --- */
+    #products .grid > .card, #products .grid > .count-band { grid-column: 1 / -1; }
+    .card .card-oneline { margin-top: 10px; font-size: 0.9rem; }
+    .card .card-oneline a { font-weight: 600; white-space: nowrap; }
+    .count-band { border: 1px solid #C9883A; border-radius: 16px; padding: 28px 32px; background: linear-gradient(135deg, #373c46, #2f343c); }
+    .count-band h3 { font-size: 1.35rem; margin-bottom: 6px; }
+    .count-band .count-sub { color: var(--muted); margin-bottom: 20px; }
+    .count-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .count-block { border-left: 3px solid #C9883A; padding: 4px 0 4px 18px; }
+    .count-block h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--text); }
+    .count-block p { color: var(--muted); font-size: 0.95rem; }
+    .count-band .count-fine { margin-top: 20px; font-size: 0.8rem; color: var(--muted); }
+    @media (max-width: 700px) { .count-cols { grid-template-columns: 1fr; } .count-band { padding: 22px 18px; } }
   </style>
 </head>
 <body>
@@ -449,6 +462,8 @@
         <span class="promise-tag">Answer every call</span>
         <h3>AI Voice Receptionist</h3>
         <p>Answer overflow and after-hours calls in English or Spanish, so fewer calls end at voicemail. Your receptionist books jobs where your calendar allows it and hands urgent requests to your team.</p>
+        <p class="card-oneline">We test your urgent-call path with your team before go-live, and you sign off. <a href="#go-live">See how go-live works &rarr;</a></p>
+        <p class="card-oneline">500 minutes included, alerts at 375, 450 and 500, and $0.30 a minute after that. <a href="#usage-alerts">See usage and overage &rarr;</a></p>
         <div class="card-links"><a href="#voice-receptionist">See how it works &rarr;</a></div>
       </div>
       <div class="card">
@@ -768,6 +783,21 @@
         <div class="price">$499 <span>setup</span> + $599 <span>/mo</span></div>
         <p style="font-size:0.8rem; margin-bottom:12px;">Setup and Month 1 are charged at checkout. Overage is billed separately.</p>
         <a class="cta" href="https://buy.stripe.com/3cIfZjcuO9fO4qB44q8og09">Select</a>
+      </div>
+      <div class="count-band" id="what-you-can-count-on">
+        <h3>What you can count on</h3>
+        <p class="count-sub">Two things we do for every voice receptionist client, in plain terms.</p>
+        <div class="count-cols">
+          <div class="count-block" id="go-live">
+            <h4>Tested before it goes live</h4>
+            <p>Before we turn on your receptionist, we test your urgent-call path with your team. That includes a live transfer to each of your two on-call phones and one deliberately failed transfer, to confirm the urgent email and voice page reach you. You sign off on the test. If an emergency scenario fails, we fix it and test again before going live.</p>
+          </div>
+          <div class="count-block" id="usage-alerts">
+            <h4>Usage alerts and a published overage rate</h4>
+            <p>Your plan includes 500 billed minutes a month. We email your billing contacts at 375, 450 and 500 minutes (75%, 90% and 100%). Above 500 minutes, usage is $0.30 a minute, counted by the second and charged to your card on file. Your monthly statement shows what was used.</p>
+          </div>
+        </div>
+        <p class="count-fine">The receptionist is an AI assistant. Call transfers, pages and alerts depend on phone carriers and other outside services, so we can't promise any single call is answered or any alert is received.</p>
       </div>
       <div class="card" id="review-product">
         <h3>Reviews — Standard</h3>
