@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (Google Ads conversion measurement) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18583509735"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18583509735');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoMar Digital — Crecimiento digital para negocios modernos</title>
@@ -1071,6 +1079,7 @@
           if (res.status === 200 && res.body.status === 'ok') {
             form.reset(); started = Date.now(); form.elements['language'].value = lang;
             show('ok', t.thanks);
+            try { if (window.gtag) gtag('event', 'conversion', { send_to: 'AW-18583509735/V9R7COPNkLsdEOe1p51F' }); } catch (err) {}
           } else if (res.status === 400 && res.body.fields) {
             Object.keys(res.body.fields).forEach(function (n) { setErr(n, t.fixThis); });
             show('bad', t.checkFields);
@@ -1082,6 +1091,28 @@
         }).catch(function () {
           clearTimeout(timer); fallback(t.failed);
         }).then(function () { btn.disabled = false; btn.textContent = label; });
+      });
+    })();
+  </script>
+  <script>
+    /* Google Ads conversion events: tel: and Stripe checkout link clicks. Never blocks navigation; no form data or personal data is sent. */
+    (function () {
+      var AW = 'AW-18583509735/';
+      var DEMO = ['+12089340280', '+17542540902', '+17869816843', '+17727580270', '+19549458223', '+17868402907'];
+      var OFFICE = '+15615686032';
+      document.addEventListener('click', function (e) {
+        try {
+          var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="https://buy.stripe.com/"]') : null;
+          if (!a || !window.gtag) return;
+          var h = a.getAttribute('href') || '';
+          if (h.indexOf('tel:') === 0) {
+            var n = h.slice(4);
+            if (DEMO.indexOf(n) > -1) gtag('event', 'conversion', { send_to: AW + 'v2Z9CMnemLsdEOe1p51F' });
+            else if (n === OFFICE) gtag('event', 'conversion', { send_to: AW + 'z1YUCMzemLsdEOe1p51F' });
+          } else {
+            gtag('event', 'conversion', { send_to: AW + '6lshCM_emLsdEOe1p51F' });
+          }
+        } catch (err) {}
       });
     })();
   </script>
