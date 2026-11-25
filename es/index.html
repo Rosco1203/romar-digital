@@ -10,6 +10,24 @@
     gtag('config', 'AW-18583509735');
   </script>
   <meta charset="UTF-8">
+  <meta name="facebook-domain-verification" content="81vf2wla1r4kcajipdhnj7h80ujrbx" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '984952230972026');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=984952230972026&ev=PageView&noscript=1"
+    alt="" /></noscript>
+  <!-- End Meta Pixel Code -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RoMar Digital — Crecimiento digital para negocios modernos</title>
   <meta name="description" content="RoMar Digital ayuda a negocios de servicios locales con recepcionista de voz con IA en inglés o español, sitios web y chatbots de IA que convierten llamadas y visitas en trabajos agendados.">
@@ -1136,6 +1154,7 @@
             form.reset(); started = Date.now(); form.elements['language'].value = lang;
             show('ok', t.thanks);
             try { if (window.gtag) gtag('event', 'conversion', { send_to: 'AW-18583509735/V9R7COPNkLsdEOe1p51F' }); } catch (err) {}
+            try { if (window.fbq) fbq('track', 'Lead'); } catch (err) {}
           } else if (res.status === 400 && res.body.fields) {
             Object.keys(res.body.fields).forEach(function (n) { setErr(n, t.fixThis); });
             show('bad', t.checkFields);
@@ -1151,7 +1170,7 @@
     })();
   </script>
   <script>
-    /* Google Ads conversion events: tel: and Stripe checkout link clicks. Never blocks navigation; no form data or personal data is sent. */
+    /* Google Ads and Meta Pixel Lead events: tel: and Stripe checkout link clicks. Never blocks navigation; no form data or personal data is sent. */
     (function () {
       var AW = 'AW-18583509735/';
       var DEMO = ['+12089340280', '+17542540902', '+17869816843', '+17727580270', '+19549458223', '+17868402907'];
@@ -1160,15 +1179,23 @@
       document.addEventListener('click', function (e) {
         try {
           var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="https://buy.stripe.com/"]') : null;
-          if (!a || !window.gtag) return;
+          if (!a) return;
           var h = a.getAttribute('href') || '';
+          var lead = false;
           if (h.indexOf('tel:') === 0) {
             var n = h.slice(4);
-            if (DEMO.indexOf(n) > -1) gtag('event', 'conversion', { send_to: AW + 'v2Z9CMnemLsdEOe1p51F' });
-            else if (n === OFFICE || n === AI_LINE) gtag('event', 'conversion', { send_to: AW + 'z1YUCMzemLsdEOe1p51F' });
+            if (DEMO.indexOf(n) > -1) {
+              if (window.gtag) gtag('event', 'conversion', { send_to: AW + 'v2Z9CMnemLsdEOe1p51F' });
+              lead = true;
+            } else if (n === OFFICE || n === AI_LINE) {
+              if (window.gtag) gtag('event', 'conversion', { send_to: AW + 'z1YUCMzemLsdEOe1p51F' });
+              lead = true;
+            }
           } else {
-            gtag('event', 'conversion', { send_to: AW + '6lshCM_emLsdEOe1p51F' });
+            if (window.gtag) gtag('event', 'conversion', { send_to: AW + '6lshCM_emLsdEOe1p51F' });
+            lead = true;
           }
+          if (lead && window.fbq) fbq('track', 'Lead');
         } catch (err) {}
       });
     })();
